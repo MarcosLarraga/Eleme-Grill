@@ -147,7 +147,6 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    overflow: auto;
     display: flex;
     align-items: center;
     height: 90px;
@@ -164,7 +163,7 @@ footer {
 }
 
 .footer-centro img {
-    width: 150px;
+    width: 50px;
     margin-right: 400px;
 }
 
