@@ -16,9 +16,21 @@ body {
 }
 
 .logo img {
-    width: 64px;
+    width: 50px;
     margin-right: 650px;
     margin-top: 19px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 .texto ul {
@@ -27,6 +39,7 @@ body {
     padding: 0;
     display: flex;
     margin-left: 20px;
+    font-size: 20px;
 }
 
 .texto ul li {
@@ -148,13 +161,17 @@ footer {
     bottom: 0;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: top;
     height: 90px;
+
 }
 
 .footer-izq {
     margin-left: 100px;
-    margin-right: 400px ;
+    margin-right: 400px;
+}
+
+.footer-izq span{
     cursor: pointer;
 }
 
@@ -162,16 +179,27 @@ footer {
     color: yellow;
 }
 
+.copyright{
+    color: #ffffffa1;
+    margin: 0px 0px;
+    font-size: 12px;
+}
+
 .footer-centro img {
-    width: 50px;
+    width: 60px;
     margin-right: 400px;
+}
+
+.footer-dcha p{
+    margin: 0px 0px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .icono-redes a {
     font-size: 20px;
     margin-left: 10px;
     color: aliceblue;
-    margin-top: auto;
 }
 
 .icono-redes a:hover {
