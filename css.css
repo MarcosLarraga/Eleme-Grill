@@ -5,12 +5,11 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Establece el fondo para el contenedor que engloba el nav y el fondo de hamburguesa */
+/* Estilos para el contenedor que engloba el video de fondo */
 .contenedor-con-video {
     position: relative;
     width: 100%;
-    height: 60vh; /* Hace que ocupe toda la pantalla */
-    overflow: hidden;
+    min-height: 100vh; /* Ajusta el tamaño mínimo a la altura de la ventana */
 }
 
 #video-fondo {
@@ -18,28 +17,26 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: -1; /* Lo coloca detrás de los demás elementos */
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño del video para cubrir todo el contenedor */
+    z-index: -1;
 }
+
 /* Estilos para el navbar */
 .navbar {
     display: flex;
     align-items: center;
-    color: white;
+    justify-content: space-between;
     padding: 10px 20px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
     height: 90px;
-    font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins */
-    font-size: 24px; /* Ajusta el tamaño del texto */
-    margin-bottom: -20px; /* Reduce el espacio inferior */
-    font-weight: 700; /* Utiliza la variante en negrita de la fuente */
 }
-
 
 .logo img {
     width: 50px;
-    margin-right: 650px;
-    margin-top: 19px;
     margin-left: 50px;
-    margin-bottom: 30px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -48,17 +45,11 @@ body {
     transform: scale(1.1);
 }
 
-
-.texto {
-    margin-left: auto; /* Mueve el texto hacia la derecha */
-}
-
 .texto ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    font-size: 24px;
 }
 
 .texto ul li {
@@ -70,176 +61,95 @@ body {
     text-decoration: none;
 }
 
-.iconos {
-    display: flex; /* Asegura que los iconos estén en línea */
-    margin-left: 20px;
-}
-
 .iconos a {
-    color: white !important; /* Forza el color blanco */
-    text-decoration: none; /* Elimina el subrayado */
-    margin-right: 20px; /* Añade margen entre los iconos */
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
 }
 
 
-
-/* Estilos para el slider de texto */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
-
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-h1 {
-    font-size: 50px;
-    font-weight: 500;
-    line-height: 1.3em;
-}
-
-.slider1 {
-    width: auto;
-    height: 200px;
-    overflow: hidden;
-    display: grid;
-    place-items: center;
-    margin-top: 0; /* Elimina el margen superior */
-}
-
-.texto-slider {
-    display: flex;
-    position: relative;
-    width: 80%;
-    height: 100px;
-    margin: auto;
-    z-index: 1;
-}
-
-.m-scroll-title {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100%;
-    white-space: nowrap;
-    transition: all 1s ease;
-}
-
-.m-scroll-title div {
-    display: flex;
-    animation: scrollText 30s infinite linear;
-}
-
-.m-scroll-title h1 {
-    margin: 0 0 0 .3em;
-    color: transparent;
-}
-
-.m-scroll-title h1:not(.slider-title-span) {
-    color: black;
-}
-
-.slider-title-span {
-    color: rgb(251, 255, 41);
-}
-
-@keyframes scrollText {
-    from {
-        transform: translateX(0%);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-/*CENTRO*/
+/* Estilos para el centro */
 .centro {
-    text-align: center;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 60vh;
 }
 
-.texto {
-    font-size: 24px;
+.imagen {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
     margin-bottom: 20px;
 }
 
 .boton {
     padding: 15px 30px;
-    font-size: 20px;
-    background-color: #007bff;
+    background-color: #000000;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
 }
 
 .boton:hover {
-    background-color: #0056b3;
+    background-color: rgb(251, 255, 41);
+    color: rgb(0, 0, 0);
 }
-/*FOOTER*/
+
+/* Estilos para el footer */
 footer {
-    background-color: black;
+    background: transparent;
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    bottom: 0;
-    width: 100%;
     display: flex;
     align-items: center;
+    background-color: black;
+    justify-content: space-between;
+    height: 100px;
+
 }
-
-
+.footer-dcha{
+    margin-right: 10PX;
+}
 .footer-logo img {
     width: 60px;
-    margin-left: 350px;
+    margin-left: 50px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-
 .footer-logo img:hover {
     transform: scale(1.1);
 }
-
 .footer-centro {
     flex-grow: 1;
     margin-left: 150px;
 }
-
 .footer-centro p {
     margin: 0;
     font-size: 20px;
     margin-bottom: 10px;
-    color: #fff;
 }
-
-.icono-redes {
-    margin-bottom: 10px;
-}
-
 .icono-redes a {
     font-size: 30px;
     margin-left: 10px;
     color: aliceblue;
 }
-
 .icono-redes a:hover {
     color: yellow;
 }
-
-.footer-dcha {
-    margin-right: 250px;
-}
-
 .footer-dcha span {
     cursor: pointer;
 }
-
 .footer-dcha span:hover {
     color: yellow;
 }
-
 .footer-dcha .copyright {
     color: #ffffffa1;
     margin: 0;
