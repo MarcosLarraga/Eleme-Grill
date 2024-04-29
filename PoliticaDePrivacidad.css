@@ -76,36 +76,30 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 50px;
+    text-align: justify;
 }
 
-.container h1,
-.container h2,
-.container h3,
-.container h4,
-.container h5,
-.container h6 {
+h1, h2, h3, h4, h5, h6 {
     color: #333;
 }
 
-.container p,
-.container ul,
-.container li {
+p, ul, li {
     color: #666;
     line-height: 1.6;
 }
 
-.container ul {
+ul {
     list-style: disc;
     margin-left: 20px;
 }
 
-.container a {
+a {
     color: #007bff;
     text-decoration: none;
 }
 
-.container a:hover {
+a:hover {
     text-decoration: underline;
 }
 
