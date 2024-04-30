@@ -5,11 +5,10 @@ body {
     font-family: "Knockout", "Helvetica", "Arial", sans-serif;
 }
 
-/* Estilos para el contenedor que engloba el video de fondo */
 .contenedor-con-video {
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Ajusta el tamaño mínimo a la altura de la ventana */
+    min-height: 100vh;
 }
 
 #video-fondo {
@@ -18,11 +17,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta el tamaño del video para cubrir todo el contenedor */
+    object-fit: cover;
     z-index: -1;
 }
 
-/* Estilos para el navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -56,12 +54,10 @@ body {
     font-family: "Knockout", "Helvetica", "Arial", sans-serif;
     font-weight: 700;
     font-size: 1rem;
-    line-height: 1rem;
     text-transform: uppercase;
     border: 2px #ffffff solid;
     border-radius: 32px;
     padding: .75rem 1rem;
-    white-space: nowrap;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -73,9 +69,15 @@ body {
 .texto ul li a.special,
 .texto .btn.special {
     background-color: #F6D347;
-    border: 2px #ffffff solid;
+    border: 2px #F6D347 solid;
     color: black;
 }
+
+.btn.special:hover {
+    background-color: black;
+    color: #F6D347;
+}
+
 .texto ul li a.carrito,
 .texto .btn.carrito {
     background-color: black;
@@ -83,11 +85,12 @@ body {
     color: #cf3f2c;
 }
 
+.btn.carrito:hover {
+    background-color: black;
+    color: #F6D347;
+    border: 2px #F6D347 solid;
+}
 
-
-
-
-/* Estilos para el centro */
 .centro {
     margin-top: 100px;
     display: flex;
@@ -104,16 +107,11 @@ body {
     margin-bottom: 20px;
 }
 
-.botones-container {
-    display: flex;
-    gap: 20px;
-}
-
 .boton {
     padding: 20px 40px;
     background-color: #000000;
     color: #F6D347;
-    border: 2px #ffffff solid;
+    border: 2px gray solid;
     text-decoration: none;
     font-family: "Knockout", "Helvetica", "Arial", sans-serif;
     font-weight: 700;
@@ -123,14 +121,11 @@ body {
     width: 200px;
 }
 
-
-
 .boton:hover {
     background-color: #F6D347;
     color: rgb(0, 0, 0);
 }
 
-/* Estilos para el footer */
 footer {
     background: transparent;
     color: #fff;
@@ -141,8 +136,8 @@ footer {
     background-color: black;
     justify-content: space-between;
     height: 100px;
-
 }
+
 .footer-dcha {
     display: flex;
     flex-direction: column;
@@ -150,11 +145,11 @@ footer {
 }
 
 .footer-links {
-    display: flex; /* Para alinear los elementos en la misma línea */
+    display: flex;
 }
 
 .footer-links span {
-    margin-right: 10px; /* Espacio entre los elementos */
+    margin-right: 10px;
 }
 
 .footer-dcha span {
@@ -171,30 +166,35 @@ footer {
     margin-top: 5px;
     font-size: 12px;
 }
+
 .footer-logo img {
     width: 60px;
     margin-left: 50px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
+
 .footer-logo img:hover {
     transform: scale(1.1);
 }
+
 .footer-centro {
     flex-grow: 1;
     margin-left: 307px;
 }
+
 .footer-centro p {
     margin: 0;
     font-size: 20px;
     margin-bottom: 10px;
 }
+
 .icono-redes a {
     font-size: 30px;
     margin-left: 10px;
     color: aliceblue;
 }
+
 .icono-redes a:hover {
     color: #F6D347;
 }
-
