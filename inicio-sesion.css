@@ -21,7 +21,8 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    /* Limita el ancho del modal para que no sea demasiado ancho en pantallas grandes */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Estilos para el botón de inicio de sesión */
@@ -70,22 +71,22 @@
 
 #login-form input[type="email"]:focus,
 #login-form input[type="password"]:focus {
-    border-color: #2563eb; /* Color del borde al enfocar */
+    border-color: #25272b; /* Color del borde al enfocar */
 }
 
 #login-form a {
     font-size: 0.875rem;
-    color: #3b82f6; /* Color del enlace */
+    color: #25272b; /* Color del enlace */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 #login-form a:hover {
-    color: #1e40af; /* Color del enlace al pasar el cursor */
+    color: #25272b; /* Color del enlace al pasar el cursor */
 }
 
 #login-form button[type="submit"] {
-    background-color: #2563eb; /* Color de fondo del botón */
+    background-color: #25272b; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
     font-size: 1rem;
     font-weight: bold;
@@ -98,5 +99,5 @@
 }
 
 #login-form button[type="submit"]:hover {
-    background-color: #1e3a8a; /* Color de fondo del botón al pasar el cursor */
+    background-color: #25272b; /* Color de fondo del botón al pasar el cursor */
 }
