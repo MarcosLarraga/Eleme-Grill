@@ -126,6 +126,26 @@ body {
     color: rgb(0, 0, 0);
 }
 
+.imagen-boton {
+    position: fixed;
+    top: 50%; /* Ajusta la posición verticalmente */
+    left: 0; /* Fija el botón a la izquierda */
+    transform: translateY(-50%); /* Centra verticalmente el botón */
+    background: none;
+    border: none;
+    padding: 5px; /* Ajusta el relleno del botón */
+    cursor: pointer;
+    outline: none;
+    z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.imagen-boton img {
+    width: 270px; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantiene la proporción de aspecto de la imagen */
+}
+
+
+
 footer {
     background: transparent;
     color: #fff;
