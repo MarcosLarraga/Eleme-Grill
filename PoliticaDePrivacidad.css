@@ -7,6 +7,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: white; /* Cambio el color del texto a blanco */
 }
 
 .navbar {
@@ -72,14 +73,12 @@ body {
 header h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #ffffff;
 }
 
 .descripcion {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
-    color: #ffffff;
 }
 
 .descripcion h2, .descripcion h3 {
@@ -92,7 +91,7 @@ header h1 {
 
 footer {
     background: transparent;
-    color: #fff;
+    color: white; /* Cambio el color del texto a blanco */
     padding: 20px;
     text-align: center;
     display: flex;
@@ -156,7 +155,7 @@ footer {
 .icono-redes a {
     font-size: 30px;
     margin-left: 10px;
-    color: #ffffff;
+    color: white; /* Cambio el color del texto a blanco */
     transition: color 0.3s ease;
 }
 
