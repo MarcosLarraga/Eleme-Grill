@@ -1,7 +1,6 @@
 /* Estilos para el modal */
 .modal {
     display: none;
-    /* Ocultar el modal por defecto */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -10,7 +9,6 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-    /* Fondo oscuro */
 }
 
 .modal-content {
@@ -25,10 +23,26 @@
     transform: translateY(-50%);
 }
 
+/* Estilos para el botón de cierre */
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Cambiar cursor al pasar por encima */
+.modal-content .close:hover,
+.modal-content .close:focus {
+    cursor: pointer;
+    cursor: pointer;
+}
+
 /* Estilos para el botón de inicio de sesión */
 .login-btn {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #F6D347; /* Mismo color que el botón de registro */
+    color: #000; /* Mismo color que el texto del botón de registro */
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -37,8 +51,7 @@
 }
 
 .login-btn:hover {
-    background-color: #45a049;
-    /* Cambia el color de fondo cuando se pasa el cursor sobre el botón */
+    background-color: #ffffff;
 }
 
 /* Estilos para el formulario dentro del modal */
@@ -86,7 +99,7 @@
 }
 
 #login-form button[type="submit"] {
-    background-color: #25272b; /* Color de fondo del botón */
+    background-color: #000; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
     font-size: 1rem;
     font-weight: bold;
@@ -100,4 +113,25 @@
 
 #login-form button[type="submit"]:hover {
     background-color: #25272b; /* Color de fondo del botón al pasar el cursor */
+}
+
+.modal-content h2 {
+    text-align: center;
+}
+
+/* Estilos para el formulario dentro del modal */
+#login-form {
+    text-align: left;
+}
+
+#loginButton {
+    font-family: "Arial", sans-serif !important;
+}
+
+.text-center a {
+    font-family: Arial, sans-serif !important;
+}
+
+.text-center a .fab {
+    font-family: Arial, sans-serif !important;
 }
