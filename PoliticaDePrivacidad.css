@@ -68,6 +68,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreado */
 }
 
 header h1 {
@@ -76,12 +79,12 @@ header h1 {
 }
 
 .descripcion {
-    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
 }
 
-.descripcion h2, .descripcion h3 {
+.descripcion h2,
+.descripcion h3 {
     margin-top: 20px;
 }
 
