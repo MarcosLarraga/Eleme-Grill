@@ -29,6 +29,20 @@ body {
     height: 90px;
 }
 
+.language-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    background: none;
+    border: none;
+}
+
+.language-buttons button {
+    margin-left: 10px;
+}
+
+
+
 .logo img {
     width: 50px;
     margin-left: 50px;

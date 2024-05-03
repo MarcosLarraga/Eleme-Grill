@@ -5,3 +5,11 @@ function cambiarIdioma(idioma) {
         window.location.href = 'home_ingles.html';
     }
 }
+
+document.getElementById('Espanol').addEventListener('click', function() {
+    cambiarIdioma('es');
+});
+
+document.getElementById('Ingles').addEventListener('click', function() {
+    cambiarIdioma('en');
+});
