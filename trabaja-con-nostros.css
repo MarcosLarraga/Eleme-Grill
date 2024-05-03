@@ -63,36 +63,114 @@ body {
     color: #cf3f2c;
 }
 
+/*SLIDER*/
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,900);
+
+#textSlider.row {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80% !important;
+}
+#textSlider div {
+	color: #FFF;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+    margin-bottom: 290px;
+    margin-left: 110px;
+}
+
+.iamCol {
+    text-align: right;
+	float: left;
+	font-weight: 300;
+	font-size:30pt;
+}
+
+.iamCol p:nth-child(2) { margin-top: -20pt !important; }
+
+.slideCol {
+	text-align: left;
+    overflow: hidden;
+	font-weight: 750;
+	font-size:45pt;
+	display: block;
+	white-space: nowrap;
+}
+
+.slideCol p { 
+    margin: 0 15px !important; 
+}
+
+.scroller {
+   height: 70pt;
+   line-height: 70pt;
+   overflow: hidden;
+   margin-top: 50px;
+}
+
+@keyframes opacity {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.scroller .inner { animation: 10s normal infinite running scroll; }
+@keyframes scroll {
+   0%  	{margin-top: 0px;}
+   15% 	{margin-top: 0px;}
+
+   25%  {margin-top: -70pt;}
+   40%  {margin-top: -70pt;}
+   
+   50%  {margin-top: -140pt;}
+   65%  {margin-top: -140pt;}
+
+   75%  {margin-top: -210pt;}
+   90%  {margin-top: -210pt;}
+
+   100% {margin-top: 0px;}
+}
+/*FIN SLIDER*/
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreado */
+    color: white; /* Color de texto */
+    margin-top: 180px
 }
 
 header h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #ffffff;
 }
 
 .descripcion {
-    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
-    color: #ffffff;
 }
 
-.job-description h2, .job-description h3 {
+.descripcion h2,
+.descripcion h3 {
     margin-top: 20px;
 }
 
-.job-description ul {
+.descripcion ul {
     padding-left: 20px;
 }
 
 footer {
     background: transparent;
-    color: #fff;
+    color: white; /* Cambio el color del texto a blanco */
     padding: 20px;
     text-align: center;
     display: flex;
@@ -156,7 +234,7 @@ footer {
 .icono-redes a {
     font-size: 30px;
     margin-left: 10px;
-    color: #ffffff;
+    color: white; /* Cambio el color del texto a blanco */
     transition: color 0.3s ease;
 }
 
