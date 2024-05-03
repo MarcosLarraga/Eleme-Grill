@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -22,32 +22,34 @@
             </div>
             <div class="texto">
                 <ul>
-                    <li><a href="#" class="btn" data-i18n="inicio">Inicio</a></li>
-                    <li><a href="#" class="btn" data-i18n="nosotros">Nosotros</a></li>
-                    <li><a href="#" class="btn" data-i18n="carta">Carta</a></li>
-                    <li><a href="#" class="btn special" data-i18n="inicia-sesion">Inicia Sesión</a></li>
+                    <li><a href="#" class="btn" data-i18n="home">Home</a></li>
+                    <li><a href="#" class="btn" data-i18n="about">About Us</a></li>
+                    <li><a href="#" class="btn" data-i18n="menu">Menu</a></li>
+                    <li><a href="#" class="btn special" data-i18n="login">Log In</a></li>
                     <a href="#" class="btn carrito"><i class="fas fa-shopping-cart"></i></a>
                 </ul>
             </div>
         </nav>
 
         <div class="centro">
-            <img src="home.png" alt="Imagen" class="imagen">
+            <img src="home.png" alt="Image" class="imagen">
             <div class="botones-container">
-                <button class="boton" data-i18n="pedir">PEDIR</button>
+                <button class="boton" data-i18n="order">ORDER</button>
             </div>
         </div>
 
-        <button class="imagen-boton" onclick="window.location.href='tu_url_destino.html'">
-            <img src="mounstruo.png" alt="Texto alternativo de la imagen">
+        <button class="imagen-boton" onclick="window.location.href='your_destination_url.html'">
+            <img src="mounstruo.png" alt="Alternative text for the image">
         </button>
+
+
     </div>
     <footer>
         <div class="footer-logo">
-            <img src="logo-eleme-grill.png" alt="Logo Footer">
+            <img src="logo-eleme-grill.png" alt="Footer Logo">
         </div>
         <div class="footer-centro">
-            <p data-i18n="siguenos">Síguenos en nuestras redes sociales:</p>
+            <p data-i18n="follow">Follow us on our social media:</p>
             <div class="icono-redes">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -56,16 +58,16 @@
         </div>
         <div class="footer-dcha">
             <div class="footer-links">
-                <span data-i18n="proteccion-datos">Protección de datos</span>
-                <span data-i18n="politica-privacidad">Política de privacidad</span>
-                <span data-i18n="aviso-legal">Aviso Legal</span>
+                <span data-i18n="data-protection">Data Protection</span>
+                <span data-i18n="privacy-policy">Privacy Policy</span>
+                <span data-i18n="legal-notice">Legal Notice</span>
             </div>
             <span class="copyright">© 2024 Eleme Grill</span>
         </div>
 
     </footer>
-    <button onclick="cambiarIdioma('es')">Español</button>
-    <button onclick="cambiarIdioma('en')">Inglés</button>
+    <button onclick="changeLanguage('es')">Spanish</button>
+    <button onclick="changeLanguage('en')">English</button>
     <script src="Home.js"></script>
 
 </body>
