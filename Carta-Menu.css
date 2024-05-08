@@ -64,25 +64,35 @@ body {
     color: #cf3f2c;
 }
 
-/* Tarjetas Restaurante */
+/* MENU */
 
-.wrap {
+.Tarjetas {
     max-width: 1500px;
     margin: 0 auto;
     background-color: #ffffff7a;
     border-radius: 15px;
+    margin-bottom: 150px;
 }
 
-.wrap h2{
+.Tarjetas h1{
     text-align: center;
     font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 80px;
 }
 
-.wrap img{
+.Tarjetas img{
     height: 150px;
 }
 
-.column-2.carta {
+.Menu-pollo {
+    column-gap: 1rem;
+    row-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3,3fr);
+}
+
+.Menu-carne {
     column-gap: 1rem;
     row-gap: 1rem;
     display: grid;
@@ -99,12 +109,12 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     color: #fff;
+    width: 450px;
+    height: 300px;
 }
 
-.img-plato-carta {
-    display: flex;
-    flex-basis: 25%;
-    justify-content: center;
+.plato-carta img{
+    margin-top: 50px;
 }
 
 .title-plato-carta {
