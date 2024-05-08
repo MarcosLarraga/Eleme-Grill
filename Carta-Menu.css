@@ -14,7 +14,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    height: 90px;
+    height: auto; /* Ajustamos la altura a automático para que se ajuste al contenido */
+    position: relative; /* Permitimos la posición relativa para posicionar el carrusel */
 }
 
 .logo img {
@@ -63,14 +64,19 @@ body {
     color: #cf3f2c;
 }
 
-.carousel-item img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
 
 .carousel {
-    height: 500px;
+    position: absolute; /* Posicionamos el carrusel absolutamente dentro del navbar */
+    top: calc(100% + 10px); /* Colocamos el carrusel debajo del navbar con un pequeño espacio */
+    left: 50%; /* Lo centramos horizontalmente */
+    transform: translateX(-50%);
+    width: 80%; /* Ajustamos el ancho según sea necesario */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px; /* Ajustamos la altura de las imágenes del carrusel */
+    object-fit: cover;
 }
 
 .footer, .footer {
