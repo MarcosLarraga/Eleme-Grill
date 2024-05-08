@@ -4,19 +4,33 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-image: url('fondo.png');
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
 }
-
-.navbar {
+.navbar_css {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
     height: 90px;
+    padding: 20px;
 }
+
+.fondo-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    z-index: -1; /* Para que el div de la imagen esté detrás de los otros elementos del nav */
+}
+
+.fondo-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para asegurar que la imagen se ajuste dentro del div */
+}
+
 
 .logo img {
     width: 50px;
@@ -62,7 +76,7 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 2em;
-    margin-top: 20px;
+    margin-top: 200px;
 }
 
 .btn.carrito {
@@ -70,6 +84,97 @@ body {
     border-color: #cf3f2c;
     color: #cf3f2c;
 }
+
+h1.titulo-carta{
+    margin-top: 35%;
+}
+
+.slider1 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 462px;
+    background-color: #F6D347;
+}
+
+.texto-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Ajusta la altura según tu diseño */
+}
+
+.m-scroll-title {
+    white-space: nowrap; /* Evita que el texto se desborde hacia abajo */
+    overflow: hidden; /* Oculta el texto que se desborda horizontalmente */
+}
+
+.m-scroll-title div {
+    display: flex; /* Agregado */
+    animation: scrollText 20s infinite linear; /* Ajusta la velocidad y la duración de la animación según sea necesario */
+    animation-delay: -10s; /* Ajusta el retraso para que la animación comience inmediatamente */
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0%); /* Cambiado de 100% a 0% */
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.slider-title-span {
+    margin-right: 20px; /* Espaciado entre cada elemento span */
+    font-size: 100px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la letra */
+    font-family: "Arial Black", Arial, sans-serif; /* Fuente de la letra */
+    color: transparent; /* Color transparente para ocultar el texto */
+    -webkit-text-stroke: 3px #333; /* Añade un contorno de 3px alrededor del texto */
+    -webkit-text-fill-color: transparent; 
+}
+
+.slider-title-span.underline {
+    text-decoration: underline;
+}
+
+.tarjetero {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.tarjetas {
+    display: flex;
+}
+
+.tarjeta {
+    flex: 1;
+    margin: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.boton-tarjeta {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-tarjeta:hover {
+    background-color: #0056b3;
+}
+
 
 .footer, .footer {
     background: transparent;
@@ -80,6 +185,7 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 100px;
+    margin-top: 10%;
 }
 
 .footer-logo {
