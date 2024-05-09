@@ -16,6 +16,10 @@ body {
     padding: 20px;
 }
 
+.menu{
+    display: none;
+}
+
 .fondo-imagen {
     position: absolute;
     top: 0;
@@ -85,10 +89,6 @@ body {
     color: #cf3f2c;
 }
 
-h1.titulo-carta{
-    margin-top: 35%;
-}
-
 .slider1 {
     position: relative;
     width: 100%;
@@ -141,16 +141,15 @@ h1.titulo-carta{
 .tarjetero {
     display: flex;
     flex-direction: column;
-
+    height: 69vh; /* Ocupa toda la altura de la ventana */
 }
 
-.tarjetas {
+.cuadrados {
     display: flex;
 }
 
 .tarjeta {
     flex: 1;
-    margin: 0px;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
@@ -160,7 +159,7 @@ h1.titulo-carta{
     display: block;
     width: 100%;
     height: 100%;
-    padding: 100px;
+    padding: 20px; /* Ajusta el espaciado interno según sea necesario */
     text-align: center;
     background-color: #007bff;
     color: #fff;
@@ -169,6 +168,7 @@ h1.titulo-carta{
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    padding: 182px;
 }
 
 .boton-tarjeta:hover {
@@ -177,7 +177,7 @@ h1.titulo-carta{
 
 
 .footer, .footer {
-    background: transparent;
+    background: black;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -185,7 +185,7 @@ h1.titulo-carta{
     align-items: center;
     justify-content: space-between;
     height: 100px;
-    margin-top: 10%;
+    margin-top: 7%;
 }
 
 .footer-logo {
@@ -250,3 +250,68 @@ h1.titulo-carta{
 .icono-redes a:hover {
     color: #F6D347;
 }
+
+
+
+/*Responsive de 768px*/
+
+@media (max-width:768px) {
+
+    .tarjetero{
+        height: 80vh;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 10px
+    }
+    .footer-dcha{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-dcha .copyright{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 430px) {
+
+    .tarjetero{
+        height: auto;
+    }
+
+    .texto{
+        display: none;
+    }
+
+    .cuadrados{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer, .footer-links{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        margin-top: 0;
+        align-items: center;
+    
+    }
+
+    .fondo-imagen{
+        height: auto;
+    }
+    
+    .slider1{
+        margin-top: 138px;
+    }
+
+}
+
+    
