@@ -71,10 +71,13 @@ body {
     gap: 12px;
     transition: background-color 0.3s ease;
 }
+
 .texto ul li a,
 .texto .btn:hover {
-    background-color: transparent; /* Hace el fondo invisible */
-    border-color: #F6D347; /* Muestra solo el borde del color */
+    background-color: transparent;
+    /* Hace el fondo invisible */
+    border-color: #F6D347;
+    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -87,8 +90,10 @@ body {
 
 .texto ul li a.special:hover,
 .texto .btn.special:hover {
-    background-color: transparent; /* Hace el fondo invisible */
-    border-color: #F6D347; /* Muestra solo el borde del color */
+    background-color: transparent;
+    /* Hace el fondo invisible */
+    border-color: #F6D347;
+    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -110,7 +115,7 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin-top: 462px;
+    margin-top: 438px;
     background-color: #F6D347;
 }
 
@@ -181,33 +186,47 @@ body {
 }
 
 .tarjeta {
-    flex: 1;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%; /* Establecemos un tamaño fijo para los cuadrados */
+    height: 100%;
+    border-radius: 2px;
     overflow: hidden;
 }
 
 .boton-tarjeta {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    padding: 20px;
-    /* Ajusta el espaciado interno según sea necesario */
-    text-align: center;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 0; /* Quitamos el padding para que la imagen ocupe todo el espacio */
+    background: transparent;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
-    padding: 182px;
+}
+.boton-tarjeta-1 {
+    background-color: #007bff; /* Azul */
+    color: #fff;
 }
 
-.boton-tarjeta:hover {
-    background-color: #0056b3;
+.boton-tarjeta-2 {
+    background-color: #28a745; /* Verde */
+    color: #fff;
 }
 
+.boton-tarjeta-3 {
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+}
+
+.boton-tarjeta-4 {
+    background-color: #ffc107; /* Amarillo */
+    color: #fff;
+}
+
+.boton-tarjeta img {
+    width: 45%;
+    object-fit: cover;
+}
 
 .footer,
 .footer {
@@ -219,7 +238,7 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 100px;
-    margin-top: 7%;
+    margin-top: 16%;
 }
 
 .footer-logo {
@@ -498,21 +517,24 @@ body {
         border: 2px solid #cf3f2c;
         border-radius: 13px;
     }
+
     .menuppal ul li a:hover {
         background-color: white;
         color: #333
     }
-    
+
     .btn.special:hover {
-        color: black; /* Cambia el color del texto al hacer hover */
+        color: black;
+        /* Cambia el color del texto al hacer hover */
     }
-    
+
     #carrito:hover {
-        color: rgb(0, 0, 0); /* Cambia el color del texto al hacer hover */
+        color: rgb(0, 0, 0);
+        /* Cambia el color del texto al hacer hover */
         background-color: #fff;
         border: none;
     }
-    
+
 
 
 }
