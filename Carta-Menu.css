@@ -148,10 +148,14 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 3fr); /* Tres columnas con tamaño mínimo de 250px y que se ajustan automáticamente */
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    gap: 15px; /* Espacio reducido entre las tarjetas */
-    padding: 0 250px; /* Espacio a los lados de la cuadrícula */
+    grid-template-columns: repeat(3, 3fr);
+    /* Tres columnas con tamaño mínimo de 250px y que se ajustan automáticamente */
+    justify-content: center;
+    /* Centra las tarjetas horizontalmente */
+    gap: 15px;
+    /* Espacio reducido entre las tarjetas */
+    padding: 0 250px;
+    /* Espacio a los lados de la cuadrícula */
 }
 
 .card {
@@ -169,12 +173,14 @@ body {
     height: 300px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    max-width: 440px; /* Ancho máximo de la tarjeta */
-    margin: 0 auto; /* Centra la tarjeta horizontalmente */
+    max-width: 440px;
+    /* Ancho máximo de la tarjeta */
+    margin: 0 auto;
+    /* Centra la tarjeta horizontalmente */
     font-family: 'Anton', sans-serif;
 }
 
-.card p{
+.card p {
     font-size: 30px;
 }
 
