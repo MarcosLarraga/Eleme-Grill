@@ -8,7 +8,6 @@ function closeModal(modalId) {
     modal.style.display = "none";
 }
 
-// Cierra el modal cuando se hace clic en la X
 var closeButtons = document.querySelectorAll(".close");
 closeButtons.forEach(function (button) {
     button.addEventListener("click", function () {
@@ -17,7 +16,6 @@ closeButtons.forEach(function (button) {
     });
 });
 
-// Cierra el modal cuando se hace clic fuera del contenido
 window.onclick = function (event) {
     if (event.target.classList.contains("modal")) {
         closeModal(event.target.id);

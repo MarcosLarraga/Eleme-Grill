@@ -65,80 +65,6 @@ body {
     color: #cf3f2c;
 }
 
-/* MENU */
-/* .Tarjetas {
-    max-width: 1367px;
-    margin: 0 auto;
-    background-color: #ffffff7a;
-    border-radius: 15px;
-    margin-bottom: 150px;
-    font-family: 'Anton', sans-serif;
-}
-
-.Tarjetas h1 {
-    text-align: center;
-    font-size: 60px;
-    margin-bottom: 20px;
-    margin-top: 90px;
-}
-
-.Tarjetas img {
-    height: 150px;
-}
-
-.Tarjetas p {
-    font-size: 30px;
-}
-
-.Menu-pollo {
-    column-gap: 1rem;
-    row-gap: 1rem;
-    display: grid;
-    grid-template-columns: repeat(3, 3fr);
-}
-
-.Menu-carne {
-    column-gap: 1rem;
-    row-gap: 1rem;
-    display: grid;
-    grid-template-columns: repeat(3, 3fr);
-}
-
-.plato-carta {
-    display: flex;
-    align-items: center;
-    border-radius: 6px;
-    flex-direction: column;
-    background-image: url(fondo.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #fff;
-    width: 450px;
-    height: 300px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.plato-carta:hover img {
-    transform: scale(1.1);
-}
-
-.plato-carta img {
-    margin-top: 50px;
-}
-
-.title-plato-carta {
-    border-bottom: none;
-    border-top: none;
-    flex-basis: 60%;
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
-/* Estilos de la tarjeta */
 .titulo {
     text-align: center;
     margin-top: 110px;
@@ -222,7 +148,6 @@ body {
     font-size: 43px
 }
 
-
 .close {
     color: #aaa;
     float: right;
@@ -236,7 +161,6 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
-
 
 .footer {
     margin-top: 130px;
