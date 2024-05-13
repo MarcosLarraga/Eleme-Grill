@@ -273,7 +273,28 @@ body {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media screen and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 50px;
+    }
+
+    .card {
+        max-width: 300px;
+        height: 250px;
+        margin: 0 auto 20px;
+    }
+
+    .card p {
+        font-size: 20px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .card-img {
+        height: 120px;
+        margin-top: 10px;
+    }
 
     .slider1 {
         margin-top: 386px;
@@ -282,7 +303,6 @@ body {
     .tarjeta {
         width: 50%;
     }
-
 
     .footer,
     .footer-links {
