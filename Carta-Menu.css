@@ -149,13 +149,9 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
-    /* Tres columnas con tamaño mínimo de 250px y que se ajustan automáticamente */
     justify-content: center;
-    /* Centra las tarjetas horizontalmente */
     gap: 15px;
-    /* Espacio reducido entre las tarjetas */
     padding: 0 250px;
-    /* Espacio a los lados de la cuadrícula */
 }
 
 .card {
@@ -174,9 +170,7 @@ body {
     cursor: pointer;
     transition: transform 0.3s ease;
     max-width: 440px;
-    /* Ancho máximo de la tarjeta */
     margin: 0 auto;
-    /* Centra la tarjeta horizontalmente */
     font-family: 'Anton', sans-serif;
 }
 
@@ -186,7 +180,6 @@ body {
 
 .card:hover {
     transform: scale(1.05);
-    /* Efecto de escala al pasar el ratón */
 }
 
 .card-img {
@@ -195,12 +188,10 @@ body {
     margin-top: 20px;
 }
 
-/* Texto dentro de la tarjeta */
 .card-text {
     margin-top: 20px;
 }
 
-/* Estilos del modal */
 .modal {
     display: none;
     position: fixed;
@@ -214,11 +205,23 @@ body {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 12% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    width: 850px;
 }
+
+.modal-content p{
+    font-size: 23px
+}
+
+.modal-content h1{
+    font-size: 43px
+}
+
 
 .close {
     color: #aaa;
