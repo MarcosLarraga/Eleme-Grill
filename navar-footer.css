@@ -225,7 +225,6 @@ body {
         top: 0;
         height: 30px;
         width: 30px;
-        padding: 20px 20px;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
