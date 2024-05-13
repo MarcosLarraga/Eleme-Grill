@@ -17,26 +17,37 @@
         <video autoplay muted loop id="video-fondo">
             <source src="video-eleme.mp4" type="video/mp4">
         </video>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo-eleme-grill.png" alt="Logo">
-            </div>
-            <div class="language-buttons">
-                <button id="Espanol" onclick="cambiarIdioma('es')"><i class="flag-icon flag-icon-es"></i></button>
-                <button id="Ingles" onclick="cambiarIdioma('en')"><i class="flag-icon flag-icon-gb"></i></button>
-            </div>
-            <div class="texto">
-                <ul>
-                    <li><a href="#" class="btn" data-i18n="home">Home</a></li>
-                    <li><a href="#" class="btn" data-i18n="about">About Us</a></li>
-                    <li><a href="#" class="btn" data-i18n="menu">Menu</a></li>
-                    <li><a href="#" class="btn special" data-i18n="login">Log In</a></li>
-                    <a href="#" class="btn carrito"><i class="fas fa-shopping-cart"></i></a>
-                </ul>
-            </div>
+   <nav class="navbar_css">
+        <div class="logo">
+            <img src="logo-eleme-grill.png" alt="Logo">
+        </div>
+        <div class="texto">
+            <ul>
+                <li><a href="#" class="btn">Inicio</a></li>
+                <li><a href="#" class="btn">Nosotros</a></li>
+                <li><a href="#" class="btn">Carta</a></li>
+                <li><a href="#" class="btn special">Inicia Sesión</a></li>
+                <a href="#" class="btn carrito"><i class="fas fa-shopping-cart"></i></a>
+            </ul>
+        </div>
+        <div class="hamburger">
+            <div class="_layer -top"></div>
+            <div class="_layer -mid"></div>
+            <div class="_layer -bottom"></div>
+        </div>
+        <nav class="menuppal">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Carta</a></li>
+                <li><a href="#" class="btn special">Inicia Sesión</a></li>
+                <li><a href="#" class="btn-carrito" id="carrito"><i class="fas fa-shopping-cart"></i></a>
+                </ul></li>
         </nav>
+    </nav>
+    
 
-        <div class="centro">
+    <div class="centro">
             <img src="home.png" alt="Image" class="imagen">
             <div class="botones-container">
                 <button class="boton" data-i18n="order">ORDER</button>
@@ -47,12 +58,12 @@
             <img src="mounstruo.png" alt="Alternative text for the image">
         </button>
     </div>
-    <footer>
+    <footer class="footer">
         <div class="footer-logo">
-            <img src="logo-eleme-grill.png" alt="Footer Logo">
+            <img src="logo-eleme-grill.png" alt="Logo Footer">
         </div>
         <div class="footer-centro">
-            <p data-i18n="follow">Follow us on our social media:</p>
+            <p>Síguenos en nuestras redes sociales:</p>
             <div class="icono-redes">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -61,14 +72,14 @@
         </div>
         <div class="footer-dcha">
             <div class="footer-links">
-                <span data-i18n="data-protection">Data Protection</span>
-                <span data-i18n="privacy-policy">Privacy Policy</span>
-                <span data-i18n="legal-notice">Legal Notice</span>
+                <span>Protección de datos</span>
+                <span>Política de privacidad</span>
+                <span>Aviso Legal</span>
             </div>
             <span class="copyright">© 2024 Eleme Grill</span>
         </div>
     </footer>
-    <script src="Home.js"></script> 
+    <script src="home.js"></script> 
 </body>
 
 </html>
