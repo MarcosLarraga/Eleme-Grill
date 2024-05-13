@@ -191,11 +191,11 @@ body {
 
     }
 
-.hamburger,
-.menuppal {
-    display: none;
+    .hamburger,
+    .menuppal {
+        display: none;
+    }
 }
-
 @media (max-width: 430px) {
 
     .tarjetero {
@@ -381,6 +381,4 @@ body {
         margin-right: 43px;
     }
     
-    
-    
-    }
+}
