@@ -273,6 +273,39 @@ body {
     display: none;
 }
 
+@media screen and (min-width: 1440px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 100px;
+        /* Reducir el espacio a los lados */
+        gap: 10px;
+        /* Reducir el espacio entre las tarjetas */
+    }
+
+    .card {
+        max-width: 400px;
+        /* Aumentar el ancho máximo de las tarjetas */
+        height: 300px;
+        /* Aumentar la altura de las tarjetas */
+        margin: 0 auto 20px;
+        /* Alinear al centro y agregar espacio inferior */
+    }
+
+    .card p {
+        font-size: 24px;
+        /* Aumentar el tamaño del texto */
+        margin-top: 15px;
+        /* Espacio superior del texto */
+    }
+
+    .card-img {
+        height: 150px;
+        /* Aumentar la altura de la imagen */
+        margin-top: 15px;
+        /* Espacio superior de la imagen */
+    }
+}
+
 @media screen and (min-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(3, 1fr);
