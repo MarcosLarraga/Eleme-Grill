@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-
-
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -173,23 +170,27 @@ body {
 .slider-title-span.underline {
     text-decoration: underline;
 }
-
 .tarjetero {
-    display: flex;
-    flex-direction: column;
-    height: 69vh;
-    /* Ocupa toda la altura de la ventana */
+    justify-content: center;
+    align-items: center;
+    background-color: black;
 }
 
 .cuadrados {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
 }
 
 .tarjeta {
-    width: 100%; /* Establecemos un tamaño fijo para los cuadrados */
-    height: 100%;
-    border-radius: 2px;
+    width: 30%;
+    height: 30%;
+    border-radius: 5px;
     overflow: hidden;
+    border: 5px solid #ffffff;
+    margin-bottom: 50px;
+    margin-top: 50PX;
 }
 
 .boton-tarjeta {
@@ -198,35 +199,18 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 0; /* Quitamos el padding para que la imagen ocupe todo el espacio */
     background: transparent;
     border: none;
     cursor: pointer;
-}
-.boton-tarjeta-1 {
-    background-color: #007bff; /* Azul */
-    color: #fff;
-}
-
-.boton-tarjeta-2 {
-    background-color: #28a745; /* Verde */
-    color: #fff;
-}
-
-.boton-tarjeta-3 {
-    background-color: #dc3545; /* Rojo */
-    color: #fff;
-}
-
-.boton-tarjeta-4 {
-    background-color: #ffc107; /* Amarillo */
-    color: #fff;
+    background-color: #333;
 }
 
 .boton-tarjeta img {
-    width: 45%;
+    width: 500px;
+    height: 500PX;
     object-fit: cover;
 }
+
 
 .footer,
 .footer {
@@ -238,7 +222,6 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 100px;
-    margin-top: 16%;
 }
 
 .footer-logo {
@@ -309,32 +292,6 @@ body {
     display: none;
 }
 
-/*Responsive de 768px*/
-
-@media (max-width:768px) {
-
-    .tarjetero {
-        height: 80vh;
-    }
-
-    .footer {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        gap: 10px
-    }
-
-    .footer-dcha {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .footer-dcha .copyright {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
 
 
 @media (max-width: 430px) {
@@ -533,6 +490,11 @@ body {
         /* Cambia el color del texto al hacer hover */
         background-color: #fff;
         border: none;
+    }
+
+    .tarjeta {
+        width: 100%;
+        height: 100%;
     }
 
 
