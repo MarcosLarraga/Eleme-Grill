@@ -14,22 +14,8 @@ body {
     align-items: center;
     height: 90px;
     padding: 20px;
+    background-color: #333;
 }
-
-.menu {
-    display: none;
-}
-
-.fondo-imagen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    z-index: -1;
-    /* Para que el div de la imagen esté detrás de los otros elementos del nav */
-}
-
 
 .logo img {
     width: 50px;
@@ -102,6 +88,7 @@ body {
     border-color: #cf3f2c;
     color: #cf3f2c;
 }
+
 /*tarjetas*/
 .titulo {
     text-align: center;
@@ -200,9 +187,9 @@ body {
     cursor: pointer;
 }
 
+.footer,
 .footer {
-    margin-top: 130px;
-    background: transparent;
+    background: black;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -210,8 +197,6 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 100px;
-    background-color: black;
-    font-family: 'Poppins', sans-serif;
 }
 
 .footer-logo {
@@ -277,14 +262,54 @@ body {
     color: #F6D347;
 }
 
+.hamburger,
+.menuppal {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .slider1 {
+        margin-top: 386px;
+    }
+
+    .tarjeta {
+        width: 50%;
+    }
+
+
+    .footer,
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        margin-top: 0;
+        align-items: center;
+
+    }
+
+    .hamburger,
+    .menuppal {
+        display: none;
+    }
+}
+
 @media (max-width: 430px) {
+
+    .tarjetero {
+        height: auto;
+    }
 
     .texto {
         display: none;
     }
-    .navbar_css{
-        background-color: black;
+
+    body {
+        margin: 0;
+        padding: 0;
     }
+
     .hamburger,
     .menuppal {
         display: block;
@@ -430,6 +455,7 @@ body {
         background-color: white;
         color: #333
     }
+
     .btn.special:hover {
         color: black;
         /* Cambia el color del texto al hacer hover */
@@ -451,18 +477,9 @@ body {
         margin-top: 0;
         align-items: center;
 
-    } .footer,
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        gap: 10px;
-        margin-top: 0;
-        align-items: center;
-
     }
 
-    .copyright{
+    .copyright {
         margin-right: 43px;
     }
 }
