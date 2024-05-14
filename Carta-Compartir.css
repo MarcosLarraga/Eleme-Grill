@@ -54,9 +54,7 @@ body {
 .texto ul li a,
 .texto .btn:hover {
     background-color: transparent;
-    /* Hace el fondo invisible */
     border-color: #F6D347;
-    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -70,9 +68,7 @@ body {
 .texto ul li a.special:hover,
 .texto .btn.special:hover {
     background-color: transparent;
-    /* Hace el fondo invisible */
     border-color: #F6D347;
-    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -277,32 +273,23 @@ body {
     .grid-container {
         grid-template-columns: repeat(3, 1fr);
         padding: 0 100px;
-        /* Reducir el espacio a los lados */
         gap: 10px;
-        /* Reducir el espacio entre las tarjetas */
     }
 
     .card {
         max-width: 400px;
-        /* Aumentar el ancho máximo de las tarjetas */
         height: 300px;
-        /* Aumentar la altura de las tarjetas */
         margin: 0 auto 20px;
-        /* Alinear al centro y agregar espacio inferior */
     }
 
     .card p {
         font-size: 24px;
-        /* Aumentar el tamaño del texto */
         margin-top: 15px;
-        /* Espacio superior del texto */
     }
 
     .card-img {
         height: 150px;
-        /* Aumentar la altura de la imagen */
         margin-top: 15px;
-        /* Espacio superior de la imagen */
     }
 }
 
@@ -313,7 +300,6 @@ body {
     }
 
     .card {
-        max-width: 300px;
         height: 250px;
         margin: 0 auto 20px;
     }
@@ -357,18 +343,13 @@ body {
 
     .grid-container {
         grid-template-columns: 1fr;
-        /* Una columna */
         padding: 0;
-        /* Eliminar el relleno a los lados */
     }
 
     .card {
         margin: 10px auto;
-        /* Alinear al centro */
         width: 90%;
-        /* Ancho del 90% del contenedor */
         max-width: none;
-        /* Eliminar el ancho máximo */
     }
 
     .tarjetero {
@@ -530,12 +511,10 @@ body {
 
     .btn.special:hover {
         color: black;
-        /* Cambia el color del texto al hacer hover */
     }
 
     #carrito:hover {
         color: rgb(0, 0, 0);
-        /* Cambia el color del texto al hacer hover */
         background-color: #fff;
         border: none;
     }
