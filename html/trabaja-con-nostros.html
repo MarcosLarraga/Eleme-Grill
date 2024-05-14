@@ -5,37 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eleme Grill</title>
-    <link rel="stylesheet" href="trabaja-con-nostros.css">
+    <link rel="stylesheet" href="../css/trabaja-con-nostros.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar_css">
         <div class="logo">
-            <img src="logo-eleme-grill.png" alt="Logo">
+            <img src="../fotos-videos/logo-eleme-grill.png" alt="Logo">
         </div>
         <div class="texto">
             <ul>
-                <li><a href="#" class="btn">Inicio</a></li>
-                <li><a href="#" class="btn">Nosotros</a></li>
-                <li><a href="#" class="btn">Carta</a></li>
-                <li><a href="#" class="btn special">Inicia Sesión</a></li>
+                <li><a href="../html/home.html" class="btn">Home</a></li>
+                <li><a href="../html/nosotros.html" class="btn">About Us</a></li>
+                <li><a href="#" class="btn">Menu</a></li>
+                <li><a href="#" class="btn special">Sign In</a></li>
                 <a href="#" class="btn carrito"><i class="fas fa-shopping-cart"></i></a>
             </ul>
         </div>
-    </nav>
-    <div id="textSlider" class="row">
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 slideCol">
-            <div class="scroller">
-                <div class="inner">
-                    <p>TRABAJA CON NOSOTROS</p>
-                    <p>TRABAJA CON NOSOTROS</p>
-                    <p>TRABAJA CON NOSOTROS</p>
-                    <p>TRABAJA CON NOSOTROS</p>
-                </div>
-            </div>
+        <div class="hamburger">
+            <div class="_layer -top"></div>
+            <div class="_layer -mid"></div>
+            <div class="_layer -bottom"></div>
         </div>
-    </div>
+        <nav class="menuppal">
+            <ul>
+                <li><a href="../html/home.html">Home</a></li>
+                <li><a href="../html/trabaja-con-nostros.html">About Us</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#" class="btn special">Sign In</a></li>
+                <li><a href="#" class="btn-carrito" id="carrito"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </nav>
+   
     <div class="container">
         <header>
             <h1>Vacante - Desarrollador de Aplicaciones Web</h1>
@@ -91,27 +94,26 @@
         </section>
     </div>
 
-    <footer>
+    <footer class="footer">
         <div class="footer-logo">
-            <img src="logo-eleme-grill.png" alt="Logo Footer">
+            <img src="../fotos-videos/logo-eleme-grill.png" alt="Logo Footer">
         </div>
         <div class="footer-centro">
-            <p>Síguenos en nuestras redes sociales:</p>
+            <p>Follow us on our social media:</p>
             <div class="icono-redes">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/?locale=es_ES"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
         <div class="footer-dcha">
             <div class="footer-links">
-                <span>Protección de datos</span>
-                <span>Política de privacidad</span>
-                <span>Aviso Legal</span>
+                <span>Data Protection</span>
+                <span>Privacy Policy</span>
+                <span>Legal Notice</span>
             </div>
             <span class="copyright">© 2024 Eleme Grill</span>
         </div>
-
     </footer>
 
 </body>

@@ -1,33 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
+
 body {
     margin: 0;
-    font-family: "Knockout", "Helvetica", "Arial", sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
 }
 
-.contenedor-con-video {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-}
-
-#video-fondo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
 .navbar_css {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 90px;
+    height: 100px;
     padding: 20px;
-    background-color: transparent;
+    background-image: url('../fotos-videos/unete.png'); /* Ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
 }
+
 
 .logo img {
     width: 50px;
@@ -65,7 +56,9 @@ body {
 .texto ul li a,
 .texto .btn:hover {
     background-color: transparent;
+    /* Hace el fondo invisible */
     border-color: #F6D347;
+    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -79,7 +72,9 @@ body {
 .texto ul li a.special:hover,
 .texto .btn.special:hover {
     background-color: transparent;
+    /* Hace el fondo invisible */
     border-color: #F6D347;
+    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -96,58 +91,107 @@ body {
     border-color: #cf3f2c;
     color: #cf3f2c;
 }
+.slider1 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #F6D347;
+}
 
-.centro {
-    margin-top: 100px;
+.texto-slider {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 60vh;
+    height: 100px;
+    /* Ajusta la altura según tu diseño */
 }
 
-.imagen {
-    width: 50%;
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 20px;
+.m-scroll-title {
+    white-space: nowrap;
+    /* Evita que el texto se desborde hacia abajo */
+    overflow: hidden;
+    /* Oculta el texto que se desborda horizontalmente */
 }
 
-.boton {
-    padding: 20px 40px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #F6D347;
-    border: 2px rgb(0, 0, 0) solid;
-    text-decoration: none;
-    font-family: "Knockout", "Helvetica", "Arial", sans-serif;
-    font-weight: 700;
-    font-size: 25px;
-    border-radius: 35px;
-    transition: background-color 0.3s ease;
-    width: 200px;
+.m-scroll-title div {
+    display: flex;
+    /* Agregado */
+    animation: scrollText 20s infinite linear;
+    /* Ajusta la velocidad y la duración de la animación según sea necesario */
+    animation-delay: -10s;
+    /* Ajusta el retraso para que la animación comience inmediatamente */
 }
 
-.boton:hover {
-    background-color: #F6D347;
-    color: rgb(0, 0, 0);
+@keyframes scrollText {
+    0% {
+        transform: translateX(0%);
+        /* Cambiado de 100% a 0% */
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
-.imagen-boton {
-    position: fixed;
-    top: 50%; /* Ajusta la posición verticalmente */
-    left: 0; /* Fija el botón a la izquierda */
-    transform: translateY(-50%); /* Centra verticalmente el botón */
-    background: none;
-    border: none;
-    padding: 5px; /* Ajusta el relleno del botón */
-    cursor: pointer;
-    outline: none;
-    z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
+.slider-title-span {
+    margin-right: 20px;
+    /* Espaciado entre cada elemento span */
+    font-size: 100px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Peso de la letra */
+    font-family: "Arial Black", Arial, sans-serif;
+    /* Fuente de la letra */
+    color: transparent;
+    /* Color transparente para ocultar el texto */
+    -webkit-text-stroke: 3px #333;
+    /* Añade un contorno de 3px alrededor del texto */
+    -webkit-text-fill-color: transparent;
 }
 
-.imagen-boton img {
-    width: 270px; /* Ajusta el ancho de la imagen */
-    height: auto; /* Mantiene la proporción de aspecto de la imagen */
+.slider-title-span.underline {
+    text-decoration: underline;
+}
+.titulo{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.main-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+    color: black;
+}
+.section-title {
+    color: #333;
+    text-align: center;
+}
+.about-us-container, .contact-container {
+    margin-bottom: 40px;
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 aspect ratio (para que el mapa se ajuste correctamente) */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contact {
+    text-align: center;
+}
+.contact-info {
+    margin: 10px 0;
 }
 
 .footer,
@@ -225,17 +269,11 @@ body {
     color: #F6D347;
 }
 
-.copyright{
-    margin-right: 43px;
-}
-
 .hamburger,
 .menuppal {
     display: none;
 }
-
 @media (max-width: 768px) {
-
 
     .footer,
     .footer-links {
@@ -254,28 +292,28 @@ body {
     }
 }
 @media (max-width: 430px) {
-
     .texto {
         display: none;
     }
-
-    .imagen-boton img {
-        width: 110px; /* Ajusta el ancho de la imagen */
-        height: auto; /* Mantiene la proporción de aspecto de la imagen */
+    .boton-tarjeta img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
     }
 
-    .imagen {
-        width: 100%;
+    body {
+        margin: 0;
+        padding: 0;
     }
 
     .hamburger,
     .menuppal {
         display: block;
         right: 0;
-    
+
     }
-    
-    
+
+
     .hamburger {
         align-items: center;
         background-color: transparent;
@@ -294,11 +332,11 @@ body {
         -ms-user-select: none;
         user-select: none
     }
-    
+
     .hamburger.is-active {
         background-color: none;
     }
-    
+
     ._layer {
         background: #ffffff;
         margin-bottom: 4px;
@@ -311,39 +349,39 @@ body {
         -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
         transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
     }
-    
+
     .hamburger:hover .-top {
         -webkit-transform: translateY(-100%);
         -ms-transform: translateY(-100%);
         transform: translateY(-100%);
     }
-    
+
     .hamburger:hover .-bottom {
         -webkit-transform: translateY(50%);
         -ms-transform: translateY(100%);
         transform: translateY(100%);
     }
-    
+
     .hamburger.is-active .-top {
         -webkit-transform: translateY(200%) rotate(45deg) !important;
         -ms-transform: translateY(200%) rotate(45deg) !important;
         transform: translateY(200%) rotate(45deg) !important;
     }
-    
+
     .hamburger.is-active .-mid {
         opacity: 0;
     }
-    
+
     .hamburger.is-active .-bottom {
         -webkit-transform: translateY(-200%) rotate(135deg) !important;
         -ms-transform: translateY(-200%) rotate(135deg) !important;
         transform: translateY(-200%) rotate(135deg) !important;
     }
-    
+
     .menuppal.is_active {
         transform: translate3d(0px, 0px, 0px);
     }
-    
+
     .menuppal {
         background-color: rgba(0, 0, 0, 0.85);
         bottom: 0;
@@ -358,12 +396,12 @@ body {
         z-index: 1001;
         text-decoration: none;
     }
-    
+
     .menuppal ul {
         margin: 0;
         padding: 0;
     }
-    
+
     .menuppal ul li {
         list-style: none;
         text-align: center;
@@ -375,8 +413,8 @@ body {
         text-transform: none;
         font-weight: bold;
     }
-    
-    
+
+
     .menuppal ul li a {
         color: #F6D347;
         font-size: 1.5rem;
@@ -384,8 +422,8 @@ body {
         display: block;
         text-decoration: none;
     }
-    
-    
+
+
     .btn.special {
         background-color: #F6D347;
         border-color: #F6D347;
@@ -395,9 +433,9 @@ body {
         margin-top: 0.5em;
         width: 50%;
         margin-left: 110px;
-    
+
     }
-    
+
     #carrito {
         color: #cf3f2c;
         font-size: 1.5rem;
@@ -407,25 +445,25 @@ body {
         border: 2px solid #cf3f2c;
         border-radius: 13px;
     }
-    
+
     .menuppal ul li a:hover {
         background-color: white;
         color: #333
     }
-    
+
     .btn.special:hover {
         color: black;
         /* Cambia el color del texto al hacer hover */
     }
-    
+
     #carrito:hover {
         color: rgb(0, 0, 0);
         /* Cambia el color del texto al hacer hover */
         background-color: #fff;
         border: none;
     }
-    
 
+    
     .footer,
     .footer-links {
         display: flex;
