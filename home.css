@@ -65,9 +65,7 @@ body {
 .texto ul li a,
 .texto .btn:hover {
     background-color: transparent;
-    /* Hace el fondo invisible */
     border-color: #F6D347;
-    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -81,9 +79,7 @@ body {
 .texto ul li a.special:hover,
 .texto .btn.special:hover {
     background-color: transparent;
-    /* Hace el fondo invisible */
     border-color: #F6D347;
-    /* Muestra solo el borde del color */
     color: white;
 }
 
