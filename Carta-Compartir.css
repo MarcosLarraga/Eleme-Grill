@@ -291,6 +291,10 @@ body {
         height: 150px;
         margin-top: 15px;
     }
+
+    .modal-content {
+        width: 730px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -321,6 +325,10 @@ body {
 
     .tarjeta {
         width: 50%;
+    }
+
+    .modal-content {
+        width: 530px;
     }
 
     .footer,
@@ -482,7 +490,6 @@ body {
         text-decoration: none;
     }
 
-
     .btn.special {
         background-color: #F6D347;
         border-color: #F6D347;
@@ -531,5 +538,9 @@ body {
 
     .copyright {
         margin-right: 55px;
+    }
+
+    .modal-content {
+        width: 280px;
     }
 }
