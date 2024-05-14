@@ -6,32 +6,36 @@ body {
     margin: 0;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
-    font-size: 18px; /* Incrementar tamaño de fuente base */
+    font-size: 18px;
+    background-image: url(fondo.jpg);
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .contenedor-login {
     background: white;
-    padding: 40px; /* Aumentar padding */
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 200px;
 }
 
 .formulario-login {
-    max-width: 400px; /* Aumentar ancho máximo */
+    max-width: 400px;
     margin: auto;
 }
 
 .formulario-login h2 {
     text-align: center;
-    margin-bottom: 50px; /* Incrementar margen inferior */
-    font-size: 30px; /* Incrementar tamaño de fuente */
+    margin-bottom: 50px;
+    font-size: 30px;
 }
 
 .botones-toggle {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 30px; /* Incrementar margen inferior */
+    margin-bottom: 30px;
 }
 
 .botones-toggle button {
@@ -39,7 +43,6 @@ body {
     border: none;
     background: lightgray;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 18px;
 }
 
