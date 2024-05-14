@@ -197,11 +197,6 @@ body {
     }
 }
 @media (max-width: 430px) {
-
-    .tarjetero {
-        height: auto;
-    }
-
     .texto {
         display: none;
     }
