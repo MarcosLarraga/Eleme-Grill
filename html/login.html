@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
-    <link rel="stylesheet" href="Login-Signup.css">
+    <title>Log in</title>
+    <link rel="stylesheet" href="../css/login-signup.css">
 </head>
 <body>
     <div class="contenedor-login">
         <div class="formulario-login">
-            <h2>Sign up</h2>
+            <h2>Log in</h2>
             <div class="botones-toggle">
-                <button>Log in</button>
-                <button class="activo">Sign up</button>
+                <button class="activo">Log in</button>
+                <button>Sign up</button>
             </div>
             <form>
                 <div class="grupo-entrada">
@@ -21,12 +21,16 @@
                 <div class="grupo-entrada">
                     <input type="password" placeholder="Password" required>
                 </div>
-                <button type="submit" class="boton-login">Sign up</button>
+                <button class="boton-login" id="loginButton" disabled>
+                    <a href="../html/home.html" id="loginLink" style="display: inline-block; width: 100%; height: 100%; text-decoration: none; color: inherit;">Log in</a>
+                </button>
+                
                 <div class="enlace-registro">
-                    <span>Have an account? <a href="Login.html">Log in</a></span>
+                    <span>Create an account <a href="../html/signup.html">Sign up</a></span>
                 </div>
             </form>
         </div>
     </div>
+    <script src="../js/login-singup.js"></script> 
 </body>
 </html>

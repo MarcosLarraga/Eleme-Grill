@@ -7,7 +7,7 @@ body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
     font-size: 18px;
-    background-image: url(fondo.jpg);
+    background-image: url(../fotos-videos/fondo.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -61,6 +61,10 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 18px;
+}
+.boton-login a {
+    text-decoration: none;
+    color: white;
 }
 
 .boton-login {
