@@ -116,11 +116,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    color: white; /* Cambio el color del texto a blanco */
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia */
-    border-radius: 10px; /* Borde redondeado */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreado */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
+
 
 .container h1,
 .container h2,
@@ -250,13 +253,8 @@ body {
         display: none;
     }
 
-    .imagen-boton img {
-        width: 110px; /* Ajusta el ancho de la imagen */
-        height: auto; /* Mantiene la proporción de aspecto de la imagen */
-    }
-
-    .imagen {
-        width: 100%;
+    .container {
+        max-width: 350px;
     }
 
     .hamburger,
@@ -428,6 +426,7 @@ body {
     
     }
     .copyright{
-        margin-right: 43px;
+        margin-right: 24px;
     }
+
 }

@@ -11,8 +11,31 @@ body {
 .navbar_css {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 90px;
     padding: 20px;
     background-color: black;
+}
+
+.menu {
+    display: none;
+}
+
+.fondo-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    z-index: -1;
+    /* Para que el div de la imagen esté detrás de los otros elementos del nav */
+}
+
+.fondo-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Para asegurar que la imagen se ajuste dentro del div */
 }
 
 

@@ -26,10 +26,9 @@ body {
 .navbar_css {
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    align-items: center;
+    height: 90px;
     padding: 20px;
-    background-size: cover;
-    background-position: center;
 }
 
 
@@ -443,6 +442,6 @@ body {
     
     }
     .copyright{
-        margin-right: 43px;
+        margin-right: 24px;
     }
 }
