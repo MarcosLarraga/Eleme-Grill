@@ -7,27 +7,16 @@
     <link rel="stylesheet" href="../css/login-signup.css">
 </head>
 <body>
-    <div class="contenedor-login">
-        <div class="formulario-login">
-            <h2>Log in</h2>
-            <div class="botones-toggle">
-                <button class="activo">Log in</button>
-                <button>Sign up</button>
-            </div>
-            <form>
-                <div class="grupo-entrada">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                <div class="grupo-entrada">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <button class="boton-login" id="loginButton" disabled>
-                    <a href="../html/home.html" id="loginLink" style="display: inline-block; width: 100%; height: 100%; text-decoration: none; color: inherit;">Log in</a>
-                </button>
-                
-                <div class="enlace-registro">
-                    <span>Create an account <a href="../html/signup.html">Sign up</a></span>
-                </div>
+    <div class="contenedor-login" id="formAcceso">
+        <div class="popup-login" id="loginPopup">
+            <span class="close-btn">&times;</span>
+            <h5>Acceso a Zona Privada</h5>
+            <form id="formAcceso">
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" required>
+                <label for="userPassword">Contraseña:</label>
+                <input type="password" id="userPassword" required>
+                <button type="submit">Acceder</button>
             </form>
         </div>
     </div>

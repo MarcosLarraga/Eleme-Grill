@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const baseDeDatos = [
+                // Hamburguesas
+                {
+                    id: 1,
+                    nombre: 'Hamburguesa Clásica',
+                    precio: 5.99,
+                    imagen: 'hamburguesa_clasica.jpg',
+                    categoria: 'Hamburguesa'
+                },
+                {
+                    id: 2,
+                    nombre: 'Hamburguesa de Pollo',
+                    precio: 6.49,
+                    imagen: 'hamburguesa_pollo.jpg',
+                    categoria: 'Hamburguesa'
+                },
+                // Agrega más hamburguesas aquí
+
+                // Entrantes
+                {
+                    id: 101,
+                    nombre: 'Patatas Fritas',
+                    precio: 2.99,
+                    imagen: 'patatas_fritas.jpg',
+                    categoria: 'Entrante'
+                },
+                {
+                    id: 102,
+                    nombre: 'Aros de Cebolla',
+                    precio: 3.49,
+                    imagen: 'aros_cebolla.jpg',
+                    categoria: 'Entrante'
+                },
+                // Agrega más entrantes aquí
+
+                // Postres
+                {
+                    id: 201,
+                    nombre: 'Tarta de Chocolate',
+                    precio: 4.99,
+                    imagen: 'tarta_chocolate.jpg',
+                    categoria: 'Postre'
+                },
+                {
+                    id: 202,
+                    nombre: 'Helado de Vainilla',
+                    precio: 3.49,
+                    imagen: 'helado_vainilla.jpg',
+                    categoria: 'Postre'
+                },
+                // Agrega más postres aquí
+
+                // Bebidas
+                {
+                    id: 301,
+                    nombre: 'Refresco de Cola',
+                    precio: 1.99,
+                    imagen: 'refresco_cola.jpg',
+                    categoria: 'Bebida'
+                },
+                {
+                    id: 302,
+                    nombre: 'Agua Mineral',
+                    precio: 1.49,
+                    imagen: 'agua_mineral.jpg',
+                    categoria: 'Bebida'
+                },
+                // Agrega más bebidas aquí
+            ];
+
+            let carrito = [];
+            const divisa = '€';
+            const miLocalStorage = window.localStorage;
+
+            const DOMitems = {
+                hamburguesas: document.getElementById('hamburguesas'),
+                entrantes: document.getElementById('entrantes'),
+                postres: document.getElementById('postres'),
+                bebidas: document.getElementById('bebidas')
+            };
+
+            const DOMcarrito = document.getElementById('carrito');
+            const DOMtotal = document.getElementById('total');
+            const DOMbotonVaciar = document.getElementById('boton-vaciar');
+            const DOMbotonPagar = document.getElementById('boton-pagar');
+
+            function renderizarProductos() {
+                baseDeDatos.forEach((info) => {
+                    const miNodo = document.createElement('div');
+                    miNodo.classList.add('card', 'col-sm-12', 'mb-3');
+                    
+                    const miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body');
+                    
+                    const miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = info.nombre;
+                    
+                    const miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('img-fluid');
+                    miNodoImagen.setAttribute('src', info.imagen);
+                    
+                    const miNodoPrecio = document.createElement('p');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                    
+                    const miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('btn', 'btn-primary');
+                    miNodoBoton.textContent = '+';
+                    miNodoBoton.setAttribute('marcador', info.id);
+                    miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                    
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    
+                    switch (info.categoria) {
+                        case 'Hamburguesa':
+                            DOMitems.hamburguesas.appendChild(miNodo);
+                            break;
+                        case 'Entrante':
+                            DOMitems.entrantes.appendChild(miNodo);
+                            break;
+                        case 'Postre':
+                            DOMitems.postres.appendChild(miNodo);
+                            break;
+                        case 'Bebida':
+                            DOMitems.bebidas.appendChild(miNodo);
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            }
+
+            function anyadirProductoAlCarrito(evento) {
+                carrito.push(evento.target.getAttribute('marcador'))
+                renderizarCarrito();
+                guardarCarritoEnLocalStorage();
+            }
+
+            function renderizarCarrito() {
+                DOMcarrito.textContent = '';
+                const carritoSinDuplicados = [...new Set(carrito)];
+                carritoSinDuplicados.forEach((item) => {
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                        return itemId === item ? total += 1 : total;
+                    }, 0);
+                    const miNodo = document.createElement('li');
+                    miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                    const miBoton = document.createElement('button');
+                    miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                    miBoton.textContent = 'X';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.dataset.item = item;
+                    miBoton.addEventListener('click', borrarItemCarrito);
+                    miNodo.appendChild(miBoton);
+                    DOMcarrito.appendChild(miNodo);
+                });
+                DOMtotal.textContent = calcularTotal();
+            }
+
+            function borrarItemCarrito(evento) {
+                const id = evento.target.dataset.item;
+                carrito = carrito.filter((carritoId) => {
+                    return carritoId !== id;
+                });
+                renderizarCarrito();
+                guardarCarritoEnLocalStorage();
+            }
+
+            function calcularTotal() {
+                return carrito.reduce((total, item) => {
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    return total + miItem[0].precio;
+                }, 0).toFixed(2);
+            }
+
+            function vaciarCarrito() {
+                carrito = [];
+                renderizarCarrito();
+                localStorage.clear();
+            }
+
+            function guardarCarritoEnLocalStorage () {
+                miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+            }
+
+            function cargarCarritoDeLocalStorage () {
+                if (miLocalStorage.getItem('carrito') !== null) {
+                    carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+                }
+            }
+
+            DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+            DOMbotonPagar.addEventListener('click', irAMetodoPago);
+
+            cargarCarritoDeLocalStorage();
+            renderizarProductos();
+            renderizarCarrito();
+
+            function irAMetodoPago() {
+                const totalCarrito = calcularTotal();
+                window.location.href = `metodo_pago.html?total=${totalCarrito}`;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <section class="col-sm-3">
+                <h2>Hamburguesas</h2>
+                <div id="hamburguesas" class="row"></div>
+            </section>
+
+            <section class="col-sm-3">
+                <h2>Entrantes</h2>
+                <div id="entrantes" class="row"></div>
+            </section>
+
+            <section class="col-sm-3">
+                <h2>Postres</h2>
+                <div id="postres" class="row"></div>
+            </section>
+
+            <section class="col-sm-3">
+                <h2>Bebidas</h2>
+                <div id="bebidas" class="row"></div>
+            </section>
+
+            <aside class="col-sm-12 mt-4">
+                <h2>Carrito</h2>
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <p class="text-right">Total: <span id="total"></span>&euro;</p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                <button id="boton-pagar" class="btn btn-success">Pagar</button>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
