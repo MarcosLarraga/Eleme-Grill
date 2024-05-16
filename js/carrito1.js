@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.body.addEventListener('click', (e) => {
-        if (e.target.tagName === 'BUTTON' && e.target.textContent === 'Añadir al Carrito') {
+        if (e.target.tagName === 'BUTTON' && e.target.textContent === 'Add to cart') {
             const name = e.target.getAttribute('data-name');
             const price = parseFloat(e.target.getAttribute('data-price'));
             addToCart(name, price);
