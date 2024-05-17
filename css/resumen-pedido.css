@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+.order-summary {
+    margin-top: 20px;
+}
+
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-summary th,
+.order-summary td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.order-total {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.payment-details {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.payment-details .form-group {
+    margin-bottom: 15px;
+}
+
+.payment-details label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.payment-details input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.payment-details button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.payment-details button:hover {
+    background-color: #0056b3;
+}

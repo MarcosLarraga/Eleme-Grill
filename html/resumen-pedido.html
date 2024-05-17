@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen del Pedido</title>
+    <link rel="stylesheet" href="../css/resumen-pedido.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resumen del Pedido</h1>
+        <div class="order-summary">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="order-summary">
+                    <!-- Los elementos del resumen se añadirán aquí -->
+                </tbody>
+            </table>
+            <div class="order-total">
+                <h3>Total: <span id="order-total">0.00</span> €</h3>
+            </div>
+        </div>
+
+        <div class="payment-details">
+            <h2>Datos de Pago</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="card-number">Titular name:</label>
+                    <input type="text" id="titular-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Número de Tarjeta:</label>
+                    <input type="text" id="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Fecha de Expiración:</label>
+                    <input type="text" id="expiry-date" placeholder="MM/AA" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" required>
+                </div>
+                <button type="submit">Pagar</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/resumen-pedido.js"></script>
+</body>
+</html>

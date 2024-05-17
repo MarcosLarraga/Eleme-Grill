@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
 
@@ -46,10 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.getElementById('checkout').addEventListener('click', () => {
-        const paymentMethod = document.getElementById('payment-method').value;
-        alert(`Pago realizado con ${paymentMethod}. Total: ${cartTotal.textContent} €`);
-        cartItems.innerHTML = '';
-        cartTotal.textContent = '0.00';
+    document.getElementById('checkout-button').addEventListener('click', () => {
+        const cartData = [];
+        document.querySelectorAll('#cart-items tr').forEach(row => {
+            const name = row.getAttribute('data-name');
+            const price = row.children[1].textContent.replace(' €', '');
+            const quantity = row.children[2].textContent;
+            const total = row.children[3].textContent.replace(' €', '');
+            cartData.push({ name, price, quantity, total });
+        });
+        const totalAmount = cartTotal.textContent;
+        localStorage.setItem('cartData', JSON.stringify(cartData));
+        localStorage.setItem('totalAmount', totalAmount);
     });
 });
