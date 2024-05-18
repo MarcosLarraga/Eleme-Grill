@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.getElementById('checkout-button').addEventListener('click', () => {
+    document.getElementById('checkout').addEventListener('click', () => {
         const cartData = [];
         document.querySelectorAll('#cart-items tr').forEach(row => {
             const name = row.getAttribute('data-name');
@@ -58,5 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalAmount = cartTotal.textContent;
         localStorage.setItem('cartData', JSON.stringify(cartData));
         localStorage.setItem('totalAmount', totalAmount);
+        window.location.href = 'resumen-pedido.html'; // Redirect to the order summary page
     });
 });
