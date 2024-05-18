@@ -58,6 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalAmount = cartTotal.textContent;
         localStorage.setItem('cartData', JSON.stringify(cartData));
         localStorage.setItem('totalAmount', totalAmount);
-        window.location.href = 'resumen-pedido.html'; // Redirect to the order summary page
+        window.location.href = 'resumen-pedido.html';
     });
 });
