@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Compra realizada con éxito. Gracias por su compra!');
         localStorage.removeItem('cartData');
         localStorage.removeItem('totalAmount');
-        window.location.href = 'index.html';
+        window.location.href = 'home.html';
     });
 
     loadOrderSummary();
