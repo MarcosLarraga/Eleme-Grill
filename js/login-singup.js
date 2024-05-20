@@ -1,19 +1,19 @@
-const closeButton = document.getElementsByClassName('close-btn')[0];
-        
-        closeButton.onclick = function() {
-            window.location.href = 'home.html'; // Redirige al usuario a la página principal o donde desees
-        }
+const botonCerrar = document.getElementsByClassName('close-btn')[0];
 
-        document.getElementById('formAcceso').onsubmit = function(event) {
-            event.preventDefault();
-            const email = document.getElementById('userEmail').value;
-            const password = document.getElementById('userPassword').value;
-            const correctEmailAdmin = 'admin@gmail.com'; // Correo del administrador
-            const correctPasswordAdmin = 'admin123'; // Contraseña del administrador
-        
-            if (email === correctEmailAdmin && password === correctPasswordAdmin) {
-                window.location.href = 'zona_privada.html'; // Redirige a la página de administrador
-            } else {
-                alert('Acceso denegado.');
-            }
-        }
+botonCerrar.onclick = function () {
+    window.location.href = 'home.html';
+}
+
+document.getElementById('formAcceso').onsubmit = function (evento) {
+    evento.preventDefault();
+    const correo = document.getElementById('userEmail').value;
+    const contrasena = document.getElementById('userPassword').value;
+    const correoCorrectoAdmin = 'eleme@gmail.com';
+    const contrasenaCorrectaAdmin = 'eleme';
+
+    if (correo === correoCorrectoAdmin && contrasena === contrasenaCorrectaAdmin) {
+        window.location.href = 'ZonaPrivada.html';
+    } else {
+        alert('Acceso denegado.');
+    }
+}

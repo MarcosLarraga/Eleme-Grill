@@ -3,10 +3,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f2f2f2;
     margin: 0;
-    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
-    font-size: 18px;
     background-image: url(../fotos-videos/fondo.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -14,79 +13,57 @@ body {
 }
 
 .contenedor-login {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 200px;
-}
-
-.formulario-login {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    margin: auto;
-}
-
-.formulario-login h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 30px;
-}
-
-.botones-toggle {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 30px;
-}
-
-.botones-toggle button {
-    padding: 15px 30px;
-    border: none;
-    background: lightgray;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-.botones-toggle .activo {
-    background: linear-gradient(to right, #e2cb4a, #e2cb4a);
-    color: white;
-}
-
-.grupo-entrada {
-    margin-bottom: 20px;
-}
-
-.grupo-entrada input {
-    width: 87%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 18px;
-}
-.boton-login a {
-    text-decoration: none;
-    color: white;
-}
-
-.boton-login {
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(to right, #e2cb4a, #e2cb4a);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
+    position: relative;
 }
 
-.enlace-registro {
+.contenedor-login h2 {
+    margin-bottom: 20px;
+    color: #333;
     text-align: center;
-    margin-top: 30px;
 }
 
-.enlace-registro a {
-    color: #4a90e2;
-    text-decoration: none;
-    font-size: 18px;
+.contenedor-login label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contenedor-login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contenedor-login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0059ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contenedor-login button:hover {
+    background-color: #0056b3;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 /* Estilos para pantallas mayores a 1440px */
@@ -172,6 +149,10 @@ body {
     .container {
         padding: 10px;
         font-size: 14px;
+    }
+
+    .contenedor-login {
+        max-width: 300px;
     }
 
     .header {
