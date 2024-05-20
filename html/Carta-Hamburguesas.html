@@ -5,22 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu</title>
-  <link rel="stylesheet" href="Carta-Hamburguesas.css">
+  <link rel="stylesheet" href="../css/Carta-Hamburguesas.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
   <nav class="navbar_css">
     <div class="logo">
-      <img src="logo-eleme-grill.png" alt="Logo">
+      <img src="../fotos-videos/logo-eleme-grill.png" alt="Logo">
     </div>
     <div class="texto">
       <ul>
-        <li><a href="#" class="btn">Home</a></li>
-        <li><a href="#" class="btn">Nosotros</a></li>
-        <li><a href="#" class="btn">Menu</a></li>
-        <li><a href="#" class="btn special">Inicia Sesión</a></li>
-        <a href="#" class="btn carrito"><i class="fas fa-shopping-cart"></i></a>
+        <li><a href="../html/home.html" class="btn">Home</a></li>
+        <li><a href="../html/nosotros.html" class="btn">About Us</a></li>
+        <li><a href="../html/carta.html" class="btn">Menu</a></li>
+        <li><a href="../html/login.html" class="btn special">Sign In</a></li>
+        <a href="../html/carrito.html" class="btn carrito"><i class="fas fa-shopping-cart"></i></a>
       </ul>
     </div>
     <div class="hamburger">
@@ -44,39 +44,39 @@
 
   <div class="grid-container" id="gridContainerMeat">
     <div class="card" onclick="openModal('myModalMeat1')">
-      <img src="carne__1.png" alt="Imagen 1" class="card-img">
+      <img src="../fotos-videos/carne__1.png" alt="Imagen 1" class="card-img">
       <p class="card-text">BIG BACON</p>
     </div>
     <div class="card" onclick="openModal('myModalMeat2')">
-      <img src="carne__2.png" alt="Imagen 2" class="card-img">
+      <img src="../fotos-videos/carne__2.png" alt="Imagen 2" class="card-img">
       <p class="card-text">PEPPER BURGUER</p>
     </div>
     <div class="card" onclick="openModal('myModalMeat3')">
-      <img src="carne__3.png" alt="Imagen 3" class="card-img">
+      <img src="../fotos-videos/carne__3.png" alt="Imagen 3" class="card-img">
       <p class="card-text">MUSHROOM FUNNY</p>
     </div>
     <div class="card" onclick="openModal('myModalMeat4')">
-      <img src="carne__4.png" alt="Imagen 4" class="card-img">
+      <img src="../fotos-videos/carne__4.png" alt="Imagen 4" class="card-img">
       <p class="card-text">LAVA CHEESE</p>
     </div>
     <div class="card" onclick="openModal('myModalMeat5')">
-      <img src="carne__5.png" alt="Imagen 5" class="card-img">
+      <img src="../fotos-videos/carne__5.png" alt="Imagen 5" class="card-img">
       <p class="card-text">CLASSIC</p>
     </div>
     <div class="card" onclick="openModal('myModalMeat6')">
-      <img src="carne__6.png" alt="Imagen 6" class="card-img">
+      <img src="../fotos-videos/carne__6.png" alt="Imagen 6" class="card-img">
       <p class="card-text">SPICY</p>
     </div>
     <div class="card" onclick="openModal('myModalMeat7')">
-      <img src="carne__7.png" alt="Imagen 7" class="card-img">
+      <img src="../fotos-videos/carne__7.png" alt="Imagen 7" class="card-img">
       <p class="card-text">DON'T MISS MEAT</p>
     </div>
     <div class="card" onclick="openModal('myModalMeat8')">
-      <img src="carne__8.png" alt="Imagen 8" class="card-img">
+      <img src="../fotos-videos/carne__8.png" alt="Imagen 8" class="card-img">
       <p class="card-text">CRUNCHY BURGUER</p>
     </div>
     <div class="card" onclick="openModal('myModalMeat9')">
-      <img src="carne__9.png" alt="Imagen 9" class="card-img">
+      <img src="../fotos-videos/carne__9.png" alt="Imagen 9" class="card-img">
       <p class="card-text">FULL FLAVOUR</p>
     </div>
   </div>
@@ -85,15 +85,15 @@
 
   <div class="grid-container" id="gridContainerChicken">
     <div class="card" onclick="openModal('myModalChicken1')">
-      <img src="pollo__1.png" alt="Imagen 1" class="card-img">
+      <img src="../fotos-videos/pollo__1.png" alt="Imagen 1" class="card-img">
       <p class="card-text">BIG CHICKEN</p>
     </div>
     <div class="card" onclick="openModal('myModalChicken2')">
-      <img src="pollo__2.png" alt="Imagen 2" class="card-img">
+      <img src="../fotos-videos/pollo__2.png" alt="Imagen 2" class="card-img">
       <p class="card-text">BASIC CHICKEN</p>
     </div>
     <div class="card" onclick="openModal('myModalChicken3')">
-      <img src="pollo__3.png" alt="Imagen 3" class="card-img">
+      <img src="../fotos-videos/pollo__3.png" alt="Imagen 3" class="card-img">
       <p class="card-text">DON'T MISS CHICKEN</p>
     </div>
 
@@ -102,7 +102,8 @@
       <div class="modal-content">
         <span class="close" onclick="closeModal('myModalMeat1')">&times;</span>
         <h1>Big Bacon</h1>
-        <p>BACK TO THE ORIGINS, DRY AGED MEET COOKED TO PERFECTION ON CHARCOAL, FLAVOURFULL CRUNCHY BACON, 100% ORIGINAL CHEEDAR CHEESE IN BRIOCHE BREAD.</p><br>
+        <p>BACK TO THE ORIGINS, DRY AGED MEET COOKED TO PERFECTION ON CHARCOAL, FLAVOURFULL CRUNCHY BACON, 100% ORIGINAL
+          CHEEDAR CHEESE IN BRIOCHE BREAD.</p><br>
         <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
       </div>
     </div>
@@ -111,7 +112,8 @@
       <div class="modal-content">
         <span class="close" onclick="closeModal('myModalMeat2')">&times;</span>
         <h1>Pepper Burguer</h1>
-        <p>GRILLED BEEF, PULLED PORK RIBS IN BARBECUE SAUCE, CHEDDAR CHEESE, CRISPY BACON AND CAJUN ONION ALL CONTAINED IN BRIOCHE BREAD.</p><br>
+        <p>GRILLED BEEF, PULLED PORK RIBS IN BARBECUE SAUCE, CHEDDAR CHEESE, CRISPY BACON AND CAJUN ONION ALL CONTAINED
+          IN BRIOCHE BREAD.</p><br>
         <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
       </div>
     </div>
@@ -167,7 +169,8 @@
       <div class="modal-content">
         <span class="close" onclick="closeModal('myModalMeat8')">&times;</span>
         <h1>Crunchy Burguer</h1>
-        <p>GRILLED BEEF, PULLED PORK RIBS IN BARBECUE SAUCE, CHEDDAR CHEESE, CRISPY BACON AND CAJUN ONION ALL CONTAINED IN BRIOCHE BREAD.</p><br>
+        <p>GRILLED BEEF, PULLED PORK RIBS IN BARBECUE SAUCE, CHEDDAR CHEESE, CRISPY BACON AND CAJUN ONION ALL CONTAINED
+          IN BRIOCHE BREAD.</p><br>
         <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
       </div>
     </div>
@@ -187,7 +190,8 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('myModalChicken1')">&times;</span>
       <h1>Big Chicken</h1>
-      <p>PROVOLONE CHEESE AND TRUFFLE RACLETTE, MELTED ON TOP OF CRISPY MARINATED CHICKEN, BATAVIA LETTUCE AND TOMATOES.</p><br>
+      <p>PROVOLONE CHEESE AND TRUFFLE RACLETTE, MELTED ON TOP OF CRISPY MARINATED CHICKEN, BATAVIA LETTUCE AND TOMATOES.
+      </p><br>
       <p style="font-size: 16px;">CHICKEN | 160GR | 250GR | 320GR</p>
     </div>
   </div>
@@ -205,7 +209,8 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('myModalChicken3')">&times;</span>
       <h1>Don't Miss Chicken</h1>
-      <p>GRILLED FARMYARD CHICKEN BREAST WITH MELTED GOUDA CHEESE, BACON, LETTUCE, TOMATO, FREE-RANGE EGGS AND BOURBON MAYONNAISE SLIGHTLY SPICY.</p><br>
+      <p>GRILLED FARMYARD CHICKEN BREAST WITH MELTED GOUDA CHEESE, BACON, LETTUCE, TOMATO, FREE-RANGE EGGS AND BOURBON
+        MAYONNAISE SLIGHTLY SPICY.</p><br>
       <p style="font-size: 16px;">CHICKEN | 160GR | 250GR | 320GR</p>
     </div>
   </div>
@@ -213,7 +218,7 @@
 
   <footer class="footer">
     <div class="footer-logo">
-      <img src="logo-eleme-grill.png" alt="Logo Footer">
+      <img src="../fotos-videos/logo-eleme-grill.png" alt="Logo Footer">
     </div>
     <div class="footer-centro">
       <p>Síguenos en nuestras redes sociales:</p>
@@ -233,7 +238,7 @@
     </div>
   </footer>
 </body>
-<script src="Carta-Hamburguesas.js"></script>
+<script src="../js/Carta-Hamburguesas.js"></script>
 </body>
 
 </html>
