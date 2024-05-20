@@ -24,6 +24,10 @@ h2 {
     text-align: center;
 }
 
+.titulo-bla {
+    color: #fff;
+}
+
 .categories {
     display: flex;
     flex-direction: column;
@@ -95,6 +99,9 @@ h2 {
 
 .cart {
     margin-top: 20px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
 }
 
 .cart table {
@@ -116,21 +123,24 @@ h2 {
 }
 
 .cart-total  button{
-    font-size: 25px;
-    margin-bottom: 80px;
-    background-color: #28a745;
+    font-size: 35px;
+    margin-bottom: 70px;
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
     border-radius: 10px;
     width: 180px;
-    height: 50px;
+    height: 70px;
+    font-family: 'Anton', sans-serif;
 }
 
 .cart-total button:hover {
-    background-color: #218838;
+    background-color: initial;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411);
 }
+
 .payment-method {
     margin-top: 20px;
     text-align: center;
