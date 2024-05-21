@@ -179,15 +179,17 @@ body {
     margin-bottom: 10px;
 }
 
-.footer-links span {
+.footer-links a {
+    color: white; 
+    text-decoration: none;
     margin-right: 20px;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.footer-links span:hover {
+.footer-links a:hover {
     color: #F6D347;
-}
+}    
 
 .footer-logo img {
     width: 50px;
@@ -213,6 +215,10 @@ body {
 
 .icono-redes a:hover {
     color: #F6D347;
+}
+
+.copyright {
+    margin-right: 43px;
 }
 
 .hamburger,
