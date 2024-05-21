@@ -25,14 +25,12 @@ body {
     width: 100%;
     height: 60%;
     z-index: -1;
-    /* Para que el div de la imagen esté detrás de los otros elementos del nav */
 }
 
 .fondo-imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Para asegurar que la imagen se ajuste dentro del div */
 }
 
 
@@ -72,9 +70,7 @@ body {
 .texto ul li a,
 .texto .btn:hover {
     background-color: transparent;
-    /* Hace el fondo invisible */
     border-color: #F6D347;
-    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -88,9 +84,7 @@ body {
 .texto ul li a.special:hover,
 .texto .btn.special:hover {
     background-color: transparent;
-    /* Hace el fondo invisible */
     border-color: #F6D347;
-    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -121,29 +115,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100px;
-    /* Ajusta la altura según tu diseño */
 }
 
 .m-scroll-title {
     white-space: nowrap;
-    /* Evita que el texto se desborde hacia abajo */
     overflow: hidden;
-    /* Oculta el texto que se desborda horizontalmente */
 }
 
 .m-scroll-title div {
     display: flex;
-    /* Agregado */
     animation: scrollText 20s infinite linear;
-    /* Ajusta la velocidad y la duración de la animación según sea necesario */
     animation-delay: -10s;
-    /* Ajusta el retraso para que la animación comience inmediatamente */
 }
 
 @keyframes scrollText {
     0% {
         transform: translateX(0%);
-        /* Cambiado de 100% a 0% */
     }
 
     100% {
@@ -153,17 +140,11 @@ body {
 
 .slider-title-span {
     margin-right: 20px;
-    /* Espaciado entre cada elemento span */
     font-size: 100px;
-    /* Tamaño del texto */
     font-weight: bold;
-    /* Peso de la letra */
     font-family: "Arial Black", Arial, sans-serif;
-    /* Fuente de la letra */
     color: transparent;
-    /* Color transparente para ocultar el texto */
     -webkit-text-stroke: 3px #333;
-    /* Añade un contorno de 3px alrededor del texto */
     -webkit-text-fill-color: transparent;
 }
 
@@ -498,12 +479,10 @@ body {
     
     .btn.special:hover {
         color: black;
-        /* Cambia el color del texto al hacer hover */
     }
     
     #carrito:hover {
         color: rgb(0, 0, 0);
-        /* Cambia el color del texto al hacer hover */
         background-color: #fff;
         border: none;
     }

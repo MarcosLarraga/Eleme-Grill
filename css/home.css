@@ -68,9 +68,7 @@ body {
 .texto ul li a,
 .texto .btn:hover {
     background-color: transparent;
-    /* Hace el fondo invisible */
     border-color: #F6D347;
-    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -84,9 +82,7 @@ body {
 .texto ul li a.special:hover,
 .texto .btn.special:hover {
     background-color: transparent;
-    /* Hace el fondo invisible */
     border-color: #F6D347;
-    /* Muestra solo el borde del color */
     color: white;
 }
 
@@ -139,20 +135,20 @@ body {
 
 .imagen-boton {
     position: fixed;
-    top: 50%; /* Ajusta la posición verticalmente */
-    left: 0; /* Fija el botón a la izquierda */
-    transform: translateY(-50%); /* Centra verticalmente el botón */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     background: none;
     border: none;
-    padding: 5px; /* Ajusta el relleno del botón */
+    padding: 5px;
     cursor: pointer;
     outline: none;
-    z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
+    z-index: 999;
 }
 
 .imagen-boton img {
-    width: 270px; /* Ajusta el ancho de la imagen */
-    height: auto; /* Mantiene la proporción de aspecto de la imagen */
+    width: 270px;
+    height: auto;
 }
 
 .footer,
@@ -267,8 +263,8 @@ body {
     }
 
     .imagen-boton img {
-        width: 110px; /* Ajusta el ancho de la imagen */
-        height: auto; /* Mantiene la proporción de aspecto de la imagen */
+        width: 110px;
+        height: auto;
     }
 
     .imagen {
@@ -422,12 +418,10 @@ body {
     
     .btn.special:hover {
         color: black;
-        /* Cambia el color del texto al hacer hover */
     }
     
     #carrito:hover {
         color: rgb(0, 0, 0);
-        /* Cambia el color del texto al hacer hover */
         background-color: #fff;
         border: none;
     }

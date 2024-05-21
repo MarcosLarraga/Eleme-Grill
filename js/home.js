@@ -1,7 +1,6 @@
-// selector
 var menu = document.querySelector('.hamburger');
 
-// method
+
 function toggleMenu(event) {
   this.classList.toggle('is-active');
   var menuContainer = document.querySelector(".menuppal");
@@ -16,6 +15,6 @@ function toggleMenu(event) {
   event.preventDefault();
 }
 
-// event
+
 menu.addEventListener('click', toggleMenu, false);
 
