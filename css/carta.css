@@ -153,26 +153,28 @@ body {
 }
 
 .tarjetero {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     background-color: black;
 }
 
 .cuadrados {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     background-color: black;
+    margin: 10px;
 }
 
 .tarjeta {
-    width: 30%;
-    height: 30%;
+    width: 555px;
+    height: 330px;
     border-radius: 5px;
     overflow: hidden;
     border: 5px solid #ffffff;
-    margin-bottom: 50px;
-    margin-top: 50PX;
+    margin: 10px;
 }
 
 .boton-tarjeta {
@@ -188,11 +190,10 @@ body {
 }
 
 .boton-tarjeta img {
-    width: 500px;
-    height: 500PX;
+    width: 100%;
+    height: auto;
     object-fit: cover;
 }
-
 
 .footer,
 .footer {
