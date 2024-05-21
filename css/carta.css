@@ -1,9 +1,10 @@
 body {
-    margin: 0;
+    margin: -19px !important;
     font-family: 'Poppins', sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
+    background-color: rgb(0, 0, 0);
 }
 
 .navbar_css {
@@ -280,6 +281,12 @@ body {
 .menuppal {
     display: none;
 }
+@media (max-width: 1025px){
+    .body{
+    margin: -19px;
+    }    
+}
+
  
 @media (max-width: 768px) {
     .slider1 {
@@ -305,6 +312,7 @@ body {
         display: none;
     }
 }
+
 @media (max-width: 430px) {
     .tarjetero {
         height: auto;
@@ -488,6 +496,9 @@ body {
         border: none;
     }
     
+    .footer{
+        margin-top: 537px !important;
+    }
 
     .footer,
     .footer-links {
