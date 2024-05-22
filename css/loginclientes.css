@@ -7,7 +7,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url(../fotos-videos/fondo.jpg);
-    background-size: cover;  /* Use cover to ensure the background image covers the entire page */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }

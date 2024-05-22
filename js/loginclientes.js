@@ -47,13 +47,21 @@ document.addEventListener('DOMContentLoaded', function () {
     signUpForm.onsubmit = function (evento) {
         evento.preventDefault();
         const name = document.getElementById('signUpName').value;
+        const surname = document.getElementById('signUpSurname').value;
+        const address = document.getElementById('signUpAddress').value;
+        const birthdate = document.getElementById('signUpBirthdate').value;
+        const phone = document.getElementById('signUpPhone').value;
         const email = document.getElementById('signUpEmail').value;
         const password = document.getElementById('signUpPassword').value;
 
         const newUser = {
-            name: name,
-            email: email,
-            password: password,
+            CL_NOMBRE: name,
+            CL_APELLIDO: surname,
+            CL_DIRECCIÓN: address,
+            CL_FE_NACIMIENTO: birthdate,
+            CL_TELÉFONO: phone,
+            CL_EMAIL: email,
+            CL_CONTRASEÑA: password
         };
 
         const url = "http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD";
