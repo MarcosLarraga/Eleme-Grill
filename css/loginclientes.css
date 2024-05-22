@@ -3,10 +3,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f2f2f2;
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url(../fotos-videos/fondo.jpg);
-    background-size: 100%;
+    background-size: cover;  /* Use cover to ensure the background image covers the entire page */
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -86,7 +87,7 @@ body {
 
 @media (min-width: 1441px) {
     body {
-        background-size: 100%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }
@@ -103,7 +104,7 @@ body {
 
 @media (max-width: 1440px) {
     body {
-        background-size: 100%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }
@@ -120,7 +121,7 @@ body {
 
 @media (max-width: 1024px) {
     body {
-        background-size: 125%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }
@@ -137,7 +138,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        background-size: 165%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }
@@ -154,7 +155,7 @@ body {
 
 @media (max-width: 425px) {
     body {
-        background-size: 300%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }
