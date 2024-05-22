@@ -151,6 +151,12 @@ body {
     height: auto;
 }
 
+.btn.special1{
+    margin-left: 220px;
+    color: #F6D347;
+
+}
+
 .footer,
 .footer {
     background: black;
