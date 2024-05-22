@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+
 body {
     display: flex;
     justify-content: center;
@@ -5,7 +8,7 @@ body {
     height: 100vh;
     background-color: #f2f2f2;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-image: url(../fotos-videos/fondo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -46,8 +49,8 @@ body {
 .contenedor-login button {
     width: 100%;
     padding: 10px;
-    background-color: #0059ff;
-    color: #fff;
+    background-color: #F6D347;
+    color: #000000;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -55,7 +58,7 @@ body {
 }
 
 .contenedor-login button:hover {
-    background-color: #0056b3;
+    background-color: #fcdc5ece;
 }
 
 .close-btn {
@@ -66,23 +69,18 @@ body {
     cursor: pointer;
 }
 
-#formSwitcher {
+.form-link {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-#formSwitcher button {
-    margin: 5px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #0059ff;
-    color: #fff;
+.form-link a {
+    color: #0059ff;
+    text-decoration: none;
 }
 
-#formSwitcher button.active {
-    background-color: #0056b3;
+.form-link a:hover {
+    text-decoration: underline;
 }
 
 @media (min-width: 1441px) {
