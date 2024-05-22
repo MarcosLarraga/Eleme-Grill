@@ -1,5 +1,5 @@
 body {
-    margin: -19px !important;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,6 +13,7 @@ body {
     align-items: center;
     height: 90px;
     padding: 20px;
+    margin-top: 20px;
 }
 
 .menu {
@@ -33,7 +34,6 @@ body {
     height: 100%;
     object-fit: cover;
 }
-
 
 .logo img {
     width: 50px;
@@ -88,7 +88,6 @@ body {
     border-color: #F6D347;
     color: white;
 }
-
 
 .titulo-carta {
     text-align: center;
@@ -158,6 +157,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     background-color: black;
+    padding-bottom: 0;
 }
 
 .cuadrados {
@@ -206,6 +206,7 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 100px;
+    margin-top: 0;
 }
 
 .footer-logo {
@@ -281,13 +282,16 @@ body {
 .menuppal {
     display: none;
 }
-@media (max-width: 1025px){
-    .body{
-    margin: -19px;
+
+@media (max-width: 1025px) {
+    body {
+        margin: 0;
     }    
+    .slider1 {
+        margin-top: 0;
+    }
 }
 
- 
 @media (max-width: 768px) {
     .slider1 {
         margin-top: 386px;
@@ -296,6 +300,7 @@ body {
     .tarjeta {
         width: 50%;
     }
+
     .footer,
     .footer-links {
         display: flex;
@@ -304,7 +309,6 @@ body {
         gap: 10px;
         margin-top: 0;
         align-items: center;
-
     }
 
     .hamburger,
@@ -316,6 +320,7 @@ body {
 @media (max-width: 430px) {
     .tarjetero {
         height: auto;
+        padding-bottom: 0;
     }
 
     .texto {
@@ -331,23 +336,21 @@ body {
     }
 
     .tarjeta {
-        width: 80%;
-        height: 100%;
+        width: 100%;
+        height: auto;
+        max-width: 430px;
     }
 
     .boton-tarjeta img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
+        width: 100%;
+        height: auto;
     }
 
     .hamburger,
     .menuppal {
         display: block;
         right: 0;
-    
     }
-    
     
     .hamburger {
         align-items: center;
@@ -365,7 +368,7 @@ body {
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
-        user-select: none
+        user-select: none;
     }
     
     .hamburger.is-active {
@@ -381,17 +384,31 @@ body {
         opacity: 1;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-        transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
     }
     
-    .hamburger:hover .-top {
-        -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-        transform: translateY(-100%);
+    ._layer.-top {
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
     }
     
-    .hamburger:hover .-bottom {
+    ._layer.-mid {
+        opacity: 1;
+    }
+    
+    ._layer.-bottom {
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+    
+    .hamburger.is-active ._layer {
+        background-color: #ffffff;
+    }
+    
+    .hamburger.is-active .-top {
         -webkit-transform: translateY(50%);
         -ms-transform: translateY(100%);
         transform: translateY(100%);
@@ -449,7 +466,6 @@ body {
         font-weight: bold;
     }
     
-    
     .menuppal ul li a {
         color: #F6D347;
         font-size: 1.5rem;
@@ -457,7 +473,6 @@ body {
         display: block;
         text-decoration: none;
     }
-    
     
     .btn.special {
         background-color: #F6D347;
@@ -468,7 +483,6 @@ body {
         margin-top: 0.5em;
         width: 50%;
         margin-left: 110px;
-    
     }
     
     #carrito {
@@ -483,7 +497,7 @@ body {
     
     .menuppal ul li a:hover {
         background-color: white;
-        color: #333
+        color: #333;
     }
     
     .btn.special:hover {
@@ -496,10 +510,6 @@ body {
         border: none;
     }
     
-    .footer{
-        margin-top: 537px !important;
-    }
-
     .footer,
     .footer-links {
         display: flex;
@@ -508,9 +518,15 @@ body {
         gap: 10px;
         margin-top: 0;
         align-items: center;
-    
     }
-    .copyright{
+
+    .footer,
+    .footer {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .copyright {
         margin-right: 24px;
     }
 }
