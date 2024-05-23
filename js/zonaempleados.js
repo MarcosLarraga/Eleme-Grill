@@ -16,12 +16,12 @@ const fetchEmployees = async ()=> {
         printEmployees(data);
     }catch(error){
         console.log('Error al extraer datos con la API', error);
-        document.getElementById('content').textContent = 'Failed to load content';
+        
     }
 }
 
 const printEmployees = (employees) => {
-    const table = document.getElementById('tablaEmpleados');
+    const table = document.getElementById('tabla-empleados');
     const tbody = table.querySelector('tbody');
     table.style.display= 'table';
 
