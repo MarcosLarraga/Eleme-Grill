@@ -63,10 +63,6 @@ body::after {
     cursor: pointer;
 }
 
-.close-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
 h1 {
     margin-bottom: 20px;
     color: #333;
