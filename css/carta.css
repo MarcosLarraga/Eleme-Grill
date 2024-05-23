@@ -106,7 +106,7 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin-top: 438px;
+    margin-top: 435px;
     background-color: #F6D347;
 }
 
@@ -283,6 +283,18 @@ body {
     display: none;
 }
 
+@media (max-width: 1442px) {
+    body {
+        margin: 0;
+    }    
+    .slider1 {
+        margin-top: 0;
+    }
+    .fondo-imagen {
+        height: auto;
+    }
+}
+
 @media (max-width: 1025px) {
     body {
         margin: 0;
@@ -290,11 +302,14 @@ body {
     .slider1 {
         margin-top: 0;
     }
+    .fondo-imagen {
+        height: auto;
+    }
 }
 
 @media (max-width: 768px) {
     .slider1 {
-        margin-top: 386px;
+        margin-top: 370px;
     }
 
     .tarjeta {
