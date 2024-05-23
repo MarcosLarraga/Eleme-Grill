@@ -1,3 +1,9 @@
+const botonCerrar = document.getElementsByClassName('close-btn')[0];
+
+botonCerrar.onclick = function () {
+    window.location.href = 'login.html';
+}
+
 function loadContent(type) {
     fetch(`data/${type}.json`)
         .then(response => response.json())

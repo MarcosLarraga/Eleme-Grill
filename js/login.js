@@ -12,7 +12,7 @@ document.getElementById('formAcceso').onsubmit = function (evento) {
     const contrasenaCorrectaAdmin = 'eleme';
 
     if (correo === correoCorrectoAdmin && contrasena === contrasenaCorrectaAdmin) {
-        window.location.href = 'ZonaPrivada.html';
+        window.location.href = 'zonaprivada.html';
     } else {
     //    alert('Acceso denegado.');
     }
