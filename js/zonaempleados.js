@@ -21,7 +21,7 @@ const fetchEmployees = async ()=> {
 }
 
 const printEmployees = (employees) => {
-    const table = document.getElementById('tabla-empleados');
+    const table = document.getElementById('tablaEmpleados');
     const tbody = table.querySelector('tbody');
     table.style.display= 'table';
 
@@ -34,9 +34,10 @@ const printEmployees = (employees) => {
             EM_TELEFONO,
             EM_EMAIL,
             EM_ZONA_PRIVADA_ID,
-        } =employee;
+        } = employee;
 
         const row = document.createElement('tr');
+
         row.innerHTML = `
         <td>${EM_EMPLEADO_ID}</td>
         <td>${EM_NOMBRE}</td>
