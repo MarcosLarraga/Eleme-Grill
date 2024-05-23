@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Zone</title>
+    <link rel="stylesheet" href="../css/zonacomun.css">
+</head>
+<body>
+    <div class="container">
+        <span class="close-btn">&times;</span>
+        <h1>Private Zone</h1>
+        <div class="button-container">
+            <button onclick="loadContent('products')">Products</button>
+            <button onclick="loadContent('clients')">Clients</button>
+            <button onclick="loadContent('employees')">Employees</button>
+            <button onclick="loadContent('orders')">Orders</button>
+        </div>
+        <div id="content">
+            <!-- Aquí se cargarán los datos -->
+        </div>
+    </div>
+    <script src="../js/zonaprivada.js"></script>
+</body>
+</html>
