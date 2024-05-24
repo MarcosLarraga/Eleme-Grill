@@ -5,7 +5,7 @@ botonCerrar.onclick = function () {
     window.location.href = 'zonaprivada.html';
 }
 
-const urlEmployees = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.FIND_ALL';
+const urlEmployees = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=PEDIDOS.FIND_ALL';
 
 const fetchEmployees = async () => {
     try {
@@ -25,25 +25,21 @@ const printEmployees = (employees) => {
 
     employees.forEach(employee => {
         const {
-            CL_CLIENTE_ID,
-            CL_NOMBRE,
-            CL_APELLIDO,
-            CL_DIRECCION,
-            CL_TELEFONO,
-            CL_EMAIL,
-            CL_CONTRASENA,
+            PE_PEDIDO_ID,
+            PE_CLIENTE_ID,
+            PE_PAGO_ID,
+            PE_EMPLEADO_ID,
+            PE_FECHAPEDIDO,
         } = employee;
 
         const row = document.createElement('tr');
 
         row.innerHTML = `
-        <td>${CL_CLIENTE_ID}</td>
-        <td>${CL_NOMBRE}</td>
-        <td>${CL_APELLIDO}</td>
-        <td>${CL_DIRECCION}</td>
-        <td>${CL_TELEFONO}</td>
-        <td>${CL_EMAIL}</td>
-        <td>${CL_CONTRASENA}</td>
+        <td>${PE_PEDIDO_ID}</td>
+        <td>${PE_CLIENTE_ID}</td>
+        <td>${PE_PAGO_ID}</td>
+        <td>${PE_EMPLEADO_ID}</td>
+        <td>${PE_FECHAPEDIDO}</td>
         `;
         tbody.appendChild(row);
     });

@@ -25,25 +25,19 @@ const printEmployees = (employees) => {
 
     employees.forEach(employee => {
         const {
-            CL_CLIENTE_ID,
-            CL_NOMBRE,
-            CL_APELLIDO,
-            CL_DIRECCION,
-            CL_TELEFONO,
-            CL_EMAIL,
-            CL_CONTRASENA,
+            PR_PRODUCTO_ID,
+            PR_NOMBRE,
+            PR_PRECIO,
+            PR_CATEGORIA_ID,
         } = employee;
 
         const row = document.createElement('tr');
 
         row.innerHTML = `
-        <td>${CL_CLIENTE_ID}</td>
-        <td>${CL_NOMBRE}</td>
-        <td>${CL_APELLIDO}</td>
-        <td>${CL_DIRECCION}</td>
-        <td>${CL_TELEFONO}</td>
-        <td>${CL_EMAIL}</td>
-        <td>${CL_CONTRASENA}</td>
+        <td>${PR_PRODUCTO_ID}</td>
+        <td>${PR_NOMBRE}</td>
+        <td>${PR_PRECIO}</td>
+        <td>${PR_CATEGORIA_ID}</td>
         `;
         tbody.appendChild(row);
     });
