@@ -77,7 +77,7 @@ const addClient = async (client) => {
 };
 
 const deleteClient = async (clientId) => {
-    const urlDeleteClient = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.DELETE&ID=${clientId}`;
+    const urlDeleteClient = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.DELETE&CL_CLIENTE_ID=${clientId}`;
     
     try {
         const response = await fetch(urlDeleteClient, {
