@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('payment-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Purchase Successful. Thank you for your purchase!');
+        alert('Payment Successful. Thank you for your purchase!');
         localStorage.removeItem('cartData');
         localStorage.removeItem('totalAmount');
         window.location.href = 'home.html';
