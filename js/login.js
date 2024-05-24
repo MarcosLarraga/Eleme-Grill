@@ -26,7 +26,7 @@ document.getElementById('formAcceso').onsubmit = function (evento) {
         CL_TELÉFONO : "33-33",
         CL_EMAIL : "la33vallegar@alonsojodete.ya"    
     }
-    const url = "http://localhost:8080/ELEME-GRILL/Controller?ACTION=EMPLEADO.FIND_ALL";
+    const url = "http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD";
     fetch(url, {
         method: "POST", // or 'PUT'
         body: JSON.stringify(Cliente), // data can be `string` or {object}!        

@@ -1,4 +1,3 @@
-/*cerrar ventana*/
 const botonCerrar = document.getElementsByClassName('close-btn')[0];
 
 botonCerrar.onclick = function () {
@@ -31,19 +30,20 @@ const printEmployees = (employees) => {
             CL_DIRECCION,
             CL_TELEFONO,
             CL_EMAIL,
-            CL_CONTRASENA,
+            CL_ZONA_PRIVADA_ID,
         } = employee;
 
         const row = document.createElement('tr');
 
         row.innerHTML = `
-        <td>${CL_CLIENTE_ID}</td>
-        <td>${CL_NOMBRE}</td>
-        <td>${CL_APELLIDO}</td>
-        <td>${CL_DIRECCION}</td>
-        <td>${CL_TELEFONO}</td>
-        <td>${CL_EMAIL}</td>
-        <td>${CL_CONTRASENA}</td>
+            <td><input type="checkbox" class="select-client" data-id="${CL_CLIENTE_ID}"></td>
+            <td>${CL_CLIENTE_ID}</td>
+            <td>${CL_NOMBRE}</td>
+            <td>${CL_APELLIDO}</td>
+            <td>${CL_DIRECCION}</td>
+            <td>${CL_TELEFONO}</td>
+            <td>${CL_EMAIL}</td>
+            <td>${CL_ZONA_PRIVADA_ID}</td>
         `;
         tbody.appendChild(row);
     });
@@ -55,13 +55,25 @@ const addClient = async (client) => {
     const urlAddClient = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD';
     
     try {
+        let Cliente = {
+            CL_CLIENTE_ID : "1",
+            CL_NOMBRE : "Pepa",
+            CL_APELLIDO : "Lópeza",
+            CL_DIRECCIÓN : "Calle Barranca 69",
+            CL_FE_NACIMIENTO : "01/01/1975",
+            CL_TELÉFONO : "33-33",
+            CL_EMAIL : "la33vallegar@alonsojodete.ya"    
+        }
+        
         const response = await fetch(urlAddClient, {
             method: 'POST',
+            cors: 'no-cors',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(client)
+            body: JSON.stringify(Cliente)
         });
+        console.log(response)
         
         if (!response.ok) {
             throw new Error('Error al añadir cliente');
@@ -76,24 +88,33 @@ const addClient = async (client) => {
     }
 };
 
-const deleteClient = async (clientId) => {
-    const urlDeleteClient = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.DELETE&CL_CLIENTE_ID=${clientId}`;
+const deleteClient = async (clientIds) => {
+    Array.from(clientIds).forEach(clientId => {
+        const urlDeleteClient = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.DELETE&CL_CLIENTE_ID=${clientId}`;
+
+        try {
+            const response = fetch(urlDeleteClient, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'CL_CLIENTE_ID': JSON.stringify(clientId) // Enviar un array de IDs en formato JSON
+                })
+            });
     
-    try {
-        const response = await fetch(urlDeleteClient, {
-            method: 'DELETE',
-        });
-        
-        if (!response.ok) {
-            throw new Error('Error al eliminar cliente');
+            if (!response.ok) {
+                throw new Error('Error al eliminar cliente');
+            }
+    
+            console.log(`Clientes con IDs ${clientId.join(', ')} eliminados`);
+            
+            fetchEmployees();
+        } catch (error) {
+            console.log('Error al eliminar cliente:', error);
         }
-        
-        console.log(`Cliente con ID ${clientId} eliminado`);
-        
-        fetchEmployees();
-    } catch (error) {
-        console.log('Error al eliminar cliente:', error);
-    }
+    })
+
 };
 
 // Mostrar el formulario de añadir cliente
@@ -121,8 +142,12 @@ document.getElementById('client-form').addEventListener('submit', (event) => {
 
 // Manejar eliminación de cliente
 document.getElementById('delete-button').addEventListener('click', () => {
-    const clientIdToDelete = prompt('Ingrese el ID del cliente a eliminar:');
-    if (clientIdToDelete) {
-        deleteClient(clientIdToDelete);
+    const selectedClients = document.querySelectorAll('.select-client:checked');
+    const clientIdsToDelete = Array.from(selectedClients).map(input => input.dataset.id);
+    
+    if (clientIdsToDelete.length > 0) {
+        deleteClient(clientIdsToDelete);
+    } else {
+        alert('Seleccione al menos un cliente para eliminar.');
     }
 });
