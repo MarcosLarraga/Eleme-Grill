@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 132vh;
     background-color: #f2f2f2;
     margin: 0;
     position: relative;
@@ -45,7 +45,7 @@ body::after {
     text-align: center;
     position: relative;
     z-index: 1;
-    margin-bottom: 500px;
+    margin-bottom: 300px;
 }
 
 .close-btn {
@@ -118,4 +118,65 @@ h1 {
 
 .close-btn:hover {
     text-decoration: none;
+}
+
+
+#content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tabla-empleados {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#tabla-empleados th, #tabla-empleados td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tabla-empleados th {
+    background-color: #f2f2f2;
+}
+
+#add-form {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#client-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    max-width: 90%;
+}
+
+#client-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#client-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#client-form button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
 }
