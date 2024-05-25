@@ -52,6 +52,71 @@ const printEmployees = (employees) => {
 }
 fetchEmployees();
 
+const addEmployee = async (employee) => {
+    const urlAddClient = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD';
+    
+    try {
+        let Employee = {
+            EM_CLIENTE_ID : "1",
+            EM_NOMBRE : "Pepa",
+            EM_APELLIDO : "Lópeza",
+            EM_DIRECCIÓN : "Calle Barranca 69",
+            EM_FE_NACIMIENTO : "01/01/1975",
+            EM_TELÉFONO : "33-33",
+            EM_EMAIL : "la33vallegar@alonsojodete.ya"    
+        }
+        
+        const response = await fetch(urlAddEmployee, {
+            method: 'POST',
+            cors: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(Employee)
+        });
+        console.log(response)
+        
+        if (!response.ok) {
+            throw new Error('Error al añadir cliente');
+        }
+        
+        const data = await response.json();
+        console.log('Empleado añadido:', data);
+        
+        fetchEmployees();
+    } catch (error) {
+        console.log('Error al añadir empleado:', error);
+    }
+};
+
+const deleteEmployee = async (employeeIds) => {
+    Array.from(employeeIds).forEach(employeeId => {
+        const urlDeleteEmployee = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.DELETE&CL_CLIENTE_ID=${clientId}`;
+
+        try {
+            const response = fetch(urlDeleteEmployee, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'EM_EMPLEADO_ID': JSON.stringify(employeeId)
+                })
+            });
+    
+            if (!response.ok) {
+                throw new Error('Error al eliminar empleado');
+            }
+    
+            console.log(`Empleados con IDs ${employeeId.join(', ')} eliminados`);
+            
+            fetchEmployees();
+        } catch (error) {
+            console.log('Error al eliminar empleado:', error);
+        }
+    })
+
+};
 
 // Mostrar el formulario de añadir cliente
 document.getElementById('add-button').addEventListener('click', () => {
