@@ -4,25 +4,25 @@ botonCerrar.onclick = function () {
     window.location.href = 'zonaprivada.html';
 }
 
-const urlClientes = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.FIND_ALL';
+const urlEmployees = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.FIND_ALL';
 
-const fetchClientes = async () => {
+const fetchEmployees = async () => {
     try {
-        const result = await fetch(urlClientes);
+        const result = await fetch(urlEmployees);
         const data = await result.json();
-        console.log('Estos son los clientes que hay en la API:', data);
-        printClientes(data);
+        console.log('Estos son los empleados que hay en la API:', data);
+        printEmployees(data);
     } catch (error) {
         console.log('Error al extraer datos con la API', error);
     }
 };
 
-const printClientes = (clientes) => {
-    const table = document.getElementById('tabla-clientes');
+const printEmployees = (employees) => {
+    const table = document.getElementById('tabla-empleados');
     const tbody = table.querySelector('tbody');
     tbody.innerHTML = '';
 
-    clientes.forEach(cliente => {
+    employees.forEach(employee => {
         const {
             CL_CLIENTE_ID,
             CL_NOMBRE,
@@ -30,7 +30,8 @@ const printClientes = (clientes) => {
             CL_DIRECCION,
             CL_TELEFONO,
             CL_EMAIL,
-        } = cliente;
+            CL_ZONA_PRIVADA_ID,
+        } = employee;
 
         const row = document.createElement('tr');
 
@@ -42,26 +43,27 @@ const printClientes = (clientes) => {
             <td>${CL_DIRECCION}</td>
             <td>${CL_TELEFONO}</td>
             <td>${CL_EMAIL}</td>
-
+            <td>${CL_ZONA_PRIVADA_ID}</td>
         `;
         tbody.appendChild(row);
     });
 };
 
-fetchClientes();
+fetchEmployees();
 
 const addClient = async (client) => {
     const urlAddClient = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD';
     
     try {
         let Cliente = {
-            CL_CLIENTE_ID: "1",
-            CL_NOMBRE: "Pepa",
-            CL_APELLIDO: "Lópeza",
-            CL_DIRECCION: "Calle Barranca 69",
-            CL_TELEFONO: "33-33",
-            CL_EMAIL: "la33vallegar@alonsojodete.ya"    
-        };
+            CL_CLIENTE_ID : "1",
+            CL_NOMBRE : "Pepa",
+            CL_APELLIDO : "Lópeza",
+            CL_DIRECCIÓN : "Calle Barranca 69",
+            CL_FE_NACIMIENTO : "01/01/1975",
+            CL_TELÉFONO : "33-33",
+            CL_EMAIL : "la33vallegar@alonsojodete.ya"    
+        }
         
         const response = await fetch(urlAddClient, {
             method: 'POST',
@@ -71,7 +73,7 @@ const addClient = async (client) => {
             },
             body: JSON.stringify(Cliente)
         });
-        console.log(response);
+        console.log(response)
         
         if (!response.ok) {
             throw new Error('Error al añadir cliente');
@@ -80,7 +82,7 @@ const addClient = async (client) => {
         const data = await response.json();
         console.log('Cliente añadido:', data);
         
-        fetchClientes();
+        fetchEmployees();
     } catch (error) {
         console.log('Error al añadir cliente:', error);
     }
@@ -93,12 +95,11 @@ const deleteClient = async (clientIds) => {
         try {
             const response = fetch(urlDeleteClient, {
                 method: 'DELETE',
-                cors: 'no-cors',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 body: new URLSearchParams({
-                    'CL_CLIENTE_ID': JSON.stringify(clientId)
+                    'CL_CLIENTE_ID': JSON.stringify(clientId) // Enviar un array de IDs en formato JSON
                 })
             });
     
@@ -108,11 +109,12 @@ const deleteClient = async (clientIds) => {
     
             console.log(`Clientes con IDs ${clientId.join(', ')} eliminados`);
             
-            fetchClientes();
+            fetchEmployees();
         } catch (error) {
             console.log('Error al eliminar cliente:', error);
         }
-    });
+    })
+
 };
 
 // Mostrar el formulario de añadir cliente
