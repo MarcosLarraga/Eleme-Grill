@@ -51,3 +51,39 @@ const printEmployees = (employees) => {
     })
 }
 fetchEmployees();
+
+
+// Mostrar el formulario de añadir cliente
+document.getElementById('add-button').addEventListener('click', () => {
+    document.getElementById('add-form').style.display = 'block';
+});
+
+// Manejar el envío del formulario
+document.getElementById('employee-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    
+    const newClient = {
+        EM_NOMBRE: document.getElementById('nombre').value,
+        EM_APELLIDO: document.getElementById('apellido').value,
+        EM_DIRECCION: document.getElementById('direccion').value,
+        EM_TELEFONO: document.getElementById('telefono').value,
+        EM_EMAIL: document.getElementById('email').value,
+        EM_CONTRASENA: document.getElementById('contrasena').value
+    };
+    
+    addClient(newEmployee);
+    document.getElementById('add-form').style.display = 'none';
+    document.getElementById('employee-form').reset();
+});
+
+// Manejar eliminación de cliente
+document.getElementById('delete-button').addEventListener('click', () => {
+    const selectedEmployees = document.querySelectorAll('.select-employee:checked');
+    const employeeIdsToDelete = Array.from(selectedEmployees).map(input => input.dataset.id);
+    
+    if (employeeIdsToDelete.length > 0) {
+        deleteEmployee(employeeIdsToDelete);
+    } else {
+        alert('Seleccione al menos un empleado para eliminar.');
+    }
+});
