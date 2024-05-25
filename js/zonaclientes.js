@@ -43,7 +43,6 @@ const printEmployees = (employees) => {
             <td>${CL_DIRECCION}</td>
             <td>${CL_TELEFONO}</td>
             <td>${CL_EMAIL}</td>
-            <td>${CL_ZONA_PRIVADA_ID}</td>
         `;
         tbody.appendChild(row);
     });
