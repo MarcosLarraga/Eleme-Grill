@@ -97,33 +97,6 @@ h1 {
     overflow-y: auto;
 }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    color: #000000;
-    font-size: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.close-btn:hover {
-    text-decoration: none;
-}
-
-#content {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #tabla-empleados {
     width: 100%;
     border-collapse: collapse;
@@ -155,24 +128,26 @@ h1 {
 
 #client-form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
     width: 100%;
     max-width: 600px;
+    align-items: center;
 }
 
 #client-form .form-group {
-    display: flex;
-    flex-direction: column;
+    display: contents;
 }
 
 #client-form label {
-    margin-bottom: 5px;
+    text-align: right;
+    padding-right: 10px;
 }
 
 #client-form input {
     padding: 10px;
     font-size: 14px;
+    width: 75%;
 }
 
 #client-form button {
@@ -184,7 +159,8 @@ h1 {
     background-color: #F6D347;
     border: none;
     border-radius: 4px;
-    margin-left: 310px;
+    width: 65%;
+    margin-left: 117px;
 }
 
 #client-form button:hover {
