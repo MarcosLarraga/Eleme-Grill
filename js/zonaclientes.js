@@ -6,23 +6,23 @@ botonCerrar.onclick = function () {
 
 const urlEmployees = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.FIND_ALL';
 
-const fetchEmployees = async () => {
+const fetchClientes = async () => {
     try {
-        const result = await fetch(urlEmployees);
+        const result = await fetch(urlClientes);
         const data = await result.json();
         console.log('Estos son los empleados que hay en la API:', data);
-        printEmployees(data);
+        printClientes(data);
     } catch (error) {
         console.log('Error al extraer datos con la API', error);
     }
 };
 
-const printEmployees = (employees) => {
+const printClientes = (clientes) => {
     const table = document.getElementById('tabla-empleados');
     const tbody = table.querySelector('tbody');
     tbody.innerHTML = '';
 
-    employees.forEach(employee => {
+    clientes.forEach(clientes => {
         const {
             CL_CLIENTE_ID,
             CL_NOMBRE,
@@ -30,7 +30,7 @@ const printEmployees = (employees) => {
             CL_DIRECCION,
             CL_TELEFONO,
             CL_EMAIL,
-        } = employee;
+        } = clientes;
 
         const row = document.createElement('tr');
 
@@ -47,7 +47,7 @@ const printEmployees = (employees) => {
     });
 };
 
-fetchEmployees();
+fetchClientes();
 
 const addClient = async (client) => {
     const urlAddClient = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD';
@@ -80,7 +80,7 @@ const addClient = async (client) => {
         const data = await response.json();
         console.log('Cliente añadido:', data);
         
-        fetchEmployees();
+        fetchClientes();
     } catch (error) {
         console.log('Error al añadir cliente:', error);
     }
@@ -107,7 +107,7 @@ const deleteClient = async (clientIds) => {
     
             console.log(`Clientes con IDs ${clientId.join(', ')} eliminados`);
             
-            fetchEmployees();
+            fetchClientes();
         } catch (error) {
             console.log('Error al eliminar cliente:', error);
         }

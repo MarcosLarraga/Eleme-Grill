@@ -5,31 +5,31 @@ botonCerrar.onclick = function () {
     window.location.href = 'zonaprivada.html';
 }
 
-const urlEmployees = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTOS.FIND_ALL';
+const urlProductos = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTOS.FIND_ALL';
 
-const fetchEmployees = async () => {
+const fetchProductos = async () => {
     try {
-        const result = await fetch(urlEmployees);
+        const result = await fetch(urlProductos);
         const data = await result.json();
         console.log('Estos son los empleados que hay en la API:', data);
-        printEmployees(data);
+        printProductos(data);
     } catch (error) {
         console.log('Error al extraer datos con la API', error);
     }
 };
 
-const printEmployees = (employees) => {
+const printProductos = (productos) => {
     const table = document.getElementById('tabla-empleados');
     const tbody = table.querySelector('tbody');
     tbody.innerHTML = '';
 
-    employees.forEach(employee => {
+    productos.forEach(productos => {
         const {
             PR_PRODUCTO_ID,
             PR_NOMBRE,
             PR_PRECIO,
             PR_CATEGORIA_ID,
-        } = employee;
+        } = productos;
 
         const row = document.createElement('tr');
 
