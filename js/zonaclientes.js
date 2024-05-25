@@ -30,7 +30,6 @@ const printEmployees = (employees) => {
             CL_DIRECCION,
             CL_TELEFONO,
             CL_EMAIL,
-            CL_ZONA_PRIVADA_ID,
         } = employee;
 
         const row = document.createElement('tr');
