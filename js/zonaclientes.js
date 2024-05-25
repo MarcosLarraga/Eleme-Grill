@@ -97,7 +97,7 @@ const deleteClient = async (clientIds) => {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 body: new URLSearchParams({
-                    'CL_CLIENTE_ID': JSON.stringify(clientId) // Enviar un array de IDs en formato JSON
+                    'CL_CLIENTE_ID': JSON.stringify(clientId)
                 })
             });
     
