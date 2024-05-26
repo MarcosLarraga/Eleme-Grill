@@ -1,28 +1,40 @@
+let lastClientId = 0; // Definir lastClientId al inicio
+
+/* Función para cerrar ventana */
 const botonCerrar = document.getElementsByClassName('close-btn')[0];
 
 botonCerrar.onclick = function () {
     window.location.href = 'zonaprivada.html';
 }
 
-const urlEmployees = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.FIND_ALL';
-
+/* Función para encontrar todos los clientes */
 const fetchClientes = async () => {
+    const urlClientes = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.FIND_ALL';
+    
     try {
         const result = await fetch(urlClientes);
         const data = await result.json();
-        console.log('Estos son los empleados que hay en la API:', data);
-        printClientes(data);
+        console.log('Estos son los clientes que hay en la API:', data);
+        printClientes(data); // Imprimir los clientes en la tabla HTML
+        
+        // Obtener el último ID de cliente
+        if (data.length > 0) {
+            lastClientId = Math.max(...data.map(cliente => parseInt(cliente.CL_CLIENTE_ID, 10)));
+        } else {
+            lastClientId = 0;
+        }
     } catch (error) {
         console.log('Error al extraer datos con la API', error);
     }
 };
 
+/* Función para imprimir los clientes en una tabla */
 const printClientes = (clientes) => {
     const table = document.getElementById('tabla-empleados');
     const tbody = table.querySelector('tbody');
     tbody.innerHTML = '';
 
-    clientes.forEach(clientes => {
+    clientes.forEach(cliente => {
         const {
             CL_CLIENTE_ID,
             CL_NOMBRE,
@@ -30,7 +42,8 @@ const printClientes = (clientes) => {
             CL_DIRECCION,
             CL_TELEFONO,
             CL_EMAIL,
-        } = clientes;
+            CL_CONTRASENA
+        } = cliente;
 
         const row = document.createElement('tr');
 
@@ -42,62 +55,72 @@ const printClientes = (clientes) => {
             <td>${CL_DIRECCION}</td>
             <td>${CL_TELEFONO}</td>
             <td>${CL_EMAIL}</td>
+            <td>${CL_CONTRASENA}</td>
         `;
         tbody.appendChild(row);
     });
 };
 
-fetchClientes();
-
-const addClient = async (client) => {
-    const urlAddClient = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD';
+/* Función para agregar un cliente */
+const addClient = async () => {
+    const newNombre = document.getElementById('nombre').value.trim();
+    const newApellido = document.getElementById('apellido').value.trim();
+    const newDireccion = document.getElementById('direccion').value.trim();
+    const newTelefono = document.getElementById('telefono').value.trim();
+    const newEmail = document.getElementById('email').value.trim();
+    const newContrasena = document.getElementById('contrasena').value.trim();
     
-    try {
-        let Cliente = {
-            CL_CLIENTE_ID : "1",
-            CL_NOMBRE : "Pepa",
-            CL_APELLIDO : "Lópeza",
-            CL_DIRECCIÓN : "Calle Barranca 69",
-            CL_FE_NACIMIENTO : "01/01/1975",
-            CL_TELÉFONO : "33-33",
-            CL_EMAIL : "la33vallegar@alonsojodete.ya"    
+    if (newNombre && newApellido && newDireccion && newTelefono && newEmail && newContrasena) {
+        const newId = lastClientId + 1; // Usar lastClientId correctamente definido
+        const url = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD`;
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    CL_CLIENTE_ID: newId,
+                    CL_NOMBRE: newNombre,
+                    CL_APELLIDO: newApellido,
+                    CL_DIRECCION: newDireccion,
+                    CL_TELEFONO: newTelefono,
+                    CL_EMAIL: newEmail,
+                    CL_CONTRASENA: newContrasena
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Cliente añadido:', data);
+                lastClientId = newId; // Actualizar el último ID
+                fetchClientes(); // Actualizar la lista de clientes después de agregar uno nuevo
+            } else {
+                console.error('Error al añadir el cliente.');
+            }
+        } catch (error) {
+            console.error('Error de red:', error);
         }
-        
-        const response = await fetch(urlAddClient, {
-            method: 'POST',
-            cors: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(Cliente)
-        });
-        console.log(response)
-        
-        if (!response.ok) {
-            throw new Error('Error al añadir cliente');
-        }
-        
-        const data = await response.json();
-        console.log('Cliente añadido:', data);
-        
-        fetchClientes();
-    } catch (error) {
-        console.log('Error al añadir cliente:', error);
+    } else {
+        alert('Todos los campos son obligatorios.');
     }
+    fetchClientes();
 };
 
+/* Función para eliminar un cliente */
 const deleteClient = async (clientIds) => {
-    Array.from(clientIds).forEach(clientId => {
+    for (const clientId of clientIds) {
         const urlDeleteClient = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.DELETE&CL_CLIENTE_ID=${clientId}`;
 
         try {
-            const response = fetch(urlDeleteClient, {
+            const response = await fetch(urlDeleteClient, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 body: new URLSearchParams({
-                    'CL_CLIENTE_ID': JSON.stringify(clientId)
+                    'CL_CLIENTE_ID': clientId
                 })
             });
     
@@ -105,40 +128,30 @@ const deleteClient = async (clientIds) => {
                 throw new Error('Error al eliminar cliente');
             }
     
-            console.log(`Clientes con IDs ${clientId.join(', ')} eliminados`);
+            console.log(`Cliente con ID ${clientId} eliminado`);
             
-            fetchClientes();
+            fetchClientes(); // Actualizar la lista de clientes después de eliminar uno
         } catch (error) {
             console.log('Error al eliminar cliente:', error);
         }
-    })
-
+    }
 };
 
-// Mostrar el formulario de añadir cliente
+/* Event listener para mostrar el formulario de agregar cliente */
 document.getElementById('add-button').addEventListener('click', () => {
     document.getElementById('add-form').style.display = 'block';
 });
 
-// Manejar el envío del formulario
+/* Event listener para manejar el envío del formulario de cliente */
 document.getElementById('client-form').addEventListener('submit', (event) => {
     event.preventDefault();
     
-    const newClient = {
-        CL_NOMBRE: document.getElementById('nombre').value,
-        CL_APELLIDO: document.getElementById('apellido').value,
-        CL_DIRECCION: document.getElementById('direccion').value,
-        CL_TELEFONO: document.getElementById('telefono').value,
-        CL_EMAIL: document.getElementById('email').value,
-        CL_CONTRASENA: document.getElementById('contrasena').value
-    };
-    
-    addClient(newClient);
+    addClient();
     document.getElementById('add-form').style.display = 'none';
     document.getElementById('client-form').reset();
 });
 
-// Manejar eliminación de cliente
+/* Event listener para manejar la eliminación de clientes */
 document.getElementById('delete-button').addEventListener('click', () => {
     const selectedClients = document.querySelectorAll('.select-client:checked');
     const clientIdsToDelete = Array.from(selectedClients).map(input => input.dataset.id);
@@ -149,3 +162,7 @@ document.getElementById('delete-button').addEventListener('click', () => {
         alert('Seleccione al menos un cliente para eliminar.');
     }
 });
+
+// Al cargar el DOM, obtener y mostrar los clientes
+document.addEventListener('DOMContentLoaded', fetchClientes);
+
