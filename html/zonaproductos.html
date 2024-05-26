@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Private Zone</title>
     <link rel="stylesheet" href="../css/zonacomun.css">
 </head>
-
 <body>
     <div class="container">
         <span class="close-btn">&times;</span>
@@ -22,7 +20,8 @@
                 <thead>
                     <tr>
                         <th>Select</th>
-                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Product</th>
                         <th>Price</th>
                         <th>Category</th>
                     </tr>
@@ -34,12 +33,12 @@
         </div>
         <div id="add-form" style="display: none;">
             <h2>Add Product</h2>
-            <form id="product-form">
-                <label for="nombre">Name:</label>
+            <form id="client-form">
+                <label for="nombre">Product:</label>
                 <input type="text" id="nombre" placeholder="Name" required>
                 <label for="precio">Price:</label>
                 <input type="text" id="precio" placeholder="Price" required>
-                <label for="direccion">Category:</label>
+                <label for="categoria">Category:</label>
                 <input type="text" id="categoria" placeholder="Category" required>
                 <button type="submit">Add</button>
             </form>
@@ -47,5 +46,4 @@
     </div>
     <script src="../js/zonaproductos.js"></script>    
 </body>
-
 </html>

@@ -1,4 +1,4 @@
-let lastProductId = 0; // Definir lastProductId al inicio
+let lastClientId = 0; // Definir lastClientId al inicio
 
 /* Función para cerrar ventana */
 const botonCerrar = document.getElementsByClassName('close-btn')[0];
@@ -8,20 +8,20 @@ botonCerrar.onclick = function () {
 }
 
 /* Función para encontrar todos los productos */
-const fetchProductos = async () => {
-    const urlProductos = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTO.FIND_ALL';
+const fetchClientes = async () => {
+    const urlClientes = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTO.FIND_ALL';
     
     try {
-        const result = await fetch(urlProductos);
+        const result = await fetch(urlClientes);
         const data = await result.json();
         console.log('Estos son los productos que hay en la API:', data);
-        printProductos(data); // Imprimir los productos en la tabla HTML
+        printClientes(data); // Imprimir los productos en la tabla HTML
         
         // Obtener el último ID de producto
         if (data.length > 0) {
-            lastProductId = Math.max(...data.map(producto => parseInt(producto.PR_PRODUCTO_ID, 10)));
+            lastClientId = Math.max(...data.map(producto => parseInt(producto.PR_PRODUCTO_ID, 10)));
         } else {
-            lastProductId = 0;
+            lastClientId = 0;
         }
     } catch (error) {
         console.log('Error al extraer datos con la API', error);
@@ -29,7 +29,7 @@ const fetchProductos = async () => {
 };
 
 /* Función para imprimir los productos en una tabla */
-const printProductos = (productos) => {
+const printClientes = (productos) => {
     const table = document.getElementById('tabla-empleados');
     const tbody = table.querySelector('tbody');
     tbody.innerHTML = '';
@@ -53,16 +53,16 @@ const printProductos = (productos) => {
         `;
         tbody.appendChild(row);
     });
-};
+}
 
 /* Función para agregar un producto */
-const addProduct = async () => {
+const addClient = async () => {
     const newNombre = document.getElementById('nombre').value.trim();
     const newPrecio = document.getElementById('precio').value.trim();
     const newCategoria = document.getElementById('categoria').value.trim();
     
     if (newNombre && newPrecio && newCategoria) {
-        const newId = lastProductId + 1; // Usar lastProductId correctamente definido
+        const newId = lastClientId + 1; // Usar lastClientId correctamente definido
         const url = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTO.ADD`;
 
         try {
@@ -82,8 +82,8 @@ const addProduct = async () => {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Producto añadido:', data);
-                lastProductId = newId; // Actualizar el último ID
-                fetchProductos(); // Actualizar la lista de productos después de agregar uno nuevo
+                lastClientId = newId; // Actualizar el último ID
+                fetchClientes(); // Actualizar la lista de productos después de agregar uno nuevo
             } else {
                 console.error('Error al añadir el producto.');
             }
@@ -93,32 +93,25 @@ const addProduct = async () => {
     } else {
         alert('Todos los campos son obligatorios.');
     }
-    fetchProductos();
+    fetchClientes();
 };
 
 /* Función para eliminar un producto */
-const deleteProduct = async (productIds) => {
+const deleteClient = async (productIds) => {
     for (const productId of productIds) {
-        const urlDeleteProduct = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTO.DELETE&CL_PRODUCTO_ID=${productId}`;
+        const urlDeleteClient = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTO.DELETE&PR_PRODUCTO_ID=${productId}`;
 
         try {
-            const response = await fetch(urlDeleteProduct, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams({
-                    'PR_PRODUCTO_ID': productId
-                })
+            const response = await fetch(urlDeleteClient, {
+                method: 'DELETE'
             });
     
-            if (!response.ok) {
+            if (response.ok) {
+                console.log(`Producto con ID ${productId} eliminado`);
+                fetchClientes(); // Actualizar la lista de productos después de eliminar uno
+            } else {
                 throw new Error('Error al eliminar producto');
             }
-    
-            console.log(`Producto con ID ${productId} eliminado`);
-            
-            fetchProductos(); // Actualizar la lista de productos después de eliminar uno
         } catch (error) {
             console.log('Error al eliminar producto:', error);
         }
@@ -131,12 +124,12 @@ document.getElementById('add-button').addEventListener('click', () => {
 });
 
 /* Event listener para manejar el envío del formulario de producto */
-document.getElementById('product-form').addEventListener('submit', (event) => {
+document.getElementById('client-form').addEventListener('submit', (event) => {
     event.preventDefault();
     
-    addProduct();
+    addClient();
     document.getElementById('add-form').style.display = 'none';
-    document.getElementById('product-form').reset();
+    document.getElementById('client-form').reset();
 });
 
 /* Event listener para manejar la eliminación de productos */
@@ -145,12 +138,11 @@ document.getElementById('delete-button').addEventListener('click', () => {
     const productIdsToDelete = Array.from(selectedProducts).map(input => input.dataset.id);
     
     if (productIdsToDelete.length > 0) {
-        deleteProduct(productIdsToDelete);
+        deleteClient(productIdsToDelete);
     } else {
         alert('Seleccione al menos un producto para eliminar.');
     }
 });
 
 // Al cargar el DOM, obtener y mostrar los productos
-document.addEventListener('DOMContentLoaded', fetchProductos);
-
+document.addEventListener('DOMContentLoaded', fetchClientes);
