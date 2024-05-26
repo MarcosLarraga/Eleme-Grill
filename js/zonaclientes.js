@@ -137,6 +137,7 @@ const deleteClient = async (clientIds) => {
     }
 };
 
+
 /* Event listener para mostrar el formulario de agregar cliente */
 document.getElementById('add-button').addEventListener('click', () => {
     document.getElementById('add-form').style.display = 'block';

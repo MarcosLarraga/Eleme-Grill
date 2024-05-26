@@ -1,31 +1,45 @@
-/*cerrar ventana*/
+
+
+
+
+
+let lastClientId = 0; // Definir lastClientId al inicio
+
+/* Función para cerrar ventana */
 const botonCerrar = document.getElementsByClassName('close-btn')[0];
 
 botonCerrar.onclick = function () {
     window.location.href = 'zonaprivada.html';
 }
 
-/*empleados*/ 
-const urlEmployees = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=EMPLEADO.FIND_ALL';
-
-const fetchEmployees = async ()=> {
-    try{
-        const result = await fetch(urlEmployees);
+/* Función para encontrar todos los clientes */
+const fetchClientes = async () => {
+    const urlClientes = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=EMPLEADO.FIND_ALL';
+    
+    try {
+        const result = await fetch(urlClientes);
         const data = await result.json();
-        console.log('Estos son los empleados que hay en la API:', data);
-        printEmployees(data);
-    }catch(error){
-        console.log('Error al extraer datos con la API', error);
+        console.log('Estos son los clientes que hay en la API:', data);
+        printClientes(data); // Imprimir los clientes en la tabla HTML
         
+        // Obtener el último ID de cliente
+        if (data.length > 0) {
+            lastClientId = Math.max(...data.map(cliente => parseInt(cliente.EM_EMPLEADO_ID, 10)));
+        } else {
+            lastClientId = 0;
+        }
+    } catch (error) {
+        console.log('Error al extraer datos con la API', error);
     }
-}
+};
 
-const printEmployees = (employees) => {
+/* Función para imprimir los clientes en una tabla */
+const printClientes = (clientes) => {
     const table = document.getElementById('tabla-empleados');
     const tbody = table.querySelector('tbody');
-    table.style.display= 'table';
+    tbody.innerHTML = '';
 
-    employees.forEach(employee => {
+    clientes.forEach(cliente => {
         const {
             EM_EMPLEADO_ID,
             EM_NOMBRE,
@@ -33,122 +47,120 @@ const printEmployees = (employees) => {
             EM_DIRECCION,
             EM_TELEFONO,
             EM_EMAIL,
-            EM_ZONA_PRIVADA_ID,
-        } = employee;
+        } = cliente;
 
         const row = document.createElement('tr');
 
         row.innerHTML = `
+        <td><input type="checkbox" class="select-employee" data-id="${EM_EMPLEADO_ID}"></td>
         <td>${EM_EMPLEADO_ID}</td>
         <td>${EM_NOMBRE}</td>
         <td>${EM_APELLIDO}</td>
         <td>${EM_DIRECCION}</td>
         <td>${EM_TELEFONO}</td>
         <td>${EM_EMAIL}</td>
-        <td>${EM_ZONA_PRIVADA_ID}</td>
         `;
         tbody.appendChild(row);
-    })
-}
-fetchEmployees();
-
-const addEmployee = async (employee) => {
-    const urlAddClient = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD';
-    
-    try {
-        let Employee = {
-            EM_CLIENTE_ID : "1",
-            EM_NOMBRE : "Pepa",
-            EM_APELLIDO : "Lópeza",
-            EM_DIRECCIÓN : "Calle Barranca 69",
-            EM_FE_NACIMIENTO : "01/01/1975",
-            EM_TELÉFONO : "33-33",
-            EM_EMAIL : "la33vallegar@alonsojodete.ya"    
-        }
-        
-        const response = await fetch(urlAddEmployee, {
-            method: 'POST',
-            cors: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(Employee)
-        });
-        console.log(response)
-        
-        if (!response.ok) {
-            throw new Error('Error al añadir cliente');
-        }
-        
-        const data = await response.json();
-        console.log('Empleado añadido:', data);
-        
-        fetchEmployees();
-    } catch (error) {
-        console.log('Error al añadir empleado:', error);
-    }
+    });
 };
 
-const deleteEmployee = async (employeeIds) => {
-    Array.from(employeeIds).forEach(employeeId => {
-        const urlDeleteEmployee = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.DELETE&CL_CLIENTE_ID=${clientId}`;
+/* Función para agregar un cliente */
+const addClient = async () => {
+    const newNombre = document.getElementById('nombre').value.trim();
+    const newApellido = document.getElementById('apellido').value.trim();
+    const newDireccion = document.getElementById('direccion').value.trim();
+    const newTelefono = document.getElementById('telefono').value.trim();
+    const newEmail = document.getElementById('email').value.trim();
+    
+    if (newNombre && newApellido && newDireccion && newTelefono && newEmail ) {
+        const newId = lastClientId + 1; // Usar lastClientId correctamente definido
+        const url = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=EMPLEADO.ADD`;
 
         try {
-            const response = fetch(urlDeleteEmployee, {
-                method: 'DELETE',
+            const response = await fetch(url, {
+                method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/json'
                 },
-                body: new URLSearchParams({
-                    'EM_EMPLEADO_ID': JSON.stringify(employeeId)
+                body: JSON.stringify({
+                    EM_EMPLEADO_ID: newId,
+                    EM_NOMBRE: newNombre,
+                    EM_APELLIDO: newApellido,
+                    EM_DIRECCION: newDireccion,
+                    EM_TELEFONO: newTelefono,
+                    EM_EMAIL: newEmail,
                 })
             });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Cliente añadido:', data);
+                lastClientId = newId; // Actualizar el último ID
+                fetchClientes(); // Actualizar la lista de clientes después de agregar uno nuevo
+            } else {
+                console.error('Error al añadir el cliente.');
+            }
+        } catch (error) {
+            console.error('Error de red:', error);
+        }
+    } else {
+        alert('Todos los campos son obligatorios.');
+    }
+    fetchClientes();
+};
+
+
+/* Función para eliminar un cliente */
+const deleteClient = async (clientIds) => {
+    for (const clientId of clientIds) {
+        const urlDeleteClient = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=EMPLEADO.DELETE&EM_EMPLEADO_ID=${clientId}`; // Corregido de CLIENTE.DELETE a EMPLEADO.DELETE
+
+        try {
+            const response = await fetch(urlDeleteClient, {
+                method: 'DELETE'
+            });
     
-            if (!response.ok) {
+            if (response.ok) {
+                console.log(`Empleado con ID ${clientId} eliminado`);
+                fetchClientes(); // Actualizar la lista de empleados después de eliminar uno
+            } else {
                 throw new Error('Error al eliminar empleado');
             }
-    
-            console.log(`Empleados con IDs ${employeeId.join(', ')} eliminados`);
-            
-            fetchEmployees();
         } catch (error) {
             console.log('Error al eliminar empleado:', error);
         }
-    })
-
+    }
 };
 
-// Mostrar el formulario de añadir cliente
+
+
+/* Event listener para mostrar el formulario de agregar cliente */
 document.getElementById('add-button').addEventListener('click', () => {
     document.getElementById('add-form').style.display = 'block';
 });
 
-// Manejar el envío del formulario
-document.getElementById('employee-form').addEventListener('submit', (event) => {
+/* Event listener para manejar el envío del formulario de cliente */
+document.getElementById('client-form').addEventListener('submit', (event) => {
     event.preventDefault();
     
-    const newClient = {
-        EM_NOMBRE: document.getElementById('nombre').value,
-        EM_APELLIDO: document.getElementById('apellido').value,
-        EM_DIRECCION: document.getElementById('direccion').value,
-        EM_TELEFONO: document.getElementById('telefono').value,
-        EM_EMAIL: document.getElementById('email').value,
-        EM_CONTRASENA: document.getElementById('contrasena').value
-    };
-    
-    addClient(newEmployee);
+    addClient();
     document.getElementById('add-form').style.display = 'none';
-    document.getElementById('employee-form').reset();
+    document.getElementById('client-form').reset();
 });
 
-// Manejar eliminación de cliente
+//* Event listener para manejar la eliminación de clientes */
 document.getElementById('delete-button').addEventListener('click', () => {
-    const selectedEmployees = document.querySelectorAll('.select-employee:checked');
+    const selectedEmployees = document.querySelectorAll('.select-employee:checked'); // Cambiado de '.select-client' a '.select-employee'
     const employeeIdsToDelete = Array.from(selectedEmployees).map(input => input.dataset.id);
     
     if (employeeIdsToDelete.length > 0) {
-        deleteEmployee(employeeIdsToDelete);
+        deleteClient(employeeIdsToDelete);
     } else {
         alert('Seleccione al menos un empleado para eliminar.');
     }
 });
+
+
+// Al cargar el DOM, obtener y mostrar los clientes
+document.addEventListener('DOMContentLoaded', fetchClientes);
+
