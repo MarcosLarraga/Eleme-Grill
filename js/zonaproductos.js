@@ -123,6 +123,7 @@ document.getElementById('add-button').addEventListener('click', () => {
     document.getElementById('add-form').style.display = 'block';
 });
 
+
 /* Event listener para manejar el envío del formulario de producto */
 document.getElementById('client-form').addEventListener('submit', (event) => {
     event.preventDefault();
