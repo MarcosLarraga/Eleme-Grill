@@ -1,70 +1,83 @@
-// Function to fetch burger data
-async function fetchBurgers() {
+/* Función para encontrar todos los productos */
+const fetchProductos = async () => {
+    const urlProductos = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTO.FIND_ALL';
+
     try {
-        const response = await fetch('http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTO.FIND_ALL');
-        const products = await response.json();
-        console.log('Fetched products:', products); // Log the fetched products
+        const result = await fetch(urlProductos);
+        const data = await result.json();
+        console.log('Estos son los productos que hay en la API:', data);
 
-        // Filter only burger products (where PR_CATEGORIA_ID === 1)
-        const burgers = products.filter(product => product.PR_CATEGORIA_ID === 1);
-        console.log('Filtered burgers:', burgers); // Log the filtered burgers
+        // Filtrar los productos cuyo PR_CATEGORIA_ID es igual a 1
+        const productosFiltrados = data.filter(producto => producto.PR_CATEGORIA_ID === 1);
 
-        displayBurgers(burgers);
+        printProductos(productosFiltrados); // Imprimir los productos filtrados en la categoría HTML
     } catch (error) {
-        console.error('Error fetching burgers:', error);
+        console.log('Error al extraer datos con la API', error);
     }
-}
+};
 
-// Function to display burger cards on the page
-function displayBurgers(burgers) {
+/* Función para imprimir los productos en la lista de productos */
+const printProductos = (productos) => {
     const productosContainer = document.getElementById('productos');
-    productosContainer.innerHTML = ''; // Clear any existing content
 
-    burgers.forEach(burger => {
-        const card = document.createElement('div');
-        card.classList.add('card');
+    // Limpiar el contenedor de productos antes de agregar los nuevos productos
+    productosContainer.innerHTML = '';
 
-        const cardContent = document.createElement('div');
-        cardContent.classList.add('card-content');
-        cardContent.textContent = burger.PR_NOMBRE;
+    // Iterar sobre cada producto y agregarlo a la tabla de productos
+    productos.forEach(producto => {
+        const { PR_NOMBRE, PR_PRECIO } = producto;
 
-        card.appendChild(cardContent);
-        productosContainer.appendChild(card);
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+        productElement.innerHTML = `
+            <h2>${PR_NOMBRE}</h2>
+            <p>Price: ${PR_PRECIO} €</p>
+            <button data-name="${PR_NOMBRE}" data-price="${PR_PRECIO}">Add to cart</button>
+        `;
+
+        productosContainer.appendChild(productElement);
     });
+};
+
+/* Ejecutar fetchProductos cuando la página haya cargado */
+document.addEventListener('DOMContentLoaded', fetchProductos);
+
+var menu = document.querySelector('.hamburger');
+
+function toggleMenu(event) {
+  this.classList.toggle('is-active');
+  var menuContainer = document.querySelector(".menuppal");
+  menuContainer.classList.toggle("is_active");
+
+  if (menuContainer.classList.contains("is_active")) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+
+  event.preventDefault();
 }
 
-// Fetch burgers when the page loads
-document.addEventListener('DOMContentLoaded', fetchBurgers);
+menu.addEventListener('click', toggleMenu, false);
 
-// Function to open modal
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'block';
+/*nav(responsive)*/
+var menu = document.querySelector('.hamburger');
+
+function toggleMenu(event) {
+    this.classList.toggle('is-active');
+    var menuContainer = document.querySelector(".menuppal");
+    menuContainer.classList.toggle("is_active");
+
+    if (menuContainer.classList.contains("is_active")) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
     }
+
+    event.preventDefault();
 }
 
-// Function to close modal
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'none';
-    }
-}
-
-// Event listener to close modal when clicking outside of it
-window.addEventListener('click', (event) => {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-});
-
-// Fetch burgers when the page loads
-document.addEventListener('DOMContentLoaded', fetchBurgers);
-
+menu.addEventListener('click', toggleMenu, false);
 
 /*modal*/
 function openModal(modalId) {
@@ -90,21 +103,3 @@ window.onclick = function (event) {
         closeModal(event.target.id);
     }
 };
-
-/*nav(responsive)*/
-var menu = document.querySelector('.hamburger');
-
-function toggleMenu(event) {
-    this.classList.toggle('is-active');
-    var menuContainer = document.querySelector(".menuppal");
-    menuContainer.classList.toggle("is_active");
-
-    if (menuContainer.classList.contains("is_active")) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
-
-    event.preventDefault();
-}
-menu.addEventListener('click', toggleMenu, false);
