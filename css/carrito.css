@@ -279,6 +279,7 @@ h2 {
         margin-right: 24px;
     }
 }
+
 @media (max-width: 430px) {
 
     .texto {
@@ -430,7 +431,7 @@ h2 {
     
     .menuppal ul li a:hover {
         background-color: white;
-        color: #333
+        color: #00000050
     }
     
     .btn.special:hover {

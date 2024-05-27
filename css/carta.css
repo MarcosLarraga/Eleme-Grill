@@ -106,7 +106,6 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin-top: 435px;
     background-color: #F6D347;
 }
 
@@ -144,7 +143,7 @@ body {
     font-weight: bold;
     font-family: "Arial Black", Arial, sans-serif;
     color: transparent;
-    -webkit-text-stroke: 3px #333;
+    -webkit-text-stroke: 3px #333333;
     -webkit-text-fill-color: transparent;
 }
 
@@ -156,7 +155,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: black;
     padding-bottom: 0;
 }
 
@@ -165,7 +163,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: black;
     margin: 10px;
 }
 
@@ -174,7 +171,7 @@ body {
     height: 330px;
     border-radius: 5px;
     overflow: hidden;
-    border: 5px solid #ffffff;
+    border: 2px solid #ffffff;
     margin: 10px;
 }
 
@@ -187,7 +184,8 @@ body {
     background: transparent;
     border: none;
     cursor: pointer;
-    background-color: #333;
+    background-color: #00000086;
+    color: #ffffff;
 }
 
 .boton-tarjeta img {
@@ -198,7 +196,6 @@ body {
 
 .footer,
 .footer {
-    background: black;
     color: #fff;
     padding: 20px;
     text-align: center;
