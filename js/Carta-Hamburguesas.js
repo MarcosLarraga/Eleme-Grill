@@ -41,3 +41,4 @@ window.onclick = function (event) {
         closeModal(event.target.id);
     }
 };
+
