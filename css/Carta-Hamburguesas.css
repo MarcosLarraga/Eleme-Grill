@@ -104,7 +104,7 @@ body {
     margin-bottom: 80px;
 }
 
-.card {
+.card-content {
     display: flex;
     align-items: center;
     justify-content: center;

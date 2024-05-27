@@ -33,157 +33,106 @@
         <li><a href="../html/trabaja-con-nostros.html">About Us</a></li>
         <li><a href="../html/carta.html">Menu</a></li>
         <li><a href="../html/login.html" class="btn special">Sign In</a></li>
-        <li><a href="../html/carrito.html" class="btn-carrito" id="carrito"><i class="fas fa-shopping-cart"></i></a></li>
+        <li><a href="../html/carrito.html" class="btn-carrito" id="carrito"><i class="fas fa-shopping-cart"></i></a>
+        </li>
       </ul>
     </nav>
   </nav>
 
-  <h1 class="titulo">MEAT</h1>
+  <h1 class="titulo">HAMBURGERS</h1>
+  <div class="product-list" id="productos">
+    <!-- Todos los productos se cargarán aquí -->
+  </div>
+  
+  <div class="grid-container" id="gridContainerMeat"></div>
 
-  <div class="grid-container" id="gridContainerMeat">
-    <div class="card" onclick="openModal('myModalMeat1')">
-      <img src="../fotos-videos/carne__1.png" alt="Imagen 1" class="card-img">
-      <p class="card-text">BIG BACON</p>
-    </div>
-    <div class="card" onclick="openModal('myModalMeat2')">
-      <img src="../fotos-videos/carne__2.png" alt="Imagen 2" class="card-img">
-      <p class="card-text">PEPPER BURGUER</p>
-    </div>
-    <div class="card" onclick="openModal('myModalMeat3')">
-      <img src="../fotos-videos/carne__3.png" alt="Imagen 3" class="card-img">
-      <p class="card-text">MUSHROOM FUNNY</p>
-    </div>
-    <div class="card" onclick="openModal('myModalMeat4')">
-      <img src="../fotos-videos/carne__4.png" alt="Imagen 4" class="card-img">
-      <p class="card-text">LAVA CHEESE</p>
-    </div>
-    <div class="card" onclick="openModal('myModalMeat5')">
-      <img src="../fotos-videos/carne__5.png" alt="Imagen 5" class="card-img">
-      <p class="card-text">CLASSIC</p>
-    </div>
-    <div class="card" onclick="openModal('myModalMeat6')">
-      <img src="../fotos-videos/carne__6.png" alt="Imagen 6" class="card-img">
-      <p class="card-text">SPICY</p>
-    </div>
-    <div class="card" onclick="openModal('myModalMeat7')">
-      <img src="../fotos-videos/carne__7.png" alt="Imagen 7" class="card-img">
-      <p class="card-text">DON'T MISS MEAT</p>
-    </div>
-    <div class="card" onclick="openModal('myModalMeat8')">
-      <img src="../fotos-videos/carne__8.png" alt="Imagen 8" class="card-img">
-      <p class="card-text">CRUNCHY BURGUER</p>
-    </div>
-    <div class="card" onclick="openModal('myModalMeat9')">
-      <img src="../fotos-videos/carne__9.png" alt="Imagen 9" class="card-img">
-      <p class="card-text">FULL FLAVOUR</p>
+  <!-- Modals -->
+  <div id="myModalMeat1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModalMeat1')">&times;</span>
+      <h1>Big Bacon</h1>
+      <p>BACK TO THE ORIGINS, DRY AGED MEET COOKED TO PERFECTION ON CHARCOAL, FLAVOURFULL CRUNCHY BACON, 100% ORIGINAL
+        CHEEDAR CHEESE IN BRIOCHE BREAD.</p><br>
+      <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
     </div>
   </div>
 
-  <h1 class="titulo">CHICKEN</h1>
-
-  <div class="grid-container" id="gridContainerChicken">
-    <div class="card" onclick="openModal('myModalChicken1')">
-      <img src="../fotos-videos/pollo__1.png" alt="Imagen 1" class="card-img">
-      <p class="card-text">BIG CHICKEN</p>
-    </div>
-    <div class="card" onclick="openModal('myModalChicken2')">
-      <img src="../fotos-videos/pollo__2.png" alt="Imagen 2" class="card-img">
-      <p class="card-text">BASIC CHICKEN</p>
-    </div>
-    <div class="card" onclick="openModal('myModalChicken3')">
-      <img src="../fotos-videos/pollo__3.png" alt="Imagen 3" class="card-img">
-      <p class="card-text">DON'T MISS CHICKEN</p>
-    </div>
-
-    <!-- Modal 1 -->
-    <div id="myModalMeat1" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalMeat1')">&times;</span>
-        <h1>Big Bacon</h1>
-        <p>BACK TO THE ORIGINS, DRY AGED MEET COOKED TO PERFECTION ON CHARCOAL, FLAVOURFULL CRUNCHY BACON, 100% ORIGINAL
-          CHEEDAR CHEESE IN BRIOCHE BREAD.</p><br>
-        <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
-      </div>
-    </div>
-
-    <div id="myModalMeat2" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalMeat2')">&times;</span>
-        <h1>Pepper Burguer</h1>
-        <p>GRILLED BEEF, PULLED PORK RIBS IN BARBECUE SAUCE, CHEDDAR CHEESE, CRISPY BACON AND CAJUN ONION ALL CONTAINED
-          IN BRIOCHE BREAD.</p><br>
-        <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
-      </div>
-    </div>
-
-    <div id="myModalMeat3" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalMeat3')">&times;</span>
-        <h1>Mushroom Funny</h1>
-        <p>ARUGULA, TOMATO, SWEET ONION, PROVOLONE CHEESE, BOLETUS AND TRUFFE SAUCE.</p><br>
-        <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
-      </div>
-    </div>
-
-    <div id="myModalMeat4" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalMeat4')">&times;</span>
-        <h1>Lava Cheese</h1>
-        <p>FONDUE OF RED CHEDDAR, GOUDA AND MOZZARELLA CHESSE, BATAVIA LETTUCE, TOMATO AND CARAMELIZED ONIONS.
-          FINISHED AT YOUR TABLE!</p><br>
-        <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
-      </div>
-    </div>
-
-    <div id="myModalMeat5" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalMeat5')">&times;</span>
-        <h1>Classic</h1>
-        <p>LETTUCE, TOMATO, SWEET ONION, GOUDA CHEESE AND OUR SPECIAL STB SAUCE.</p><br>
-        <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
-      </div>
-    </div>
-
-    <div id="myModalMeat6" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalMeat6')">&times;</span>
-        <h1>Spicy</h1>
-        <p>AVOCADO MAYONAISE, ARUGULA, GOUDA CHEESE, JALAPENO RELISH AND PLANTAINE CHIPS.</p><br>
-        <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
-      </div>
-    </div>
-
-    <div id="myModalMeat7" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalMeat7')">&times;</span>
-        <h1>Don't Miss Meat </h1>
-        <p>LETTUCE, TOMATO, BACON, ONION, GOUDA CHEESE AND FREERANGE EGGS.</p>
-        <br>
-        <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
-      </div>
-    </div>
-
-    <div id="myModalMeat8" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalMeat8')">&times;</span>
-        <h1>Crunchy Burguer</h1>
-        <p>GRILLED BEEF, PULLED PORK RIBS IN BARBECUE SAUCE, CHEDDAR CHEESE, CRISPY BACON AND CAJUN ONION ALL CONTAINED
-          IN BRIOCHE BREAD.</p><br>
-        <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
-      </div>
-    </div>
-
-    <div id="myModalMeat9" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalMeat9')">&times;</span>
-        <h1>Full Flavour</h1>
-        <p>ARUGULA, TOMATO, SWEET ONION, PROVOLONE CHEESE, OREGANO AND CHIMICHURRI SAUCE WITH MAYONNAISE.</p><br>
-        <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
-      </div>
+  <div id="myModalMeat2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModalMeat2')">&times;</span>
+      <h1>Pepper Burguer</h1>
+      <p>GRILLED BEEF, PULLED PORK RIBS IN BARBECUE SAUCE, CHEDDAR CHEESE, CRISPY BACON AND CAJUN ONION ALL CONTAINED
+        IN BRIOCHE BREAD.</p><br>
+      <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
     </div>
   </div>
 
-  <!-- Modal 2 -->
+  <div id="myModalMeat3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModalMeat3')">&times;</span>
+      <h1>Mushroom Funny</h1>
+      <p>ARUGULA, TOMATO, SWEET ONION, PROVOLONE CHEESE, BOLETUS AND TRUFFE SAUCE.</p><br>
+      <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
+    </div>
+  </div>
+
+  <div id="myModalMeat4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModalMeat4')">&times;</span>
+      <h1>Lava Cheese</h1>
+      <p>FONDUE OF RED CHEDDAR, GOUDA AND MOZZARELLA CHESSE, BATAVIA LETTUCE, TOMATO AND CARAMELIZED ONIONS.
+        FINISHED AT YOUR TABLE!</p><br>
+      <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
+    </div>
+  </div>
+
+  <div id="myModalMeat5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModalMeat5')">&times;</span>
+      <h1>Classic</h1>
+      <p>LETTUCE, TOMATO, SWEET ONION, GOUDA CHEESE AND OUR SPECIAL STB SAUCE.</p><br>
+      <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
+    </div>
+  </div>
+
+  <div id="myModalMeat6" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModalMeat6')">&times;</span>
+      <h1>Spicy</h1>
+      <p>AVOCADO MAYONAISE, ARUGULA, GOUDA CHEESE, JALAPENO RELISH AND PLANTAINE CHIPS.</p><br>
+      <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
+    </div>
+  </div>
+
+  <div id="myModalMeat7" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModalMeat7')">&times;</span>
+      <h1>Don't Miss Meat </h1>
+      <p>LETTUCE, TOMATO, BACON, ONION, GOUDA CHEESE AND FREERANGE EGGS.</p>
+      <br>
+      <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
+    </div>
+  </div>
+
+  <div id="myModalMeat8" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModalMeat8')">&times;</span>
+      <h1>Crunchy Burguer</h1>
+      <p>GRILLED BEEF, PULLED PORK RIBS IN BARBECUE SAUCE, CHEDDAR CHEESE, CRISPY BACON AND CAJUN ONION ALL CONTAINED
+        IN BRIOCHE BREAD.</p><br>
+      <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
+    </div>
+  </div>
+
+  <div id="myModalMeat9" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModalMeat9')">&times;</span>
+      <h1>Full Flavour</h1>
+      <p>ARUGULA, TOMATO, SWEET ONION, PROVOLONE CHEESE, OREGANO AND CHIMICHURRI SAUCE WITH MAYONNAISE.</p><br>
+      <p style="font-size: 16px;">BEEF | 160GR | 250GR | 320GR</p>
+    </div>
+  </div>
+
   <div id="myModalChicken1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('myModalChicken1')">&times;</span>
@@ -215,27 +164,26 @@
 
   <footer class="footer">
     <div class="footer-logo">
-        <a href="../html/home.html"><img src="../fotos-videos/logo-eleme-grill.png" alt="Logo footer"></a>
+      <a href="../html/home.html"><img src="../fotos-videos/logo-eleme-grill.png" alt="Logo footer"></a>
     </div>
     <div class="footer-centro">
-        <p>Follow us on our social media:</p>
-        <div class="icono-redes">
-            <a href="https://www.facebook.com/?locale=es_ES"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-        </div>
+      <p>Follow us on our social media:</p>
+      <div class="icono-redes">
+        <a href="https://www.facebook.com/?locale=es_ES"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
     <div class="footer-dcha">
-        <div class="footer-links">
-            <a href="../html/PoliticaCokies.html"><span>Cookies Policy</span></a> 
-            <a href="../html/PoliticaDePrivacidad.html"><span>Privacy Policy</span></a>
-            <a href="../html/AvisoLegal.html"><span>Legal Notice</span></a>
-        </div>            
-        <span class="copyright">© 2024 Eleme Grill</span>
+      <div class="footer-links">
+        <a href="../html/PoliticaCokies.html"><span>Cookies Policy</span></a>
+        <a href="../html/PoliticaDePrivacidad.html"><span>Privacy Policy</span></a>
+        <a href="../html/AvisoLegal.html"><span>Legal Notice</span></a>
+      </div>
+      <span class="copyright">© 2024 Eleme Grill</span>
     </div>
-</footer>
+  </footer>
 </body>
 <script src="../js/Carta-Hamburguesas.js"></script>
-</body>
 
 </html>
