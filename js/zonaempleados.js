@@ -1,8 +1,3 @@
-
-
-
-
-
 let lastClientId = 0; // Definir lastClientId al inicio
 
 /* Función para cerrar ventana */

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let quantity = parseInt(quantityElement.textContent);
             quantity++;
             quantityElement.textContent = quantity;
-            totalElement.textContent = (quantity * price).toFixed(2);
+            totalElement.textContent = (quantity * price).toFixed(2) + ' €';
         } else {
             cartItem = document.createElement('tr');
             cartItem.setAttribute('data-name', name);
@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCartTotal() {
         let total = 0;
         document.querySelectorAll('#cart-items .total').forEach(item => {
-            total += parseFloat(item.textContent);
+            total += parseFloat(item.textContent.replace(' €', ''));
         });
-        cartTotal.textContent = total.toFixed(2);
+        cartTotal.textContent = total.toFixed(2) + ' €';
     }
 
     document.body.addEventListener('click', (e) => {
@@ -62,48 +62,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-const urlEmployees = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=EMPLEADO.FIND_ALL';
+/* Función para encontrar todos los productos */
+const fetchProductos = async () => {
+    const urlProductos = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTO.FIND_ALL';
 
-const fetchEmployees = async ()=> {
-    try{
-        const result = await fetch(urlEmployees);
+    try {
+        const result = await fetch(urlProductos);
         const data = await result.json();
-        console.log('Estos son los empleados que hay en la API:', data);
-        printEmployees(data);
-    }catch(error){
+        console.log('Estos son los productos que hay en la API:', data);
+        printProductos(data); // Imprimir los productos en la categoría HTML
+    } catch (error) {
         console.log('Error al extraer datos con la API', error);
-        
     }
-}
+};
 
-const printEmployees = (employees) => {
-    const table = document.getElementById('tabla-empleados');
-    const tbody = table.querySelector('tbody');
-    table.style.display= 'table';
+/* Función para imprimir los productos en la lista de productos */
+const printProductos = (productos) => {
+    const productosContainer = document.getElementById('productos');
 
-    employees.forEach(employee => {
-        const {
-            EM_EMPLEADO_ID,
-            EM_NOMBRE,
-            EM_APELLIDO,
-            EM_DIRECCION,
-            EM_TELEFONO,
-            EM_EMAIL,
-            EM_ZONA_PRIVADA_ID,
-        } = employee;
+    productos.forEach(producto => {
+        const { PR_PRODUCTO_ID, PR_NOMBRE, PR_PRECIO } = producto;
 
-        const row = document.createElement('tr');
-
-        row.innerHTML = `
-        <td>${EM_EMPLEADO_ID}</td>
-        <td>${EM_NOMBRE}</td>
-        <td>${EM_APELLIDO}</td>
-        <td>${EM_DIRECCION}</td>
-        <td>${EM_TELEFONO}</td>
-        <td>${EM_EMAIL}</td>
-        <td>${EM_ZONA_PRIVADA_ID}</td>
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+        productElement.innerHTML = `
+            <h2>${PR_NOMBRE}</h2>
+            <p>Price: ${PR_PRECIO} €</p>
+            <button data-name="${PR_NOMBRE}" data-price="${PR_PRECIO}">Add to cart</button>
         `;
-        tbody.appendChild(row);
-    })
-}
-fetchEmployees();
+
+        productosContainer.appendChild(productElement);
+    });
+};
+
+/* Ejecutar fetchProductos cuando la página haya cargado */
+document.addEventListener('DOMContentLoaded', fetchProductos);
