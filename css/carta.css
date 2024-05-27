@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -156,6 +157,17 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 0;
+    font-family: 'Anton', sans-serif;
+}
+
+.tarjeta a h1 {
+    text-decoration: none;
+    font-size: 60px;
+}
+
+.tarjeta a:hover h1 {
+    text-decoration: underline; /* Cambiado a underline */
+    color: #F6D347;
 }
 
 .cuadrados {
@@ -269,10 +281,6 @@ body {
 
 .icono-redes a:hover {
     color: #F6D347;
-}
-
-.copyright {
-    margin-right: 43px;
 }
 
 .hamburger,
