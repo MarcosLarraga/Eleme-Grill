@@ -40,6 +40,7 @@ const printClientes = (productos) => {
             PR_NOMBRE,
             PR_PRECIO,
             PR_CATEGORIA_ID,
+            PR_FOTO,
         } = producto;
 
         const row = document.createElement('tr');
@@ -50,6 +51,7 @@ const printClientes = (productos) => {
             <td>${PR_NOMBRE}</td>
             <td>${PR_PRECIO}</td>
             <td>${PR_CATEGORIA_ID}</td>
+            <td>${PR_FOTO}</td>
         `;
         tbody.appendChild(row);
     });
@@ -60,6 +62,7 @@ const addClient = async () => {
     const newNombre = document.getElementById('nombre').value.trim();
     const newPrecio = document.getElementById('precio').value.trim();
     const newCategoria = document.getElementById('categoria').value.trim();
+    const newFoto = document.getElementById('foto').value.trim();
     
     if (newNombre && newPrecio && newCategoria) {
         const newId = lastClientId + 1; // Usar lastClientId correctamente definido
@@ -75,7 +78,8 @@ const addClient = async () => {
                     PR_PRODUCTO_ID: newId,
                     PR_NOMBRE: newNombre,
                     PR_PRECIO: newPrecio,
-                    PR_CATEGORIA_ID: newCategoria
+                    PR_CATEGORIA_ID: newCategoria,
+                    PR_FOTO: newFoto
                 })
             });
 
