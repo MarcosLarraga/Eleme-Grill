@@ -60,13 +60,6 @@ function toggleMenu(event) {
 
 menu.addEventListener('click', toggleMenu, false);
 
-
-
-
-
-
-
-
 /*nav(responsive)*/
 var menu = document.querySelector('.hamburger');
 

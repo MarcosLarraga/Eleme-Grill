@@ -80,14 +80,19 @@ const fetchProductos = async () => {
 const printProductos = (productos) => {
     const productosContainer = document.getElementById('productos');
 
+    // Limpiar el contenedor de productos antes de agregar los nuevos productos
+    productosContainer.innerHTML = '';
+
+    // Iterar sobre cada producto y agregarlo a la tabla de productos
     productos.forEach(producto => {
-        const { PR_PRODUCTO_ID, PR_NOMBRE, PR_PRECIO } = producto;
+        const { PR_NOMBRE, PR_PRECIO, PR_FOTO } = producto;
 
         const productElement = document.createElement('div');
         productElement.classList.add('product');
         productElement.innerHTML = `
             <h2>${PR_NOMBRE}</h2>
-            <p>Price: ${PR_PRECIO} €</p>
+            <img src="${PR_FOTO}"/>
+            <p>${PR_PRECIO} €</p>
             <button data-name="${PR_NOMBRE}" data-price="${PR_PRECIO}">Add to cart</button>
         `;
 
@@ -114,6 +119,5 @@ function toggleMenu(event) {
 
   event.preventDefault();
 }
-
 
 menu.addEventListener('click', toggleMenu, false);
