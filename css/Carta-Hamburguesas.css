@@ -207,7 +207,7 @@ h1{
 
 .product h2 {
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin:auto;
 }
 
 .product img {
@@ -220,7 +220,7 @@ h1{
 
 .product p {
     font-size: 1em;
-    margin-bottom: 10px;
+    margin: auto;
 }
 
 .product button {

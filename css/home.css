@@ -15,6 +15,7 @@
     object-fit: cover;
     z-index: -1;
 }
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -208,7 +209,7 @@ body {
 }
 
 .footer-links a {
-    color: white; 
+    color: white;
     text-decoration: none;
     margin-right: 20px;
     cursor: pointer;
@@ -217,7 +218,7 @@ body {
 
 .footer-links a:hover {
     color: #F6D347;
-}    
+}
 
 .footer-logo img {
     width: 50px;
@@ -262,13 +263,56 @@ body {
     color: black;
 }
 
+.cookie-alert {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #000000ce;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    transition: bottom 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.cookie-alert.show {
+    bottom: 0;
+    height: 300px;
+}
+
+.cookie-alert p {
+    margin-bottom: 10px;
+}
+
+.cookie-alert button {
+    margin-top: 10px;
+    background-color: #FFD700;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.cookie-alert button:hover {
+    background-color: #FFC800;
+}
+
 @media (max-width: 1024px) {
     .footer-logo {
         align-items: center;
     }
+
     .footer-dcha {
         align-items: center;
     }
+
     .footer-logo .btn.special1 {
         background-color: #F6D347;
         border-color: #F6D347;
@@ -276,7 +320,7 @@ body {
         transition: background-color 0.3s ease, color 0.3s ease;
         margin-left: 10px;
     }
-    
+
     .footer-logo {
         display: flex;
         justify-content: space-around;
@@ -313,6 +357,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
     .footer,
     .footer-links {
         display: flex;
@@ -557,16 +602,19 @@ body {
         display: flex;
         align-items: center;
     }
+
     .footer-dcha {
         display: flex;
         align-items: center;
     }
+
     .footer-logo .btn.special1 {
         background-color: #F6D347;
         border-color: #F6D347;
         color: black;
         transition: background-color 0.3s ease, color 0.3s ease;
-        margin-left: 10px; /* Ajuste de margen para alinear */
+        margin-left: 10px;
+        /* Ajuste de margen para alinear */
     }
 
     .footer-logo .btn.special1:hover {
