@@ -7,7 +7,10 @@ const fetchProductos = async () => {
         const data = await result.json();
         console.log('Estos son los productos que hay en la API:', data);
 
-        printProductos(data); // Imprimir todos los productos obtenidos de la API
+        // Filtrar los productos cuyo PR_CATEGORIA_ID es igual a 1
+        const productosFiltrados = data.filter(producto => producto.PR_CATEGORIA_ID === 1);
+
+        printProductos(productosFiltrados); // Imprimir los productos filtrados en la categoría HTML
     } catch (error) {
         console.log('Error al extraer datos con la API', error);
     }
@@ -56,8 +59,6 @@ function toggleMenu(event) {
 }
 
 menu.addEventListener('click', toggleMenu, false);
-
-
 
 
 

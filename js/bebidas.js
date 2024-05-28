@@ -25,12 +25,13 @@ const printProductos = (productos) => {
 
     // Iterar sobre cada producto y agregarlo a la tabla de productos
     productos.forEach(producto => {
-        const { PR_NOMBRE, PR_PRECIO } = producto;
+        const { PR_NOMBRE, PR_PRECIO, PR_FOTO } = producto;
 
         const productElement = document.createElement('div');
         productElement.classList.add('product');
         productElement.innerHTML = `
             <h2>${PR_NOMBRE}</h2>
+            <img src="${PR_FOTO}"/>
             <p>${PR_PRECIO} €</p>
         `;
 
