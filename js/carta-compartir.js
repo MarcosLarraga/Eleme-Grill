@@ -31,8 +31,7 @@ const printProductos = (productos) => {
         productElement.classList.add('product');
         productElement.innerHTML = `
             <h2>${PR_NOMBRE}</h2>
-            <p>Price: ${PR_PRECIO} €</p>
-            <button data-name="${PR_NOMBRE}" data-price="${PR_PRECIO}">Add to cart</button>
+            <p>${PR_PRECIO} €</p>
         `;
 
         productosContainer.appendChild(productElement);

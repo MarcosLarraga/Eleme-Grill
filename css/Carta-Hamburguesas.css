@@ -7,6 +7,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: rgb(0, 0, 0);
+    background-image: url(../fotos-videos/FONDO-CARTA-TODAS.jpg);
 }
 
 .navbar_css {
@@ -15,7 +16,6 @@ body {
     align-items: center;
     height: 90px;
     padding: 20px;
-    background-color: #000000;
 }
 
 .logo img {
@@ -142,7 +142,6 @@ body {
     color: white;
 }
 
-
 .titulo-carta {
     text-align: center;
     font-weight: bold;
@@ -155,7 +154,6 @@ body {
     margin: 0 auto;
     padding: 20px;
     background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 27px;
     background-color: rgba(0, 0, 0, 0);
     font-family: 'Anton', sans-serif;
@@ -164,6 +162,12 @@ body {
 h1,
 h2 {
     text-align: center;
+}
+
+h1{
+    COLOR: rgb(255, 255, 255);
+    FONT-SIZE: 86PX;
+    MARGIN: AUTO
 }
 
 .categories {
@@ -193,7 +197,7 @@ h2 {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
-    background-color: #fff;
+    background-color: #ffffffdc;
     box-sizing: border-box;
 }
 
@@ -306,7 +310,6 @@ h2 {
 
 .footer,
 .footer {
-    background: black;
     color: #fff;
     padding: 20px;
     text-align: center;
