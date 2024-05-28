@@ -78,14 +78,20 @@ const fetchProductos = async () => {
 
 /* Función para imprimir los productos en la lista de productos */
 const printProductos = (productos) => {
-    const productosContainer = document.getElementById('productos');
+    const hamburgersContainer = document.getElementById('hamburgers-products');
+    const drinksContainer = document.getElementById('drinks-products');
+    const toShareContainer = document.getElementById('to-share-products');
+    const dessertsContainer = document.getElementById('desserts-products');
 
-    // Limpiar el contenedor de productos antes de agregar los nuevos productos
-    productosContainer.innerHTML = '';
+    // Limpiar los contenedores de productos antes de agregar los nuevos productos
+    hamburgersContainer.innerHTML = '';
+    drinksContainer.innerHTML = '';
+    toShareContainer.innerHTML = '';
+    dessertsContainer.innerHTML = '';
 
-    // Iterar sobre cada producto y agregarlo a la tabla de productos
+    // Iterar sobre cada producto y agregarlo al contenedor correspondiente según su categoría
     productos.forEach(producto => {
-        const { PR_NOMBRE, PR_PRECIO, PR_FOTO } = producto;
+        const { PR_NOMBRE, PR_PRECIO, PR_FOTO, PR_CATEGORIA_ID } = producto;
 
         const productElement = document.createElement('div');
         productElement.classList.add('product');
@@ -96,7 +102,23 @@ const printProductos = (productos) => {
             <button data-name="${PR_NOMBRE}" data-price="${PR_PRECIO}">Add to cart</button>
         `;
 
-        productosContainer.appendChild(productElement);
+        switch (PR_CATEGORIA_ID) {
+            case 1:
+                hamburgersContainer.appendChild(productElement);
+                break;
+            case 2:
+                drinksContainer.appendChild(productElement);
+                break;
+            case 3:
+                toShareContainer.appendChild(productElement);
+                break;
+            case 4:
+                dessertsContainer.appendChild(productElement);
+                break;
+            default:
+                // Manejar casos de categoría no reconocida
+                break;
+        }
     });
 };
 
