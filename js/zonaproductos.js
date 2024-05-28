@@ -64,7 +64,7 @@ const addClient = async () => {
     const newCategoria = document.getElementById('categoria').value.trim();
     const newFoto = document.getElementById('foto').value.trim();
     
-    if (newNombre && newPrecio && newCategoria) {
+    if (newNombre && newPrecio && newCategoria && newFoto) {
         const newId = lastClientId + 1; // Usar lastClientId correctamente definido
         const url = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=PRODUCTO.ADD`;
 
