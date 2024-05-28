@@ -17,12 +17,12 @@ const printCategorias = (categorias) => {
   const tarjetas = document.querySelectorAll('.tarjeta');
 
   categorias.forEach((categoria, index) => {
-      const { CAT_NOMBRE } = categoria;
+      const { CA_NOMBRE } = categoria;
 
       if (tarjetas[index]) {
           const titulo = tarjetas[index].querySelector('h1');
           if (titulo) {
-              titulo.textContent = CAT_NOMBRE;
+              titulo.textContent = CA_NOMBRE;
           }
       }
   });
