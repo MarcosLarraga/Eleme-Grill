@@ -2,104 +2,71 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu for drink</title>
-    <link rel="stylesheet" href="../css/bebidas.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRINKS</title>
+  <link rel="stylesheet" href="../css/Carta-Hamburguesas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-    <nav class="navbar_css">
-        <div class="logo">
-            <a href="../html/home.html"><img src="../fotos-videos/logo-eleme-grill.png" alt="Logo"></a>
-        </div>
-        <div class="texto">
-            <ul>
-                <li><a href="../html/home.html" class="btn">Home</a></li>
-                <li><a href="../html/nosotros.html" class="btn">About Us</a></li>
-                <li><a href="../html/carta.html" class="btn">Menu</a></li>
-                <a href="../html/carrito.html" class="btn carrito"><i class="fas fa-shopping-cart"></i></a>
-            </ul>
-        </div>
-        <div class="hamburger">
-            <div class="_layer -top"></div>
-            <div class="_layer -mid"></div>
-            <div class="_layer -bottom"></div>
-        </div>
-        <nav class="menuppal">
-            <ul>
-                <li><a href="../html/home.html">Home</a></li>
-                <li><a href="../html/trabaja-con-nostros.html">About Us</a></li>
-                <li><a href="../html/carta.html">Menu</a></li>
-                <li><a href="../html/login.html" class="btn special">Sign In</a></li>
-                <li><a href="../html/carrito.html" class="btn-carrito" id="carrito"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
-        </nav>
-    </nav>
-
-    <h1 class="titulo">For drink</h1>
-
-    <div class="grid-container" id="gridContainerMeat">
-        <div class="card" onclick="openModal('myModalMeat1')">
-            <img src="../fotos-videos/agua.jpg" alt="Imagen 1" class="card-img">
-            <p class="card-text">WATER</p>
-        </div>
-        <div class="card" onclick="openModal('myModalMeat2')">
-            <img src="../fotos-videos/aquarius-limon.png" alt="Imagen 2" class="card-img">
-            <p class="card-text">AQUARIUS</p>
-        </div>
-        <div class="card" onclick="openModal('myModalMeat3')">
-            <img src="../fotos-videos/aquarius-naranja.png" alt="Imagen 3" class="card-img">
-            <p class="card-text">ORANJE AQUARIUS</p>
-        </div>
-        <div class="card" onclick="openModal('myModalMeat4')">
-            <img src="../fotos-videos/cocacola.jpg" alt="Imagen 4" class="card-img">
-            <p class="card-text">COCA-COLA</p>
-        </div>
-        <div class="card" onclick="openModal('myModalMeat5')">
-            <img src="../fotos-videos/fanta-naranja.png" alt="Imagen 5" class="card-img">
-            <p class="card-text">ORANJE FANTA</p>
-        </div>
-        <div class="card" onclick="openModal('myModalMeat6')">
-            <img src="../fotos-videos/nestea.png" alt="Imagen 6" class="card-img">
-            <p class="card-text">NESTEA</p>
-        </div>
-        <div class="card" onclick="openModal('myModalMeat7')">
-            <img src="../fotos-videos/sprite.png" alt="Imagen 7" class="card-img">
-            <p class="card-text">SPRITE</p>
-        </div>
-        <div class="card" onclick="openModal('myModalMeat7')">
-            <img src="../fotos-videos/fanta-limon.png" alt="Imagen 7" class="card-img">
-            <p class="card-text">LEMON FANTA</p>
-        </div>
-        <div class="card" onclick="openModal('myModalMeat8')">
-            <img src="../fotos-videos/cerveza.png" alt="Imagen 8" class="card-img">
-            <p class="card-text">BEER</p>
-        </div>
+  <nav class="navbar_css">
+    <div class="logo">
+      <a href="../html/home.html"><img src="../fotos-videos/logo-eleme-grill.png" alt="Logo"></a>
     </div>
+    <div class="texto">
+      <ul>
+        <li><a href="../html/home.html" class="btn">Home</a></li>
+        <li><a href="../html/nosotros.html" class="btn">About Us</a></li>
+        <li><a href="../html/carta.html" class="btn">Menu</a></li>
+        <a href="../html/carrito.html" class="btn carrito"><i class="fas fa-shopping-cart"></i></a>
+      </ul>
+    </div>
+    <div class="hamburger">
+      <div class="_layer -top"></div>
+      <div class="_layer -mid"></div>
+      <div class="_layer -bottom"></div>
+    </div>
+    <nav class="menuppal">
+      <ul>
+        <li><a href="../html/home.html">Home</a></li>
+        <li><a href="../html/trabaja-con-nostros.html">About Us</a></li>
+        <li><a href="../html/carta.html">Menu</a></li>
+        <li><a href="../html/login.html" class="btn special">Sign In</a></li>
+        <li><a href="../html/carrito.html" class="btn-carrito" id="carrito"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </nav>
 
-    <footer class="footer">
-        <div class="footer-logo">
-            <a href="../html/home.html"><img src="../fotos-videos/logo-eleme-grill.png" alt="Logo footer"></a>
-        </div>
-        <div class="footer-centro">
-            <p>Follow us on our social media:</p>
-            <div class="icono-redes">
-                <a href="https://www.facebook.com/?locale=es_ES"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-        <div class="footer-dcha">
-            <div class="footer-links">
-                <a href="../html/PoliticaCokies.html"><span>Cookies Policy</span></a> 
-                <a href="../html/PoliticaDePrivacidad.html"><span>Privacy Policy</span></a>
-                <a href="../html/AvisoLegal.html"><span>Legal Notice</span></a>
-            </div>            
-            <span class="copyright">© 2024 Eleme Grill</span>
-        </div>
-    </footer>
+  <div class="container">
+    <h1 class="titulo-bla">DRINKS</h1>
+    <div class="product-list" id="productos">
+        <!-- Todos los productos se cargarán aquí -->
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">
+      <a href="../html/home.html"><img src="../fotos-videos/logo-eleme-grill.png" alt="Logo footer"></a>
+    </div>
+    <div class="footer-centro">
+      <p>Follow us on our social media:</p>
+      <div class="icono-redes">
+        <a href="https://www.facebook.com/?locale=es_ES"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-dcha">
+      <div class="footer-links">
+        <a href="../html/PoliticaCokies.html"><span>Cookies Policy</span></a>
+        <a href="../html/PoliticaDePrivacidad.html"><span>Privacy Policy</span></a>
+        <a href="../html/AvisoLegal.html"><span>Legal Notice</span></a>
+      </div>
+      <span class="copyright">© 2024 Eleme Grill</span>
+    </div>
+  </footer>
 </body>
 <script src="../js/bebidas.js"></script>
 </body>
