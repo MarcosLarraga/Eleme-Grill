@@ -143,3 +143,13 @@ function toggleMenu(event) {
 }
 
 menu.addEventListener('click', toggleMenu, false);
+
+//scroll icono
+document.getElementById('scrollToOrder').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('order-details').scrollIntoView({ behavior: 'smooth' });
+});
+
+function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+}

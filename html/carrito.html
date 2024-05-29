@@ -13,7 +13,7 @@
         <i class="fas fa-sign-out-alt"></i> BACK
     </a>
     <div class="container">
-        <h1 class="titulo-bla">CART</h1>
+        <h1 class="titulo-bla" id="cart-section">CART</h1>
         
         <h1 class="titulo-bla">Hamburgers</h1>
         <div class="product-list" id="hamburgers-products">
@@ -35,7 +35,7 @@
             <!-- Todos los productos de postres se cargarán aquí -->
         </div>
 
-        <h1 class="titulo-bla">Order details</h1>
+        <h1 class="titulo-bla" id="order-details">Order details</h1>
         <div class="cart">
             <table>
                 <thead>
@@ -56,6 +56,14 @@
             </div>
         </div>
     </div>
+
+    <button class="scroll-to-section" onclick="scrollToSection('cart-section')">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <button class="scroll-to-section" onclick="scrollToSection('order-details')">
+        <i class="fas fa-arrow-down"></i>
+    </button>
+    
     <script src="../js/carrito.js"></script>
 </body>
 </html>
