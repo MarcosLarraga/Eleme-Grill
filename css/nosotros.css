@@ -12,11 +12,12 @@ body {
 .navbar_css {
     display: flex;
     justify-content: space-between;
-    height: 100px;
     padding: 20px;
     background-image: url('../fotos-videos/unete.png');
     background-size: cover;
     background-position: center;
+    height: 600px;
+
 }
 
 

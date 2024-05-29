@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Share</title>
+    <link rel="stylesheet" href="../css/carta-compartir.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar_css">
+        <div class="logo">
+            <a href="ml"><img src="../fotos-videos/logo-eleme-grill.png" alt="Logo"></a>
+        </div>
+        <div class="texto">
+            <ul>
+                <li><a href="ml" class="btn">Home</a></li>
+                <li><a href="s.html" class="btn">About Us</a></li>
+                <li><a href="tml" class="btn">Menu</a></li>
+                <li><a href="tml" class="btn special">Sign In</a></li>
+                <a href=".html" class="btn carrito"><i class="fas fa-shopping-cart"></i></a>
+            </ul>
+        </div>
+        <div class="hamburger">
+            <div class="_layer -top"></div>
+            <div class="_layer -mid"></div>
+            <div class="_layer -bottom"></div>
+        </div>
+        <nav class="menuppal">
+            <ul>
+                <li><a href="ml">Home</a></li>
+                <li><a href="-con-nostros.html">About Us</a></li>
+                <li><a href="tml">Menu</a></li>
+                <li><a href="tml" class="btn special">Sign In</a></li>
+                <li><a href=".html" class="btn-carrito" id="carrito"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </nav>
+
+    <h1 class="titulo">TO SHARE</h1>
+
+    <div class="grid-container" id="gridContainerMeat">
+        <div class="card" onclick="openModal('myModalMeat1')">
+            <img src="../fotos-videos/nachos.png" alt="Imagen 1" class="card-img">
+            <p class="card-text">STEAK NACHOS</p>
+        </div>
+        <div class="card" onclick="openModal('myModalMeat2')">
+            <img src="../fotos-videos/CAJÚN%20CHICKEN%20QUESADILLAS.png" alt="Imagen 2" class="card-img">
+            <p class="card-text">CAJÚN CHICKEN QUESADILLAS</p>
+        </div>
+        <div class="card" onclick="openModal('myModalMeat3')">
+            <img src="../fotos-videos/BRAVAS%20WINGS.png" alt="Imagen 3" class="card-img">
+            <p class="card-text">BRAVAS WINGS</p>
+        </div>
+        <div class="card" onclick="openModal('myModalMeat4')">
+            <img src="../fotos-videos/BOURBON%20WINGS.png" alt="Imagen 4" class="card-img">
+            <p class="card-text">BOURBON WINGS</p>
+        </div>
+        <div class="card" onclick="openModal('myModalMeat5')">
+            <img src="../fotos-videos/MOZZARELLA%20STICKS.png" alt="Imagen 5" class="card-img">
+            <p class="card-text">MOZZARELLA STICKS</p>
+        </div>
+        <div class="card" onclick="openModal('myModalMeat6')">
+            <img src="../fotos-videos/SUPER%20CRISPY%20CHICKEN%20STRIPS.png" alt="Imagen 6" class="card-img">
+            <p class="card-text">SUPER CRISPY CHICKEN STRIPS</p>
+        </div>
+        <div class="card" onclick="openModal('myModalMeat7')">
+            <img src="../fotos-videos/FONDUE%20IN%20BREAD%20LOAF.png" alt="Imagen 7" class="card-img">
+            <p class="card-text">FONDUE IN BREAD LOAF</p>
+        </div>
+        <div class="card" onclick="openModal('myModalMeat8')">
+            <img src="../fotos-videos/SPICY%20PORK%20SAUSAGE.png" alt="Imagen 8" class="card-img">
+            <p class="card-text">SPICY PORK SAUSAGE</p>
+        </div>
+        <div class="card" onclick="openModal('myModalMeat9')">
+            <img src="../fotos-videos/BOLETUS%20CROQUETTES.png" alt="Imagen 9" class="card-img">
+            <p class="card-text">BOLETUS CROQUETTES</p>
+        </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div id="myModalMeat1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModalMeat1')">&times;</span>
+            <h1>STEAK NACHOS</h1>
+            <p>CRISPY TORTILLAS LOADED WITH TOMATO CHILI BEEF SAUCE,MELTED
+                CHEESE, PICO DE GALLO, SOUR CREAM, GUACAMOLE AND JALAPENOS.</p><br>
+            <p style="font-size: 16px;">2 PEOPLE MINIMUM</p>
+        </div>
+    </div>
+
+    <div id="myModalMeat2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModalMeat2')">&times;</span>
+            <h1>CAJÚN CHICKEN QUESADILLAS</h1>
+            <p>DELICIOUS QUESADILLA WITH CHEESE MIXTURE, CRISPY BACON, WITH JUICY FARMYARD CHICKEN SEASONED WITH SPICY
+                CAJUN
+                SPICES.</p><br>
+            <p style="font-size: 16px;">2 PEOPLE MINIMUM</p>
+        </div>
+    </div>
+
+    <div id="myModalMeat3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModalMeat3')">&times;</span>
+            <h1>BRAVAS WINGS</h1>
+            <p>WITH SPICY SAUCE. SERVED WITH CARROT STICKS AND BLUE CHEESE DIP.</p><br>
+            <p style="font-size: 16px;">2 PEOPLE MINIMUM</p>
+        </div>
+    </div>
+
+    <div id="myModalMeat4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModalMeat4')">&times;</span>
+            <h1>BOURBON WINGS</h1>
+            <p>WITH BOURBON SAUCE. SERVED WITH CARROT STICKS AND BLUE CHEESE DIP.</p><br>
+            <p style="font-size: 16px;">2 PEOPLE MINIMUM</p>
+        </div>
+    </div>
+
+    <div id="myModalMeat5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModalMeat5')">&times;</span>
+            <h1>MOZZARELLA STICKS</h1>
+            <p>BATTERED MOZZARELLA WITH SWEET TOMATO SAUCE.</p><br>
+            <p style="font-size: 16px;">2 PEOPLE MINIMUM</p>
+        </div>
+    </div>
+
+    <div id="myModalMeat6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModalMeat6')">&times;</span>
+            <h1>SUPER CRISPY CHICKEN STRIPS</h1>
+            <p>DELICIOUS FARMYARD CHICKEN STRIPS AND OUR EXCLUSIVE BBQ SAUCE.</p><br>
+            <p style="font-size: 16px;">2 PEOPLE MINIMUM</p>
+        </div>
+    </div>
+
+    <div id="myModalMeat7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModalMeat7')">&times;</span>
+            <h1>FONDUE IN BREAD LOAF</h1>
+            <p>MELTED MIX OF CHESSES IN A “PAYES” BREAD LOAF WITH CARROTS TO DIP.</p>
+            <br>
+            <p style="font-size: 16px;">2 PEOPLE MINIMUM</p>
+        </div>
+    </div>
+
+    <div id="myModalMeat8" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModalMeat8')">&times;</span>
+            <h1>SPICY PORK SAUSAGE</h1>
+            <p>DELICIOUS GRILLED SPICY PORK WITH CHIMICHURRI SAUCE.</p><br>
+            <p style="font-size: 16px;">2 PEOPLE MINIMUM</p>
+        </div>
+    </div>
+
+    <div id="myModalMeat9" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModalMeat9')">&times;</span>
+            <h1>BOLETUS CROQUETTES</h1>
+            <p>HANDCRAFT MADE WITH BOLETUS, CRUNCHY OTUSIDE AND CREAMY INSIDE.</p><br>
+            <p style="font-size: 16px;">2 PEOPLE MINIMUM</p>
+        </div>
+    </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <a href="ml"><img src="../fotos-videos/logo-eleme-grill.png" alt="Logo footer"></a>
+        </div>
+        <div class="footer-centro">
+            <p>Follow us on our social media:</p>
+            <div class="icono-redes">
+                <a href="https://www.facebook.com/?locale=es_ES"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-dcha">
+            <div class="footer-links">
+                <a href="aCokies.html"><span>Cookies Policy</span></a>
+                <a href="aDePrivacidad.html"><span>Privacy Policy</span></a>
+                <a href="gal.html"><span>Legal Notice</span></a>
+            </div>            
+            <span class="copyright">© 2024 Eleme Grill</span>
+        </div>
+    </footer>
+</body>
+<script src="../js/carta-compartir.js"></script>
+</body>
+
+</html>

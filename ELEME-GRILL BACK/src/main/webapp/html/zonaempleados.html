@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Zone</title>
+    <link rel="stylesheet" href="../css/zonaCLI-EMP.css">
+</head>
+<body>
+    <div class="container">
+        <span class="close-btn">&times;</span>
+        <h1>Private Zone</h1>
+        <div class="button-container">
+            <button onclick="loadContent('clients')">ADD</button>
+            <button onclick="loadContent('employees')">DELETE</button>
+        </div>
+        <div id="content">
+            <table id="tabla-empleados">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Zona Privada ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se cargarán los datos -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/zonaempleados.js"></script>
+</body>
+</html>

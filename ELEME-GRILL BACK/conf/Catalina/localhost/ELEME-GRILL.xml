@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="E:\ELEME-GRILL1\src\main\webapp">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="C:/Users/marcu/OneDrive/Escritorio/ELEME-GRILL1/target/classes" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+    <PostResources base="C:/Users/marcu/OneDrive/Escritorio/ELEME-GRILL1/lib/gson-2.10.1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/gson-2.10.1.jar"/>
+    <PostResources base="C:/Users/marcu/OneDrive/Escritorio/ELEME-GRILL1/lib/ojdbc11-21.3.0.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/ojdbc11-21.3.0.0.jar"/>
+    <PostResources base="C:/Users/marcu/OneDrive/Escritorio/ELEME-GRILL1/lib/javax.servlet-api-4.0.1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javax.servlet-api-4.0.1.jar"/>
+  </Resources>
+</Context>
