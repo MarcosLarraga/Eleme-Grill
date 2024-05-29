@@ -10,13 +10,13 @@ botonCerrar.onclick = function () {
 /* Función para encontrar todos los clientes */
 const fetchClientes = async () => {
     const urlClientes = 'http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.FIND_ALL';
-    
+
     try {
         const result = await fetch(urlClientes);
         const data = await result.json();
         console.log('Estos son los clientes que hay en la API:', data);
         printClientes(data); // Imprimir los clientes en la tabla HTML
-        
+
         // Obtener el último ID de cliente
         if (data.length > 0) {
             lastClientId = Math.max(...data.map(cliente => parseInt(cliente.CL_CLIENTE_ID, 10)));
@@ -69,7 +69,7 @@ const addCliente = async () => {
     const newTelefono = document.getElementById('telefono').value.trim();
     const newEmail = document.getElementById('email').value.trim();
     const newContrasena = document.getElementById('contrasena').value.trim();
-    
+
     if (newNombre && newApellido && newDireccion && newTelefono && newEmail && newContrasena) {
         const newId = lastClientId + 1; // Usar lastClientId correctamente definido
         const url = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.ADD`;
@@ -97,6 +97,7 @@ const addCliente = async () => {
                 lastClientId = newId; // Actualizar el último ID
                 fetchClientes(); // Actualizar la lista de clientes después de agregar uno nuevo
             } else {
+
                 console.error('Error al añadir el cliente.');
             }
         } catch (error) {
@@ -105,6 +106,7 @@ const addCliente = async () => {
     } else {
         alert('Todos los campos son obligatorios.');
     }
+    fetchClientes();
 };
 
 /* Función para eliminar un cliente */
@@ -116,7 +118,7 @@ const deleteCliente = async (clientIds) => {
             const response = await fetch(urlDeleteCliente, {
                 method: 'DELETE'
             });
-    
+
             if (response.ok) {
                 console.log(`Cliente con ID ${clientId} eliminado`);
                 fetchClientes(); // Actualizar la lista de clientes después de eliminar uno
@@ -162,7 +164,7 @@ document.getElementById('add-button').addEventListener('click', () => {
 /* Event listener para manejar el envío del formulario de cliente */
 document.getElementById('client-form').addEventListener('submit', (event) => {
     event.preventDefault();
-    
+
     addCliente();
     document.getElementById('add-form').style.display = 'none';
     document.getElementById('client-form').reset();
@@ -172,7 +174,7 @@ document.getElementById('client-form').addEventListener('submit', (event) => {
 document.getElementById('delete-button').addEventListener('click', () => {
     const selectedClients = document.querySelectorAll('.select-client:checked');
     const clientIdsToDelete = Array.from(selectedClients).map(input => input.dataset.id);
-    
+
     if (clientIdsToDelete.length > 0) {
         deleteCliente(clientIdsToDelete);
     } else {
