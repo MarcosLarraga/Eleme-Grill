@@ -35,7 +35,7 @@
         </div>
         <div id="add-form" style="display: none;">
             <h2>Add Employee</h2>
-            <form id="client-form">
+            <form id="employee-form">
                 <div class="form-group">
                     <label for="nombre">Name:</label>
                     <input type="text" id="nombre" placeholder="Name" required>
@@ -59,6 +59,24 @@
                 <button type="submit">Add</button>
             </form>
         </div>
+
+        <div id="update-form" style="display: none;">
+            <h2>Actualizar Cliente</h2>
+            <form id="update-client-form">
+                <label for="update-nombre">Nombre:</label>
+                <input type="text" id="update-nombre" placeholder="Nombre" required>
+                <label for="update-apellido">Apellido:</label>
+                <input type="text" id="update-apellido" placeholder="Apellido" required>
+                <label for="update-direccion">Dirección:</label>
+                <input type="text" id="update-direccion" placeholder="Dirección" required>
+                <label for="update-telefono">Teléfono:</label>
+                <input type="text" id="update-telefono" placeholder="Teléfono" required>
+                <label for="update-email">Correo electrónico:</label>
+                <input type="text" id="update-email" placeholder="Correo electrónico" required>
+                <button type="submit">Actualizar</button>
+            </form>
+        </div>
+
     </div>
     <script src="../js/zonaempleados.js"></script>
 </body>

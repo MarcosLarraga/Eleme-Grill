@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Private Zone</title>
     <link rel="stylesheet" href="../css/zonacomun.css">
 </head>
-
 <body>
     <div class="container">
         <span class="close-btn">&times;</span>
@@ -15,6 +13,7 @@
         <div class="button-container">
             <button id="add-button">ADD</button>
             <button id="delete-button">DELETE</button>
+            <button id="update-button">UPDATE</button>
         </div>
         <div id="content">
             <table id="tabla-empleados">
@@ -42,26 +41,27 @@
                 <input type="text" id="precio" placeholder="Price" required>
                 <label for="categoria">Category:</label>
                 <input type="text" id="categoria" placeholder="Category" required>
-                <label for="categoria">Foto:</label>
+                <label for="foto">Foto:</label>
                 <input type="text" id="foto" placeholder="Foto" required>
                 <button type="submit">Add</button>
             </form>
         </div>
+
         <div id="update-form" style="display: none;">
-            <h2>Update Product</h2>
-            <form id="update-form">
-                <input type="hidden" id="update-product-id">
-                <label for="update-nombre">Product:</label>
-                <input type="text" id="update-nombre" placeholder="Name" required>
-                <label for="update-precio">Price:</label>
-                <input type="text" id="update-precio" placeholder="Price" required>
-                <label for="update-categoria">Category:</label>
-                <input type="text" id="update-categoria" placeholder="Category" required>
-                <button type="submit">Update</button>
+            <h2>Actualizar Cliente</h2>
+            <form id="update-client-form">
+                <label for="update-nombre">Nombre:</label>
+                <input type="text" id="update-nombre" placeholder="Nombre" required>
+                <label for="update-precio">Precio:</label>
+                <input type="text" id="update-precio" placeholder="Precio" required>
+                <label for="update-categoria">Categoria:</label>
+                <input type="text" id="update-categoria" placeholder="Categoria" required>
+                <label for="update-foto">Foto:</label>
+                <input type="text" id="update-foto" placeholder="Foto" required>
+                <button type="submit">Actualizar</button>
             </form>
         </div>
     </div>
     <script src="../js/zonaproductos.js"></script>    
 </body>
-
 </html>
