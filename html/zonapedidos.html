@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Private Zone</title>
-    <link rel="stylesheet" href="../css/zonacomun.css">
+    <link rel="stylesheet" href="../css/zonaempleados.css">
 </head>
 <body>
     <div class="container">
         <span class="close-btn">&times;</span>
-        <h1>Private Zone</h1>
-        <h2>ORDERS</h2>
+        <h1>PEDIDOS</h1>
         <div class="button-container">
-            <button id="update-button">UPDATE</button>
+            <button id="delete-button">DELETE</button>
         </div>
         <div id="content">
-            <!-- Aquí se cargarán los datos -->
-        </div>
+            <table id="tabla-pedidos">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>ID</th>
+                        <th>Cliente ID</th>
+                        <th>Empleado ID</th>
+                        <th>Fecha Pedido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se cargarán los datos -->
+                </tbody>
+            </table>
     </div>
     <script src="../js/zonapedidos.js"></script>
 </body>
 </html>
+

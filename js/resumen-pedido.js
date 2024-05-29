@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 body: JSON.stringify({
                     PE_PEDIDO_ID: newOrderId,
-                    PE_CLIENTE_ID: clientId,
+                    PE_CLIENTE_ID: clientId + 1,
                     PE_EMPLEADO_ID: randomEmployee.EM_EMPLEADO_ID,
                     PE_FECHAPEDIDO: currentDate
                 })
@@ -167,6 +167,10 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error de red:', error);
         }
     };
+
+
+    
+
 
     /* Event listener para mostrar el formulario de agregar cliente */
     document.getElementById('add-button').addEventListener('click', () => {

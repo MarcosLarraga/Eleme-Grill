@@ -70,24 +70,62 @@ button:hover {
     background-color: #fcdc5ece;
 }
 
-.payment-icon {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
-.payment-details {
-    text-align: center;
-}
 
 .form-group {
     margin-bottom: 40px;
 }
 
-.payment-icon {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 8px;
+.button {
+    background-color: #F6D347;
+    color: black;
+    border: none;
+    padding: 10px;
+    width: 97%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
 }
+
+
+.button2 {
+    background-color: greenyellow;
+    color: black;
+    border: none;
+    padding: 10px;
+    width: 97%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.BACK {
+    background-color: red;
+    color: black;
+    border: none;
+    padding: 10px;
+    width: 13%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.BACK i {
+    margin-right: 8px; }
