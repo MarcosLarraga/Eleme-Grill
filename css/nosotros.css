@@ -263,6 +263,35 @@ body {
 .menuppal {
     display: none;
 }
+
+.main-container h1{
+    text-align: center;
+}
+
+.main-container p{
+    text-align: center;
+}
+
+.photo-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+img[alt="foto-luis"]{
+    width: 200px;
+    height: auto;
+    display: inline-block;
+    margin: 5px;  
+    margin-left: 220px;
+}
+
+img[alt="foto-marcos"]{
+    width: 200px;
+    height: auto;
+    display: inline-block;
+    margin: 5px;
+} 
+
 @media (max-width: 768px) {
 
     .footer,
