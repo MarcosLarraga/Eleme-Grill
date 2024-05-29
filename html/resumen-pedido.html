@@ -31,9 +31,9 @@
             </div>
         </div>
         <!-- Agregar evento para mostrar el formulario -->
-        <button id="add-button">Suscribe</button>
+        <button id="add-button">ADD</button>
         <div id="add-form" style="display: none;">
-            <h2>New Client</h2>
+            <h2>Add Client</h2>
             <form id="client-form">
                 <label for="nombre">Name:</label>
                 <input type="text" id="nombre" placeholder="Name" required>
@@ -57,6 +57,7 @@
     </div>
     <script src="../js/resumen-pedido.js"></script>
     <script>
+        // Agregar evento al botón "ADD" para mostrar el formulario de agregar cliente
         document.getElementById('add-button').addEventListener('click', function () {
             document.getElementById('add-form').style.display = 'block';
         });
