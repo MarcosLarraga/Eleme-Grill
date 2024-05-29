@@ -113,10 +113,6 @@ h2 {
     text-align: center;
 }
 
-h1{
-    margin-top: 100px;
-}
-
 .titulo-bla {
     color: #fff;
 }
@@ -258,6 +254,26 @@ h1{
 .payment-method button:hover {
     background-color: #0056b3;
 }
+
+.BACK {
+    background-color: #F6D347;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    width: 13%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.BACK i {
+    margin-right: 8px; }
 
 @media (max-width: 768px) {
 

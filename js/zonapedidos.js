@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     let lastOrderId = 0; // Definir lastOrderId al inicio
+    /* Función para cerrar ventana */
+    const botonCerrar = document.getElementsByClassName('close-btn')[0];
+
+    if (botonCerrar) {
+        botonCerrar.onclick = function () {
+            window.location.href = 'zonaprivada.html';
+        }
+    }
 
     /* Función para encontrar todos los pedidos y actualizar el lastOrderId */
     const fetchPedidos = async () => {
