@@ -24,7 +24,6 @@ function showCookieAlert() {
 }
 
 
-
 //responsive nav
 var menu = document.querySelector('.hamburger');
 
