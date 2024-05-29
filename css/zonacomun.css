@@ -4,16 +4,18 @@ body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
+    min-height: 100vh;
     background-color: #f2f2f2;
     margin: 0;
+    padding: 20px;
     position: relative;
+    box-sizing: border-box;
 }
 
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -27,7 +29,7 @@ body::before {
 
 body::after {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -41,10 +43,14 @@ body::after {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 1278px;
+    width: 100%;
+    max-width: 1200px;
     text-align: center;
     position: relative;
     z-index: 1;
+    box-sizing: border-box;
+    margin: 20px 0;
+    overflow: hidden;
 }
 
 .close-btn {
@@ -53,7 +59,7 @@ body::after {
     right: 10px;
     width: 30px;
     height: 30px;
-    color: #fff;
+    color: #000000;
     font-size: 20px;
     border-radius: 50%;
     display: flex;
@@ -95,33 +101,39 @@ h1 {
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
     max-height: 300px;
     overflow-y: auto;
+    margin-bottom: 20px;
 }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    color: #000000;
-    font-size: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.close-btn:hover {
-    text-decoration: none;
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
 }
 
-#add-form {
+table th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#add-form, #update-form {
     display: none;
+    margin-top: 20px;
 }
 
-#add-form h2 {
+#add-form h2, #update-form h2 {
     margin-bottom: 20px;
     color: #333;
 }
@@ -137,7 +149,8 @@ form label {
 }
 
 form input {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
