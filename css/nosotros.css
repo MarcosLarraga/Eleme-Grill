@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
-
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -17,9 +16,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 600px;
-
 }
-
 
 .logo img {
     width: 50px;
@@ -75,7 +72,6 @@ body {
     color: white;
 }
 
-
 .titulo-carta {
     text-align: center;
     font-weight: bold;
@@ -88,6 +84,7 @@ body {
     border-color: #cf3f2c;
     color: #cf3f2c;
 }
+
 .slider1 {
     position: relative;
     width: 100%;
@@ -117,7 +114,6 @@ body {
     0% {
         transform: translateX(0%);
     }
-
     100% {
         transform: translateX(-100%);
     }
@@ -136,22 +132,26 @@ body {
 .slider-title-span.underline {
     text-decoration: underline;
 }
-.titulo{
+
+.titulo {
     background-color: #000000;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
+
 .main-container {
     max-width: 900px;
     margin: 20px auto;
     padding: 0 20px;
     color: black;
 }
+
 .section-title {
     color: #333;
     text-align: center;
 }
+
 .about-us-container, .contact-container {
     margin-bottom: 40px;
 }
@@ -174,6 +174,7 @@ body {
 .contact {
     text-align: center;
 }
+
 .contact-info {
     margin: 10px 0;
 }
@@ -264,33 +265,26 @@ body {
     display: none;
 }
 
-.main-container h1{
+.main-container h1 {
     text-align: center;
 }
 
-.main-container p{
+.main-container p {
     text-align: center;
 }
 
-.photo-container {
+.fotos-nosotros {
     text-align: center;
     margin: 20px 0;
 }
 
-img[alt="foto-luis"]{
-    width: 200px;
-    height: auto;
-    display: inline-block;
-    margin: 5px;  
-    margin-left: 220px;
-}
-
-img[alt="foto-marcos"]{
-    width: 200px;
+.fotos-nosotros img {
+    width: 100%;
+    max-width: 200px;
     height: auto;
     display: inline-block;
     margin: 5px;
-} 
+}
 
 @media (max-width: 768px) {
 
@@ -302,7 +296,6 @@ img[alt="foto-marcos"]{
         gap: 10px;
         margin-top: 0;
         align-items: center;
-
     }
 
     .hamburger,
@@ -310,6 +303,7 @@ img[alt="foto-marcos"]{
         display: none;
     }
 }
+
 @media (max-width: 430px) {
     .texto {
         display: none;
@@ -329,9 +323,7 @@ img[alt="foto-marcos"]{
     .menuppal {
         display: block;
         right: 0;
-
     }
-
 
     .hamburger {
         align-items: center;
@@ -433,7 +425,6 @@ img[alt="foto-marcos"]{
         font-weight: bold;
     }
 
-
     .menuppal ul li a {
         color: #F6D347;
         font-size: 1.5rem;
@@ -441,7 +432,6 @@ img[alt="foto-marcos"]{
         display: block;
         text-decoration: none;
     }
-
 
     .btn.special {
         background-color: #F6D347;
@@ -452,7 +442,6 @@ img[alt="foto-marcos"]{
         margin-top: 0.5em;
         width: 50%;
         margin-left: 110px;
-
     }
 
     #carrito {
@@ -480,7 +469,6 @@ img[alt="foto-marcos"]{
         border: none;
     }
 
-    
     .footer,
     .footer-links {
         display: flex;
@@ -489,9 +477,9 @@ img[alt="foto-marcos"]{
         gap: 10px;
         margin-top: 0;
         align-items: center;
-    
     }
-    .copyright{
+
+    .copyright {
         margin-right: 43px;
     }
 }
