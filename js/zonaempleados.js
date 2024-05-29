@@ -135,12 +135,12 @@ document.getElementById('add-button').addEventListener('click', () => {
 });
 
 /* Event listener para manejar el envío del formulario de cliente */
-document.getElementById('client-form').addEventListener('submit', (event) => {
+document.getElementById('employee-form').addEventListener('submit', (event) => {
     event.preventDefault();
     
     addClient();
     document.getElementById('add-form').style.display = 'none';
-    document.getElementById('client-form').reset();
+    document.getElementById('employee-form').reset();
 });
 
 //* Event listener para manejar la eliminación de clientes */
@@ -154,6 +154,72 @@ document.getElementById('delete-button').addEventListener('click', () => {
         alert('Seleccione al menos un empleado para eliminar.');
     }
 });
+
+/* Función para actualizar un cliente */
+const updateEmpleado = async (clientId, updatedData) => {
+    const url = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=EMPLEADO.UPDATE&EM_EMPLEADO_ID=${clientId}`;
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedData)
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al actualizar cliente');
+        }
+
+        console.log(`Cliente con ID ${clientId} actualizado`);
+        fetchClientes(); // Actualizar la lista de clientes después de actualizar uno
+    } catch (error) {
+        console.log('Error al actualizar cliente:', error);
+    }
+};
+
+
+
+
+/* Event listener para mostrar el formulario de actualizar cliente */
+document.getElementById('update-button').addEventListener('click', () => {
+    const selectedEmployees = document.querySelectorAll('.select-employee:checked');
+
+    if (selectedEmployees.length === 1) {
+        const employeeId = selectedEmployees[0].dataset.id;
+        const employeeRow = selectedEmployees[0].closest('tr').children;
+
+        document.getElementById('update-nombre').value = employeeRow[2].innerText;
+        document.getElementById('update-apellido').value = employeeRow[3].innerText;
+        document.getElementById('update-direccion').value = employeeRow[4].innerText;
+        document.getElementById('update-telefono').value = employeeRow[5].innerText;
+        document.getElementById('update-email').value = employeeRow[6].innerText;
+
+        document.getElementById('update-form').style.display = 'block';
+        document.getElementById('add-form').style.display = 'none';
+
+        document.getElementById('update-client-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const updatedData = {
+                EM_EMPLEADO_ID: employeeId,
+                EM_NOMBRE: document.getElementById('update-nombre').value.trim(),
+                EM_APELLIDO: document.getElementById('update-apellido').value.trim(),
+                EM_DIRECCION: document.getElementById('update-direccion').value.trim(),
+                EM_TELEFONO: document.getElementById('update-telefono').value.trim(),
+                EM_EMAIL: document.getElementById('update-email').value.trim(),
+            };
+
+            updateEmpleado(employeeId, updatedData); // Llama a la función updateEmpleado
+            document.getElementById('update-form').style.display = 'none';
+            document.getElementById('update-client-form').reset();
+        }, { once: true }); // Asegurar que el event listener solo se ejecute una vez
+    } else {
+        alert('Seleccione un empleado para actualizar.');
+    }
+});
+
 
 
 // Al cargar el DOM, obtener y mostrar los clientes

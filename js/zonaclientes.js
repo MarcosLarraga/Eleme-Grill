@@ -30,7 +30,7 @@ const fetchClientes = async () => {
 
 /* Función para imprimir los clientes en una tabla */
 const printClientes = (clientes) => {
-    const table = document.getElementById('tabla-empleados');
+    const table = document.getElementById('tabla-clientes');
     const tbody = table.querySelector('tbody');
     tbody.innerHTML = '';
 
@@ -59,10 +59,10 @@ const printClientes = (clientes) => {
         `;
         tbody.appendChild(row);
     });
-};
+}
 
 /* Función para agregar un cliente */
-const addClient = async () => {
+const addCliente = async () => {
     const newNombre = document.getElementById('nombre').value.trim();
     const newApellido = document.getElementById('apellido').value.trim();
     const newDireccion = document.getElementById('direccion').value.trim();
@@ -105,49 +105,65 @@ const addClient = async () => {
     } else {
         alert('Todos los campos son obligatorios.');
     }
-    fetchClientes();
 };
 
 /* Función para eliminar un cliente */
-const deleteClient = async (clientIds) => {
+const deleteCliente = async (clientIds) => {
     for (const clientId of clientIds) {
-        const urlDeleteClient = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.DELETE&CL_CLIENTE_ID=${clientId}`;
+        const urlDeleteCliente = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.DELETE&CL_CLIENTE_ID=${clientId}`;
 
         try {
-            const response = await fetch(urlDeleteClient, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams({
-                    'CL_CLIENTE_ID': clientId
-                })
+            const response = await fetch(urlDeleteCliente, {
+                method: 'DELETE'
             });
     
-            if (!response.ok) {
+            if (response.ok) {
+                console.log(`Cliente con ID ${clientId} eliminado`);
+                fetchClientes(); // Actualizar la lista de clientes después de eliminar uno
+            } else {
                 throw new Error('Error al eliminar cliente');
             }
-    
-            console.log(`Cliente con ID ${clientId} eliminado`);
-            
-            fetchClientes(); // Actualizar la lista de clientes después de eliminar uno
         } catch (error) {
             console.log('Error al eliminar cliente:', error);
         }
     }
 };
 
+/* Función para actualizar un cliente */
+const updateCliente = async (clientId, updatedData) => {
+    const url = `http://localhost:8080/ELEME-GRILL/Controller?ACTION=CLIENTE.UPDATE&CL_CLIENTE_ID=${clientId}`;
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedData)
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al actualizar cliente');
+        }
+
+        console.log(`Cliente con ID ${clientId} actualizado`);
+        fetchClientes(); // Actualizar la lista de clientes después de actualizar uno
+    } catch (error) {
+        console.log('Error al actualizar cliente:', error);
+    }
+};
 
 /* Event listener para mostrar el formulario de agregar cliente */
 document.getElementById('add-button').addEventListener('click', () => {
     document.getElementById('add-form').style.display = 'block';
+    document.getElementById('update-form').style.display = 'none';
 });
 
 /* Event listener para manejar el envío del formulario de cliente */
 document.getElementById('client-form').addEventListener('submit', (event) => {
     event.preventDefault();
     
-    addClient();
+    addCliente();
     document.getElementById('add-form').style.display = 'none';
     document.getElementById('client-form').reset();
 });
@@ -158,12 +174,51 @@ document.getElementById('delete-button').addEventListener('click', () => {
     const clientIdsToDelete = Array.from(selectedClients).map(input => input.dataset.id);
     
     if (clientIdsToDelete.length > 0) {
-        deleteClient(clientIdsToDelete);
+        deleteCliente(clientIdsToDelete);
     } else {
         alert('Seleccione al menos un cliente para eliminar.');
     }
 });
 
+/* Event listener para mostrar el formulario de actualizar cliente */
+document.getElementById('update-button').addEventListener('click', () => {
+    const selectedClients = document.querySelectorAll('.select-client:checked');
+
+    if (selectedClients.length === 1) {
+        const clientId = selectedClients[0].dataset.id;
+        const clientRow = selectedClients[0].closest('tr').children;
+
+        document.getElementById('update-nombre').value = clientRow[2].innerText;
+        document.getElementById('update-apellido').value = clientRow[3].innerText;
+        document.getElementById('update-direccion').value = clientRow[4].innerText;
+        document.getElementById('update-telefono').value = clientRow[5].innerText;
+        document.getElementById('update-email').value = clientRow[6].innerText;
+        document.getElementById('update-contrasena').value = clientRow[7].innerText;
+
+        document.getElementById('update-form').style.display = 'block';
+        document.getElementById('add-form').style.display = 'none';
+
+        document.getElementById('update-client-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const updatedData = {
+                CL_CLIENTE_ID: clientId,
+                CL_NOMBRE: document.getElementById('update-nombre').value.trim(),
+                CL_APELLIDO: document.getElementById('update-apellido').value.trim(),
+                CL_DIRECCION: document.getElementById('update-direccion').value.trim(),
+                CL_TELEFONO: document.getElementById('update-telefono').value.trim(),
+                CL_EMAIL: document.getElementById('update-email').value.trim(),
+                CL_CONTRASENA: document.getElementById('update-contrasena').value.trim()
+            };
+
+            updateCliente(clientId, updatedData);
+            document.getElementById('update-form').style.display = 'none';
+            document.getElementById('update-client-form').reset();
+        }, { once: true }); // Asegurar que el event listener solo se ejecute una vez
+    } else {
+        alert('Seleccione un cliente para actualizar.');
+    }
+});
+
 // Al cargar el DOM, obtener y mostrar los clientes
 document.addEventListener('DOMContentLoaded', fetchClientes);
-
