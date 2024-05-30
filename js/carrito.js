@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td>${price.toFixed(2)} €</td>
                 <td class="quantity">1</td>
                 <td class="total">${price.toFixed(2)} €</td>
-                <td><button class="remove">Eliminar</button></td>
+                <td><button class="remove">Delete</button></td>
             `;
             cartItems.appendChild(cartItem);
         }
